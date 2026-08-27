@@ -1,0 +1,35 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Anciennes URLs éventuelles → pages v1
+[[redirects]]
+  from = "/programmes"
+  to = "/mba.html"
+  status = 301
+[[redirects]]
+  from = "/programmes.html"
+  to = "/mba.html"
+  status = 301
+[[redirects]]
+  from = "/admissions"
+  to = "/contact.html"
+  status = 301
+[[redirects]]
+  from = "/admissions.html"
+  to = "/contact.html"
+  status = 301
+[[redirects]]
+  from = "/partenariats"
+  to = "/a-propos.html"
+  status = 301
+[[redirects]]
+  from = "/partenariats.html"
+  to = "/a-propos.html"
+  status = 301
