@@ -126,6 +126,13 @@ window.UPL.config = {
     },
   ],
 
+  /* Rentrée académique — laisser date vide tant qu'elle n'est pas confirmée par l'école.
+     Format : "2026-10-05" (AAAA-MM-JJ). Tant que vide, le compte à rebours reste caché. */
+  rentree: {
+    date: "",
+    label: "Rentrée académique",
+  },
+
   /* Citations de management — rotation aléatoire côté accueil.
      Choisir des citations sourcées (attribution fiable). */
   quotes: [

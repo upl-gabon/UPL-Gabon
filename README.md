@@ -16,7 +16,7 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 ## Démarrage
 
 ```bash
-npm test          # 17 tests de stabilité — OBLIGATOIRE avant toute livraison
+npm test          # 21 tests de stabilité — OBLIGATOIRE avant toute livraison
 npm run serve     # serveur local → http://127.0.0.1:5173
 ```
 
@@ -27,7 +27,8 @@ Aucun `npm install` nécessaire (aucune dépendance).
 ```
 ├── index.html            Accueil (type grande école)
 ├── mba.html              Fiche Executive MBA
-├── a-propos.html         Institution + limites éditoriales
+├── a-propos.html         Institution + vision + direction
+├── president.html        Mot du Président (Serge Patrick MINANG)
 ├── contact.html          Téléphones + contact@ + formulaire (mailto)
 ├── assets/
 │   ├── css/main.css      Charte bleu/or + layout
@@ -36,7 +37,7 @@ Aucun `npm install` nécessaire (aucune dépendance).
 │       ├── config.js     ★ SOURCE DE VÉRITÉ (contacts, flags, programmes)
 │       ├── include.js    Header / footer injectés
 │       └── main.js       Nav, formulaire
-├── tests/site.test.mjs   17 tests de stabilité (Node ≥ 18)
+├── tests/site.test.mjs   21 tests de stabilité (Node ≥ 18)
 ├── docs/                 Décisions & guides (domaine, DNS, GitHub, com)
 ├── HANDOVER.md           ★ Passation — à lire en premier
 └── netlify.toml          Config Netlify conservée (publish = ".")

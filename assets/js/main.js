@@ -126,4 +126,19 @@
     }
   }
 
+
+  /* Compte à rebours de rentrée — affiché uniquement si la date est confirmée dans config.js */
+  var countdownEl = document.querySelector("[data-countdown]");
+  if (countdownEl && C2.rentree && C2.rentree.date) {
+    var target = new Date(C2.rentree.date + "T00:00:00");
+    var now = new Date();
+    if (!isNaN(target.getTime()) && target.getTime() > now.getTime()) {
+      var days = Math.ceil((target.getTime() - now.getTime()) / 86400000);
+      var dateFr = target.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+      countdownEl.innerHTML = "<strong>" + (C2.rentree.label || "Rentrée") + " : J-" + days +
+        "</strong> \u2014 " + dateFr + ". Dossier \u00E0 d\u00E9poser d\u00E8s maintenant.";
+      countdownEl.hidden = false;
+    }
+  }
+
 })();

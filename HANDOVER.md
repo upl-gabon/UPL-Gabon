@@ -205,6 +205,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (5) — v1.5 « personnalisation Président + préparation SEO »**
+- Nouvelle page **`president.html` — Mot du Président** (brouillon sobre et factuel rédigé par l'agent : conviction, chiffres réels, « programme après programme, critère : la réalité ») — **à valider/ajuster par le Président** avant mise en ligne définitive. Ajoutée à la nav + footer.
+- **Compte à rebours de rentrée** prêt : `config.js → rentree: { date: "AAAA-MM-JJ" }` — caché tant que la date n'est pas confirmée (aucune date inventée). S'affiche sur la carte MBA de l'accueil (J-XX).
+- **SEO** : JSON-LD `CollegeOrUniversity` (fiches enrichies Google), `robots.txt`, `sitemap.xml` (URLs upl-gabon.com — actives après branchement DNS).
+- Tests portés à **21**.
+
 **27/08/2026 (4) — v1.4 « site vivant, à l'image du Président »**
 - Accueil : bandeau **« À la une »** (ticker) qui fait tourner les titres des communiqués ; **bandeau citation de management** (rotation aléatoire — Drucker, Ford, Mandela, Maxwell) + repères factuels (parité 655,957 FCFA/EUR BEAC, OHADA, CEMAC) ; section **Communiqués** rendue depuis `config.js` (`news: []` — le plus récent en premier, dates au mois, faits réels uniquement).
 - Rotation désactivée si `prefers-reduced-motion` (accessibilité).

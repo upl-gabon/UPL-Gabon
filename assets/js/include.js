@@ -23,6 +23,7 @@
       '<a href="index.html">Accueil</a>' +
       '<a href="mba.html">Executive MBA</a>' +
       '<a href="a-propos.html">À propos</a>' +
+      '<a href="president.html">Mot du Président</a>' +
       '<a class="nav-cta" href="contact.html">Contact</a>' +
       "</nav></div></header>"
     );
@@ -37,6 +38,7 @@
       "<p class=\"small\">Sablière, en face de la Résidence de l'Ambassade d'Arabie Saoudite</p></div>" +
     "<div><h4>Parcours</h4><ul>" +
       '<li><a href="mba.html">Executive MBA</a></li>' +
+      '<li><a href="president.html">Mot du Président</a></li>' +
       '<li><a href="a-propos.html">À propos</a></li>' +
       '<li><a href="contact.html">Contact / inscription</a></li>' +
       "</ul></div>" +

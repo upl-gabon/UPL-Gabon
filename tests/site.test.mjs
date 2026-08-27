@@ -39,7 +39,7 @@ function test(title, fn) {
 console.log("\nUPL site stability tests\n");
 
 test("pages requises existent", () => {
-  for (const f of ["index.html", "mba.html", "a-propos.html", "contact.html"]) {
+  for (const f of ["index.html", "mba.html", "a-propos.html", "president.html", "contact.html"]) {
     assert.ok(existsSync(join(ROOT, f)), `manque ${f}`);
   }
 });
@@ -121,7 +121,7 @@ test("CPGE pas présenté comme offre ouverte (page dédiée / nav)", () => {
 });
 
 test("pages chargent config.js puis include.js puis main.js", () => {
-  for (const f of ["index.html", "mba.html", "a-propos.html", "contact.html"]) {
+  for (const f of ["index.html", "mba.html", "a-propos.html", "president.html", "contact.html"]) {
     const html = read(f);
     const iConfig = html.indexOf("assets/js/config.js");
     const iInclude = html.indexOf("assets/js/include.js");
@@ -205,4 +205,34 @@ test("a-propos : direction + liens Douala et ESSEC Douala", () => {
   assert.ok(html.includes("Serge Patrick MINANG"), "bloc président manquant");
   assert.ok(html.includes("univ-douala.com"), "lien Université de Douala manquant");
   assert.ok(html.includes("essec-douala.cm"), "lien ESSEC Douala manquant");
+});
+
+test("mot du Président : page, nav et liens footer", () => {
+  assert.ok(existsSync(join(ROOT, "president.html")), "manque president.html");
+  const pres = read("president.html");
+  assert.ok(pres.includes("Serge Patrick MINANG"), "président non cité");
+  assert.ok(pres.includes("contact@upl-gabon.com"), "email manquant");
+  const include = read("assets/js/include.js");
+  assert.ok(include.includes("president.html"), "lien nav/footer manquant");
+});
+
+test("compte à rebours rentrée : branché et masqué sans date", () => {
+  const cfg = read("assets/js/config.js");
+  assert.ok(cfg.includes("rentree:"), "config rentree manquante");
+  const m = cfg.match(/rentree:\s*\{\s*date:\s*"([^"]*)"/);
+  assert.ok(m, "date de rentrée illisible");
+  const index = read("index.html");
+  assert.ok(index.includes("data-countdown"), "marqueur countdown manquant");
+  const main = read("assets/js/main.js");
+  assert.ok(main.includes("data-countdown") && main.includes("J-"), "logique countdown manquante");
+});
+
+test("SEO : JSON-LD, robots.txt et sitemap.xml", () => {
+  const index = read("index.html");
+  assert.ok(index.includes("application/ld+json"), "JSON-LD manquant");
+  assert.ok(index.includes("CollegeOrUniversity"), "type schema manquant");
+  for (const f of ["robots.txt", "sitemap.xml"]) {
+    assert.ok(existsSync(join(ROOT, f)), `manque ${f}`);
+  }
+  assert.ok(read("robots.txt").includes("sitemap.xml"));
 });
