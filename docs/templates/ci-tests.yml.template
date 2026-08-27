@@ -1,0 +1,31 @@
+name: Tests stabilité site
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Tests de stabilité (npm test)
+        run: npm test
+
+# ─────────────────────────────────────────────────────────────
+# POUR ACTIVER LA CI (1 minute, par un admin du compte upl-gabon) :
+# 1. GitHub → dépôt → "Add file" → "Create new file"
+# 2. Nom : .github/workflows/tests.yml
+# 3. Coller le YAML ci-dessus (sans ces commentaires), Commit
+# → les 13 tests tourneront à chaque push / Pull Request.
+# (l'agent Arena ne peut pas créer ce fichier lui-même :
+#  permission GitHub App « workflows » absente)
+# ─────────────────────────────────────────────────────────────
