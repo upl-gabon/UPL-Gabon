@@ -133,6 +133,30 @@ window.UPL.config = {
     label: "Rentrée académique",
   },
 
+  /* Situations pratiques — alternent avec les citations sur l'accueil.
+     Paiement : justification de paiement + confirmation UPL indispensables (docs d'inscription). */
+  paymentNotices: [
+    {
+      text: "Scolarité payable en tranches — l'échéancier est remis par le secrétariat à l'inscription.",
+      source: "Modalités de paiement",
+    },
+    {
+      text: "Règlement par Airtel Money : conservez votre justificatif de paiement — la confirmation de l'UPL est indispensable.",
+      source: "Paiement & inscription",
+    },
+    {
+      text: "Après chaque versement, un reçu UPL vous est délivré : joignez-le à vos documents d'inscription.",
+      source: "Justificatifs",
+    },
+  ],
+
+  /* Défilement continu « À la une » : communiqués + infos pratiques. */
+  tickerExtra: [
+    "Cours du soir 17h–21h · Sablière, Libreville",
+    "Scolarité payable en tranches · reçu + confirmation UPL",
+    "Inscriptions : contact@upl-gabon.com",
+  ],
+
   /* Citations de management — rotation aléatoire côté accueil.
      Choisir des citations sourcées (attribution fiable). */
   quotes: [
@@ -176,6 +200,12 @@ window.UPL.config = {
       date: "",
       title: "Les cours du soir se poursuivent à la Sablière",
       text: "Séances de 17h00 à 21h00, compatibles avec l'activité professionnelle des auditeurs. Emploi du temps remis au début de chaque module.",
+    },
+    {
+      tag: "Inscription",
+      date: "",
+      title: "Paiement : justificatif et confirmation UPL indispensables",
+      text: "Règlement des tranches par Airtel Money ou au secrétariat. Conservez votre justificatif de paiement : la confirmation de l'UPL complète votre dossier d'inscription.",
     },
     {
       tag: "Multimédia",

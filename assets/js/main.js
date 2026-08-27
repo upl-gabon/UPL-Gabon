@@ -71,23 +71,28 @@
   var news = C2.news || [];
   var quotes = C2.quotes || [];
 
-  /* Bandeau "À la une" — rotation des titres de communiqués */
+  /* Bandeau "À la une" — défilement continu (type infos en continue d'une chaîne) */
   var tickerItem = document.querySelector("[data-ticker-item]");
-  if (tickerItem && news.length) {
+  if (tickerItem) {
     var titles = news.map(function (n) { return n.title; });
-    if (reduceMotion) {
-      tickerItem.textContent = titles.join("  ·  ");
-    } else {
-      var ti = 0;
-      tickerItem.textContent = titles[0];
-      setInterval(function () {
-        ti = (ti + 1) % titles.length;
-        tickerItem.style.opacity = "0";
-        setTimeout(function () {
-          tickerItem.textContent = titles[ti];
-          tickerItem.style.opacity = "1";
-        }, 350);
-      }, 5000);
+    var extras = C2.tickerExtra || [];
+    var items = titles.concat(extras);
+    if (items.length) {
+      if (reduceMotion) {
+        tickerItem.textContent = items.join("  ·  ");
+      } else {
+        tickerItem.remove();
+        var sep = '<span class="ticker-sep" aria-hidden="true">\u2022</span>';
+        var groupHtml = items.map(function (t) {
+          return '<span class="ticker-item">' + t + "</span>" + sep;
+        }).join("");
+        var track = document.createElement("div");
+        track.className = "ticker-track";
+        track.style.setProperty("--ticker-duration", (items.length * 6) + "s");
+        track.innerHTML = '<div class="ticker-group">' + groupHtml + "</div>" +
+          '<div class="ticker-group" aria-hidden="true">' + groupHtml + "</div>";
+        tickerItem.parentNode.appendChild(track);
+      }
     }
   }
 
@@ -106,16 +111,24 @@
   /* Citation de management — tirage aléatoire, rotation douce */
   var qText = document.getElementById("quote-text");
   var qAuthor = document.getElementById("quote-author");
-  if (qText && qAuthor && quotes.length) {
-    var qi = Math.floor(Math.random() * quotes.length);
+  var notices = C2.paymentNotices || [];
+  var flow = [];
+  var maxLen = Math.max(quotes.length, notices.length);
+  for (var k = 0; k < maxLen; k++) {
+    if (quotes[k]) flow.push({ text: quotes[k].text, author: quotes[k].author, isQuote: true });
+    if (notices[k]) flow.push({ text: notices[k].text, author: notices[k].source, isQuote: false });
+  }
+  if (qText && qAuthor && flow.length) {
+    var qi = Math.floor(Math.random() * flow.length);
     function showQuote(i) {
-      qText.textContent = "\u00AB " + quotes[i].text + " \u00BB";
-      qAuthor.textContent = "\u2014 " + quotes[i].author;
+      var it = flow[i];
+      qText.textContent = it.isQuote ? "\u00AB " + it.text + " \u00BB" : it.text;
+      qAuthor.textContent = "\u2014 " + it.author;
     }
     showQuote(qi);
-    if (!reduceMotion && quotes.length > 1) {
+    if (!reduceMotion && flow.length > 1) {
       setInterval(function () {
-        qi = (qi + 1) % quotes.length;
+        qi = (qi + 1) % flow.length;
         var box = qText.parentNode;
         box.style.opacity = "0";
         setTimeout(function () {

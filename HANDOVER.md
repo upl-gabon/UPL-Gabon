@@ -205,6 +205,13 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (6) — v1.6 « ticker continu + paiement » (retours Président)**
+- Bandeau « À la une » : **défilement continu type chaîne d'infos** (marquee CSS, pause au survol, statique si prefers-reduced-motion) — contenus = communiqués + infos pratiques (`config.js → tickerExtra`).
+- Bandeau citation : **alterne citations de management et situations pratiques** (`config.js → paymentNotices`) : tranches, Airtel Money, justificatif + confirmation UPL.
+- Règle d'inscription mise en avant (source Président) : **justification de paiement + confirmation UPL indispensables** — affichée sur MBA, contact et communiqué dédié. Paiement Airtel Money = via le processus du secrétariat (pas de paiement en ligne sur le site).
+- **Parité EUR/FCFA retirée** (inutile pour un public gabonais) — repères : OHADA, CEMAC, cours du soir.
+- Tests portés à **22**.
+
 **27/08/2026 (5) — v1.5 « personnalisation Président + préparation SEO »**
 - Nouvelle page **`president.html` — Mot du Président** (brouillon sobre et factuel rédigé par l'agent : conviction, chiffres réels, « programme après programme, critère : la réalité ») — **à valider/ajuster par le Président** avant mise en ligne définitive. Ajoutée à la nav + footer.
 - **Compte à rebours de rentrée** prêt : `config.js → rentree: { date: "AAAA-MM-JJ" }` — caché tant que la date n'est pas confirmée (aucune date inventée). S'affiche sur la carte MBA de l'accueil (J-XX).

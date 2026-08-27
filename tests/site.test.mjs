@@ -236,3 +236,14 @@ test("SEO : JSON-LD, robots.txt et sitemap.xml", () => {
   }
   assert.ok(read("robots.txt").includes("sitemap.xml"));
 });
+
+test("paiement : Airtel Money, justificatif et confirmation UPL — parité retirée", () => {
+  const cfg = read("assets/js/config.js");
+  assert.ok(cfg.includes("Airtel Money"), "Airtel Money manquant dans config");
+  assert.ok(cfg.includes("paymentNotices"), "situations paiement manquantes");
+  assert.ok(cfg.includes("confirmation de l'UPL"), "règle confirmation UPL manquante");
+  const mba = read("mba.html");
+  assert.ok(mba.includes("Airtel Money") && mba.includes("confirmation de l'UPL"), "info paiement MBA manquante");
+  const index = read("index.html");
+  assert.ok(!index.includes("655,957"), "parité EUR/FCFA encore présente");
+});
