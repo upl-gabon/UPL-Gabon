@@ -31,13 +31,19 @@
       var phone = (fd.get("phone") || "").toString().trim();
       var message = (fd.get("message") || "").toString().trim();
       var interest = (fd.get("interest") || "Executive MBA").toString().trim();
-      var text =
-        "Demande UPL\n" +
-        "Intérêt : " + interest + "\n" +
-        "Nom : " + name + "\n" +
-        "Email : " + from + "\n" +
-        "Téléphone : " + phone + "\n\n" +
-        message;
+      var text = LANG === "en"
+        ? "UPL enquiry\n" +
+          "Interest: " + interest + "\n" +
+          "Name: " + name + "\n" +
+          "Email: " + from + "\n" +
+          "Phone: " + phone + "\n\n" +
+          message
+        : "Demande UPL\n" +
+          "Intérêt : " + interest + "\n" +
+          "Nom : " + name + "\n" +
+          "Email : " + from + "\n" +
+          "Téléphone : " + phone + "\n\n" +
+          message;
       var subject = encodeURIComponent("UPL — " + interest + " — " + name);
       window.location.href =
         "mailto:" + target + "?subject=" + subject + "&body=" + encodeURIComponent(text);
@@ -68,14 +74,21 @@
   /* ===== Infos dynamiques (type fil d'actualité) ===== */
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var C2 = (window.UPL && window.UPL.config) || {};
+  var LANG = (window.UPL && window.UPL.lang) || "fr";
+  function pick(obj, frKey, enKey) {
+    if (LANG === "en" && obj && obj[enKey || (frKey + "En")]) return obj[enKey || (frKey + "En")];
+    return obj ? obj[frKey] : "";
+  }
   var news = C2.news || [];
   var quotes = C2.quotes || [];
 
   /* Bandeau "À la une" — défilement continu (type infos en continue d'une chaîne) */
   var tickerItem = document.querySelector("[data-ticker-item]");
   if (tickerItem) {
-    var titles = news.map(function (n) { return n.title; });
-    var extras = C2.tickerExtra || [];
+    var titles = news.map(function (n) { return pick(n, "title"); });
+    var extras = (C2.tickerExtra || []).map(function (t) {
+      return (typeof t === "string") ? t : (pick(t, "fr", "en") || t.fr || "");
+    });
     var items = titles.concat(extras);
     if (items.length) {
       if (reduceMotion) {
@@ -99,12 +112,15 @@
   /* Communiqués — rendu depuis config.js */
   var newsGrid = document.querySelector("[data-news-grid]");
   if (newsGrid && news.length) {
-    newsGrid.innerHTML = news.map(function (n) {
-      var head = (n.tag ? '<span class="news-tag">' + n.tag + "</span>" : "") +
-                 (n.date ? '<span class="news-date">' + n.date + "</span>" : "");
+    var visible = news.filter(function (n) { return LANG !== "en" || n.titleEn; });
+    newsGrid.innerHTML = visible.map(function (n) {
+      var tag = pick(n, "tag");
+      var date = n.date;
+      var head = (tag ? '<span class="news-tag">' + tag + "</span>" : "") +
+                 (date ? '<span class="news-date">' + date + "</span>" : "");
       return '<article class="card">' + head +
-        "<h3>" + n.title + "</h3>" +
-        '<p class="small">' + n.text + "</p></article>";
+        "<h3>" + pick(n, "title") + "</h3>" +
+        '<p class="small">' + pick(n, "text") + "</p></article>";
     }).join("");
   }
 
@@ -115,8 +131,8 @@
   var flow = [];
   var maxLen = Math.max(quotes.length, notices.length);
   for (var k = 0; k < maxLen; k++) {
-    if (quotes[k]) flow.push({ text: quotes[k].text, author: quotes[k].author, isQuote: true });
-    if (notices[k]) flow.push({ text: notices[k].text, author: notices[k].source, isQuote: false });
+    if (quotes[k]) flow.push({ text: pick(quotes[k], "text"), author: quotes[k].author, isQuote: true });
+    if (notices[k]) flow.push({ text: pick(notices[k], "text"), author: pick(notices[k], "source"), isQuote: false });
   }
   if (qText && qAuthor && flow.length) {
     var qi = Math.floor(Math.random() * flow.length);
@@ -147,9 +163,12 @@
     var now = new Date();
     if (!isNaN(target.getTime()) && target.getTime() > now.getTime()) {
       var days = Math.ceil((target.getTime() - now.getTime()) / 86400000);
-      var dateFr = target.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
-      countdownEl.innerHTML = "<strong>" + (C2.rentree.label || "Rentrée") + " : J-" + days +
-        "</strong> \u2014 " + dateFr + ". Dossier \u00E0 d\u00E9poser d\u00E8s maintenant.";
+      var label = (LANG === "en" ? (C2.rentree.labelEn || "Academic year opening") : (C2.rentree.label || "Rentrée"));
+      var dateStr = target.toLocaleDateString(LANG === "en" ? "en-GB" : "fr-FR", { day: "numeric", month: "long", year: "numeric" });
+      countdownEl.innerHTML = "<strong>" + label + " : " + (LANG === "en" ? "D-" : "J-") + days +
+        "</strong> \u2014 " + dateStr + (LANG === "en"
+          ? ". Send your application now."
+          : ". Dossier \u00E0 d\u00E9poser d\u00E8s maintenant.");
       countdownEl.hidden = false;
     }
   }

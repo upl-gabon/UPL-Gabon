@@ -267,3 +267,46 @@ test("ouvertures à venir : perche tendue sans mensonge ni date", () => {
   assert.ok(apropos.includes("en préparation"), "mention a-propos manquante");
   assert.ok(!/(ouvr(e|ai)s?|rentrée)[^.]{0,30}(202[7-9]|20[3-9][0-9])/i.test(index + apropos), "date d'ouverture inventée");
 });
+
+test("site bilingue : 5 pages EN câblées (lang, base, scripts, bandeau d'action)", () => {
+  for (const f of ["index.html", "mba.html", "a-propos.html", "president.html", "contact.html"]) {
+    const html = read("en/" + f);
+    assert.ok(html.includes('lang="en"'), `en/${f} : lang manquant`);
+    assert.ok(html.includes('data-base="../"'), `en/${f} : data-base manquant`);
+    assert.ok(html.includes('UPL.lang = "en"'), `en/${f} : UPL.lang manquant`);
+    assert.ok(html.includes("../assets/css/main.css"), `en/${f} : css manquant`);
+    assert.ok(html.includes("data-action-band"), `en/${f} : bandeau d'action manquant`);
+    assert.ok(html.includes("data-include-footer"), `en/${f} : footer manquant`);
+  }
+  const include = read("assets/js/include.js");
+  assert.ok(include.includes("lang-switch"), "bascule de langue manquante");
+  assert.ok(include.includes("data-action-band"), "injection bandeau manquante");
+  assert.ok(include.includes("bandApply") && include.includes("bandMeeting") && include.includes("bandPartner"), "CTAs du bandeau manquants");
+});
+
+test("config bilingue : citations, communiqués, notices et ticker traduits", () => {
+  const cfg = read("assets/js/config.js");
+  assert.ok((cfg.match(/textEn:/g) || []).length >= 6 + 3 + 4, "traductions textEn incomplètes");
+  assert.ok((cfg.match(/titleEn:/g) || []).length >= 4, "traductions titleEn incomplètes");
+  assert.ok((cfg.match(/sourceEn:/g) || []).length >= 3, "traductions sourceEn incomplètes");
+  assert.ok((cfg.match(/tagEn:/g) || []).length >= 4, "traductions tagEn incomplètes");
+  assert.ok(cfg.includes("labelEn"), "labelEn rentree manquant");
+  assert.ok(cfg.includes('{ fr: "Cours du soir'), "tickerExtra non bilingue");
+});
+
+test("bandeau d'action présent sur toutes les pages (FR et EN)", () => {
+  let count = 0;
+  for (const p of walkHtml()) {
+    const html = readFileSync(p, "utf8");
+    assert.ok(html.includes("data-action-band"), `bandeau d'action manquant dans ${p}`);
+    count++;
+  }
+  assert.ok(count >= 10, "pages inspectées insuffisantes : " + count);
+});
+
+test("sitemap bilingue", () => {
+  const sm = read("sitemap.xml");
+  for (const u of ["https://upl-gabon.com/en/", "https://upl-gabon.com/en/mba.html"]) {
+    assert.ok(sm.includes(u), "URL EN manquante : " + u);
+  }
+});

@@ -11,12 +11,13 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 - Offre publique : **Executive MBA uniquement** (partenaire : Université de Douala)
 - Charte : bleu `#0B2A5B` · or `#C9A227` · blanc — rendu « grande école »
 - **Config centrale** : `assets/js/config.js` — contacts, feature flags, programmes (architecture multi-université prête)
-- Hébergement : **GitHub Pages** (branche de travail) — Netlify existant conservé en secours, non supprimé
+- **Bilingue FR ⇄ EN** (pages miroir `en/`) · bandeau d'action standard (candidature · rendez-vous · partenariat) sur chaque page
+- Hébergement : **GitHub Pages** — Netlify existant conservé en secours, non supprimé
 
 ## Démarrage
 
 ```bash
-npm test          # 23 tests de stabilité — OBLIGATOIRE avant toute livraison
+npm test          # 27 tests de stabilité — OBLIGATOIRE avant toute livraison
 npm run serve     # serveur local → http://127.0.0.1:5173
 ```
 
@@ -30,6 +31,8 @@ Aucun `npm install` nécessaire (aucune dépendance).
 ├── a-propos.html         Institution + vision + direction
 ├── president.html        Mot du Président (Serge Patrick MINANG)
 ├── contact.html          Téléphones + contact@ + formulaire (mailto)
+├── en/                   Site complet en anglais (5 pages miroir)
+│                         Bascule FR ⇄ EN dans le header
 ├── assets/
 │   ├── css/main.css      Charte bleu/or + layout
 │   ├── img/              logo-upl.png, illustration campus
@@ -37,7 +40,7 @@ Aucun `npm install` nécessaire (aucune dépendance).
 │       ├── config.js     ★ SOURCE DE VÉRITÉ (contacts, flags, programmes)
 │       ├── include.js    Header / footer injectés
 │       └── main.js       Nav, formulaire
-├── tests/site.test.mjs   23 tests de stabilité (Node ≥ 18)
+├── tests/site.test.mjs   27 tests de stabilité (Node ≥ 18)
 ├── docs/                 Décisions & guides (domaine, DNS, GitHub, com)
 ├── HANDOVER.md           ★ Passation — à lire en premier
 └── netlify.toml          Config Netlify conservée (publish = ".")

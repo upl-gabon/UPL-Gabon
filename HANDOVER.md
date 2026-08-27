@@ -205,6 +205,13 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (9) — v1.9 « push-to-action + bilingue FR/EN » (retours Président)**
+- **Bandeau d'action standard** (`[data-action-band]`, injecté par include.js) sur les 10 pages : **Candidature MBA · Demander un rendez-vous · Partenariat** (mails pré-remplis) + lignes UPL. L'ancien CTA accueil remplacé.
+- **Bilinguisme complet** : dossier `en/` = 5 pages miroir traduites (lang="en", data-base="../"), bascule **FR ⇄ EN** dans le header, `sitemap.xml` bilingue. Contenus dynamiques bilingues dans `config.js` (`titleEn/textEn/tagEn/dateEn`, `textEn/sourceEn`, citations = citations originales anglaises, `tickerExtra` objets {fr,en}) — en EN, un communiqué sans traduction est masqué (jamais de mélange de langues).
+- **Demande de RDV** : mail pré-rempli objet « Demande de rendez-vous » / « Meeting request » (pas d'outil de planification encore).
+- Rédaction à venir (attente fichiers réels, ne pas improviser) : **extrait de cours** (1 PDF choisi, accord des enseignants, pas de supports complets) — prévoir `assets/docs/`.
+- Tests portés à **27** (pages EN câblées, config bilingue, bandeau sur toutes les pages, sitemap).
+
 **27/08/2026 (8) — v1.8 « formations à venir — perche tendue, zéro maintenance » (retours Président)**
 - Accueil : nouvelle section **« Et demain — D'autres formations en préparation »** : licences, masters et programmes spécialisés annoncés **sans date et sans promesse** (« chaque ouverture sera annoncée dès que les conditions pédagogiques et réglementaires seront réunies »). Deux CTA : étudiants/pros → abonnement lettre d'information ; entreprises/institutions → partenariat.
 - a-propos : vision alignée (formations en préparation, annonce à l'ouverture effective).

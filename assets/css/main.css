@@ -467,3 +467,25 @@ table.data tr:last-child td { border-bottom: 0; }
 @media (max-width: 900px) { .tv-panel { padding: 1.15rem; } }
 .tv-panel .btn-dark { background: var(--or); color: var(--bleu); font-weight: 700; }
 .tv-panel .btn-dark:hover { background: #fff; color: var(--bleu); }
+
+/* ===== Bascule de langue ===== */
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  margin-left: 0.75rem; padding-left: 0.9rem;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+}
+.lang-switch a, .lang-switch b {
+  color: rgba(255,255,255,0.75); text-decoration: none; padding: 0.1rem 0.35rem; border-radius: 6px;
+}
+.lang-switch b { color: var(--or); }
+.lang-switch a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+/* ===== Bandeau d'action standard ===== */
+.action-band { text-align: center; }
+.band-actions {
+  display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center;
+  margin: 0 auto; max-width: 46rem;
+}
+.band-actions .btn { flex: 1 1 12rem; }
+@media (max-width: 600px) { .band-actions .btn { flex: 1 1 100%; } }

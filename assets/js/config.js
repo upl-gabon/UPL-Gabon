@@ -125,6 +125,7 @@ window.UPL.config = {
   rentree: {
     date: "",
     label: "Rentrée académique",
+    labelEn: "Academic year opening",
   },
 
   /* Situations pratiques — alternent avec les citations sur l'accueil.
@@ -133,22 +134,28 @@ window.UPL.config = {
     {
       text: "Scolarité payable en tranches — l'échéancier est remis par le secrétariat à l'inscription.",
       source: "Modalités de paiement",
+      textEn: "Tuition is payable in instalments — the schedule is handed over by the Secretariat upon enrolment.",
+      sourceEn: "Payment terms",
     },
     {
       text: "Règlement par Airtel Money : conservez votre justificatif de paiement — la confirmation de l'UPL est indispensable.",
       source: "Paiement & inscription",
+      textEn: "Pay via Airtel Money: keep your payment receipt — the UPL confirmation is mandatory.",
+      sourceEn: "Payment & enrolment",
     },
     {
       text: "Après chaque versement, un reçu UPL vous est délivré : joignez-le à vos documents d'inscription.",
       source: "Justificatifs",
+      textEn: "After each instalment you receive a UPL receipt: attach it to your enrolment documents.",
+      sourceEn: "Supporting documents",
     },
   ],
 
   /* Défilement continu « À la une » : communiqués + infos pratiques. */
   tickerExtra: [
-    "Cours du soir 17h–21h · Sablière, Libreville",
-    "Scolarité payable en tranches · reçu + confirmation UPL",
-    "Inscriptions : contact@upl-gabon.com",
+    { fr: "Cours du soir 17h–21h · Sablière, Libreville", en: "Evening classes 5–9 pm · Sablière, Libreville" },
+    { fr: "Scolarité payable en tranches · reçu + confirmation UPL", en: "Tuition payable in instalments · receipt + UPL confirmation" },
+    { fr: "Inscriptions : contact@upl-gabon.com", en: "Admissions: contact@upl-gabon.com" },
   ],
 
   /* Citations de management — rotation aléatoire côté accueil.
@@ -157,26 +164,32 @@ window.UPL.config = {
     {
       text: "Le management consiste à faire les choses correctement ; le leadership, à faire les bonnes choses.",
       author: "Peter Drucker",
+      textEn: "Management is doing things right; leadership is doing the right things.",
     },
     {
       text: "Les plans ne sont que de bonnes intentions tant qu'ils ne se transforment pas immédiatement en travail.",
       author: "Peter Drucker",
+      textEn: "Plans are only good intentions unless they immediately degenerate into hard work.",
     },
     {
       text: "La meilleure façon de prédire l'avenir, c'est de le créer.",
       author: "Peter Drucker",
+      textEn: "The best way to predict the future is to create it.",
     },
     {
       text: "Quiconque cesse d'apprendre vieillit — qu'il ait vingt ou quatre-vingts ans.",
       author: "Henry Ford",
+      textEn: "Anyone who stops learning is old, whether at twenty or eighty.",
     },
     {
       text: "L'éducation est l'arme la plus puissante qu'on puisse utiliser pour changer le monde.",
       author: "Nelson Mandela",
+      textEn: "Education is the most powerful weapon which you can use to change the world.",
     },
     {
       text: "Un budget, c'est dire à son argent où aller, au lieu de se demander où il est passé.",
       author: "John C. Maxwell",
+      textEn: "A budget is telling your money where to go instead of wondering where it went.",
     },
   ],
 
@@ -184,28 +197,36 @@ window.UPL.config = {
      Utiliser des faits réels ; date au mois, pas de date inventée. */
   news: [
     {
-      tag: "Communiqué",
-      date: "Août 2026",
+      tag: "Communiqué", tagEn: "Announcement",
+      date: "Août 2026", dateEn: "August 2026",
       title: "Inscriptions ouvertes — Executive MBA",
+      titleEn: "Admissions open — Executive MBA",
       text: "Constitution du dossier : CV, parcours, diplômes — par e-mail (objet « Candidature MBA ») ou dépôt au secrétariat, Sablière. Scolarité payable en tranches.",
+      textEn: "Prepare your file (CV, background, diplomas) — by e-mail (subject « MBA Application ») or at the Secretariat, Sablière. Tuition is payable in instalments.",
     },
     {
-      tag: "Vie de l'école",
-      date: "",
+      tag: "Vie de l'école", tagEn: "School life",
+      date: "", dateEn: "",
       title: "Les cours du soir se poursuivent à la Sablière",
+      titleEn: "Evening classes continue in Sablière",
       text: "Séances de 17h00 à 21h00, compatibles avec l'activité professionnelle des auditeurs. Emploi du temps remis au début de chaque module.",
+      textEn: "Sessions run from 5:00 pm to 9:00 pm, compatible with the auditors' professional activity. The timetable is handed out at the start of each module.",
     },
     {
-      tag: "Inscription",
-      date: "",
+      tag: "Inscription", tagEn: "Admissions",
+      date: "", dateEn: "",
       title: "Paiement : justificatif et confirmation UPL indispensables",
+      titleEn: "Payment: proof of payment and UPL confirmation are mandatory",
       text: "Règlement des tranches par Airtel Money ou au secrétariat. Conservez votre justificatif de paiement : la confirmation de l'UPL complète votre dossier d'inscription.",
+      textEn: "Instalments are settled via Airtel Money or at the Secretariat. Keep your payment receipt: the UPL confirmation completes your enrolment file.",
     },
     {
-      tag: "Multimédia",
-      date: "",
+      tag: "Multimédia", tagEn: "Media",
+      date: "", dateEn: "",
       title: "L'UPL en vidéo",
+      titleEn: "UPL on video",
       text: "Présentation institutionnelle à la télévision (lecture automatique sur l'accueil) et interview sur l'Executive MBA — page MBA, section « Le MBA en images ».",
+      textEn: "The televised institutional presentation (autoplay on the homepage) and the Executive MBA interview — MBA page, section « The MBA in pictures ».",
     },
   ],
 
