@@ -139,7 +139,7 @@ Ajouter des tests si vous ajoutez une page.
 
 ## 5. Règles éditoriales (non négociables)
 
-1. MBA = seul programme `open` jusqu’à décision contraire du Président  
+1. Rentrée 2026-2027 — décision du Président (27/08) : offre ouverte Licence, Master, CPGE, Executive MBA, DBA (supports officiels : roll-up + fiche des frais) ; l'Executive MBA reste le programme historique depuis 2022
 2. Pas de logo partenaire non contractuel  
 3. Ton : grande école sobre + usage africain (mobile, clarté) — pas template IA générique  
 4. Paiements futurs : **Moov Money / Airtel Money d’abord**  
@@ -204,6 +204,15 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 ---
 
 ## 10. Journal des mises à jour
+
+**27/08/2026 (12) — v2.2 « offre officielle 2026-2027 en ligne » (PIVOT validé par les supports du Président)**
+- Les roll-up/fiches officiels UPL (« Inscriptions ouvertes 2026-2027 », fiche des frais) **supersèdent** la règle « MBA seul » : l'accueil affiche la **vraie offre chiffrée** — Licence 1 (1 000 000 / 50 premières · 1 200 000 / normales), Master 1 (1 500 000), Master 2 (2 000 000), CPGE (2 200 000), Executive MBA (4 000 000), DBA (sur dossier).
+- Frais d'inscription L1 : 200 000 / 300 000 exigibles au dépôt du dossier, solde en 6 tranches ; reçu pour tout paiement ; places limitées ; échéancier conditionne la validation administrative.
+- Cinq pôles affichés + CPGE ; `config.js` (programmes[], schools[]) = source de vérité mise à jour.
+- MBA : « jusqu'à huit échéances » (note officielle 04/07/2026).
+- Bloc « Et demain » remplacé par l'offre réelle ; a-propos, ticker et communiqué alignés (FR/EN).
+- Tests réécrits : **tarifs officiels verrouillés** (toute divergence de chiffre casse la CI). 28/28.
+- Photos campus (9 WhatsApp) : toujours bloquées côté sandbox (pièces jointes non persistées ; Drive inaccessible en binaire). Chemin fiable : upload web GitHub puis `git pull`.
 
 **27/08/2026 (11) — v2.1 « trajectoire : format éditorial » (retours Président : « fait trop IA »)**
 - Ligne du temps à cartes symétriques **remplacée** par un **chapitre éditorial de rapport annuel** : fond bleu pleine page, colonne gauche sticky (chapeau au trait d'or qui se dessine, titre), chronologie en **grands chiffres serif dorés** (2022 · ≈ 80 · 17h · +1) séparés par des filets fins — plus aucune carte, plus aucun arrangement symétrique de template.
