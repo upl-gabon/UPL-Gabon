@@ -53,9 +53,10 @@ Aucun `npm install` nécessaire (aucune dépendance).
 ## Workflow de contribution (passation)
 
 1. Créer une branche depuis `main`, travailler, **`npm test` vert**
-2. Ouvrir une **Pull Request** vers `main` (la CI relance les tests)
-3. Revue + merge — jamais de push direct sur `main`
-4. Toute action publique (mise en ligne, annonce partenaire, nouvelle filière) reste soumise à **validation du Président**
+2. Ouvrir une **Pull Request** vers `main` — jamais de push direct sur `main`
+3. Revue + merge
+4. CI (recommandé) : activer `docs/templates/ci-tests.yml.template` (voir le fichier, 1 minute) pour relancer les tests automatiquement à chaque PR
+5. Toute action publique (mise en ligne, annonce partenaire, nouvelle filière) reste soumise à **validation du Président**
 
 ## Règles non négociables
 
