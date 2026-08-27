@@ -316,7 +316,8 @@ test("animations sobres : trajectoire animée + poussière d'or avec garde-fous 
   assert.ok(index.includes("data-timeline"), "timeline manquante (accueil)");
   assert.ok(index.includes("tl-cap"), "svg chapeau manquant");
   assert.ok(index.includes("effects.js"), "effects.js non chargé (accueil)");
-  assert.ok(index.includes("La trajectoire de l'UPL"), "titre trajectoire manquant");
+  assert.ok(/La\s+trajectoire(\s|<br\s*\/>)+de l'UPL/.test(index), "titre trajectoire manquant");
+  assert.ok(index.includes("chrono-year") && index.includes("chrono-vow"), "structure éditoriale manquante");
   const enIndex = read("en/index.html");
   assert.ok(enIndex.includes("data-timeline") && enIndex.includes("The UPL trajectory"), "timeline EN manquante");
   const effects = read("assets/js/effects.js");

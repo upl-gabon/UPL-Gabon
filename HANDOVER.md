@@ -205,6 +205,11 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (11) — v2.1 « trajectoire : format éditorial » (retours Président : « fait trop IA »)**
+- Ligne du temps à cartes symétriques **remplacée** par un **chapitre éditorial de rapport annuel** : fond bleu pleine page, colonne gauche sticky (chapeau au trait d'or qui se dessine, titre), chronologie en **grands chiffres serif dorés** (2022 · ≈ 80 · 17h · +1) séparés par des filets fins — plus aucune carte, plus aucun arrangement symétrique de template.
+- Typographie éditoriale étendue : `Georgia/serif` sur le H1 du hero, la citation et les chiffres de la trajectoire (police système, zéro dépendance).
+- La révélation au scroll et les garde-fous d'accessibilité sont conservés ; tests 28/28.
+
 **27/08/2026 (10) — v2.0 « animation sobre : la trajectoire » (retours Président)**
 - Arbitrage Président/agent : **panthère et pluie d'or écartées** (risque kitsch face aux universités prestigieuses) ; retenues deux animations uniques mais dignes :
   1. **Poussière d'or du hero** (`assets/js/effects.js`, canvas) : 26 particules dorées lentes, scintillement discret. Garde-fous : coupée si `prefers-reduced-motion`, en pause onglet masqué, canvas confiné au hero.
