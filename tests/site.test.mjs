@@ -255,3 +255,15 @@ test("paiement : Airtel Money, justificatif et confirmation UPL — parité reti
   const index = read("index.html");
   assert.ok(!index.includes("655,957"), "parité EUR/FCFA encore présente");
 });
+
+test("ouvertures à venir : perche tendue sans mensonge ni date", () => {
+  const index = read("index.html");
+  assert.ok(index.includes("D'autres formations en préparation"), "bloc « à venir » manquant");
+  assert.ok(index.includes("licences, masters"), "mention licences/masters manquante");
+  assert.ok(index.includes("Être informé des ouvertures"), "CTA information manquant");
+  assert.ok(index.includes("Proposer un partenariat"), "CTA partenariat manquant");
+  assert.ok(/conditions\s+pédagogiques\s+et\s+réglementaires\s+seront\s+réunies/.test(index), "garantie d'honnêteté manquante");
+  const apropos = read("a-propos.html");
+  assert.ok(apropos.includes("en préparation"), "mention a-propos manquante");
+  assert.ok(!/(ouvr(e|ai)s?|rentrée)[^.]{0,30}(202[7-9]|20[3-9][0-9])/i.test(index + apropos), "date d'ouverture inventée");
+});

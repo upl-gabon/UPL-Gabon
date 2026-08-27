@@ -205,6 +205,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (8) — v1.8 « formations à venir — perche tendue, zéro maintenance » (retours Président)**
+- Accueil : nouvelle section **« Et demain — D'autres formations en préparation »** : licences, masters et programmes spécialisés annoncés **sans date et sans promesse** (« chaque ouverture sera annoncée dès que les conditions pédagogiques et réglementaires seront réunies »). Deux CTA : étudiants/pros → abonnement lettre d'information ; entreprises/institutions → partenariat.
+- a-propos : vision alignée (formations en préparation, annonce à l'ouverture effective).
+- **Bloc volontairement evergreen** : aucune mise à jour quotidienne nécessaire. Le jour où une formation ouvre réellement : `config.js → programmes[] → status: "open"` + page dédiée + retirer du bloc « en préparation ».
+- Tests portés à **23** (garde-fou : aucune date d'ouverture inventée).
+
 **27/08/2026 (7) — v1.7 « vidéo TV en autoplay + interview sur le MBA » (retours Président)**
 - **Vidéo « Rentrée 2024 » supprimée** du site et de `config.media` (sur demande du Président).
 - Accueil : section **« Replay — L'UPL à la télévision »**, lecteur BFM-style : **démarrage automatique muet** (`autoplay=1&mute=1`, la seule méthode sans erreur d'autoplay des navigateurs), note « son coupé par défaut », panneau bleu/or avec arguments factuels + CTA vers l'interview.

@@ -16,7 +16,7 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 ## Démarrage
 
 ```bash
-npm test          # 22 tests de stabilité — OBLIGATOIRE avant toute livraison
+npm test          # 23 tests de stabilité — OBLIGATOIRE avant toute livraison
 npm run serve     # serveur local → http://127.0.0.1:5173
 ```
 
@@ -37,7 +37,7 @@ Aucun `npm install` nécessaire (aucune dépendance).
 │       ├── config.js     ★ SOURCE DE VÉRITÉ (contacts, flags, programmes)
 │       ├── include.js    Header / footer injectés
 │       └── main.js       Nav, formulaire
-├── tests/site.test.mjs   22 tests de stabilité (Node ≥ 18)
+├── tests/site.test.mjs   23 tests de stabilité (Node ≥ 18)
 ├── docs/                 Décisions & guides (domaine, DNS, GitHub, com)
 ├── HANDOVER.md           ★ Passation — à lire en premier
 └── netlify.toml          Config Netlify conservée (publish = ".")
