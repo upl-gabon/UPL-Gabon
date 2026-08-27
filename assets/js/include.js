@@ -30,6 +30,7 @@
     bandApply: "MBA application",
     bandMeeting: "Request a meeting",
     bandPartner: "Partnership",
+    bandWhatsapp: "WhatsApp",
     bandCall: "or call ",
     subjApply: "MBA%20Application",
     subjMeeting: "Meeting%20request",
@@ -51,6 +52,7 @@
     bandApply: "Candidature MBA",
     bandMeeting: "Demander un rendez-vous",
     bandPartner: "Partenariat",
+    bandWhatsapp: "WhatsApp",
     bandCall: "ou appelez ",
     subjApply: "Candidature%20MBA",
     subjMeeting: "Demande%20de%20rendez-vous",
@@ -112,6 +114,7 @@
       "</ul></div>" +
       '<div><h4>' + T.colContact + '</h4><ul>' +
       phones +
+      '<li><a href="' + ((contact.whatsapp && contact.whatsapp.href) || "https://wa.me/24102621978") + '" target="_blank" rel="noopener">WhatsApp ' + ((contact.whatsapp && contact.whatsapp.display) || "+241 02 62 19 78") + "</a></li>" +
       '<li><a href="mailto:' + email + '">' + email + "</a></li>" +
       '<li><a href="' + href("contact") + '">' + T.form + "</a></li>" +
       "</ul></div></div>" +
@@ -134,6 +137,7 @@
       '<a class="btn btn-primary" href="mailto:' + email + "?subject=" + T.subjApply + '">' + T.bandApply + "</a>" +
       '<a class="btn btn-secondary" href="mailto:' + email + "?subject=" + T.subjMeeting + '">' + T.bandMeeting + "</a>" +
       '<a class="btn btn-secondary" href="mailto:' + email + "?subject=" + T.subjPartner + '">' + T.bandPartner + "</a>" +
+      '<a class="btn btn-whatsapp" href="' + ((contact.whatsapp && contact.whatsapp.href) || "https://wa.me/24102621978") + '" target="_blank" rel="noopener">' + T.bandWhatsapp + "</a>" +
       "</div>" +
       '<p class="small" style="margin:0.9rem 0 0">' + T.bandCall + phones + "</p>" +
       "</div></section>"

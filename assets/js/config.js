@@ -32,6 +32,11 @@ window.UPL.config = {
       { label: "UPL", display: "+241 02 62 19 78", tel: "+24102621978" },
       { label: "UPL", display: "+241 07 35 95 72", tel: "+24107359572" },
     ],
+    /* WhatsApp public : ligne 02 du Président (compte Business déjà en service). */
+    whatsapp: {
+      display: "+241 02 62 19 78",
+      href: "https://wa.me/24102621978",
+    },
     /* Président / épouse — questions UPL */
     phonesDirection: [
       { label: "Présidence / secrétariat", display: "+241 05 01 56 20", tel: "+24105015620" },

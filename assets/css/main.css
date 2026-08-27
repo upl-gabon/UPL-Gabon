@@ -135,6 +135,8 @@ p { margin: 0 0 1rem; color: var(--ink); }
 .btn-outline:hover { background: var(--bleu-soft); color: var(--bleu); }
 .btn-dark { background: var(--bleu); color: #fff; }
 .btn-dark:hover { background: var(--bleu-mid); color: #fff; }
+.btn-whatsapp { background: #25D366; color: #073B1E; border-color: #25D366; }
+.btn-whatsapp:hover { background: #1EBE5A; color: #073B1E; }
 
 /* Cards / grids */
 .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; }
