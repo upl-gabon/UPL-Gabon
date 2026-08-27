@@ -508,15 +508,11 @@ table.data tr:last-child td { border-bottom: 0; }
   padding: 4.5rem 0 5rem;
 }
 .section-chapter .kicker { color: var(--or); }
-.chapter-grid {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-  gap: 3rem; align-items: start;
-}
-.chapter-side { position: sticky; top: 4.5rem; }
-.chapter-title { color: #fff; font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.12; margin: 0.4rem 0 0; letter-spacing: 0.01em; }
-.chapter-side .gold-rule { margin: 1.1rem 0 1.2rem; background: var(--or); }
-.chapter-note { color: rgba(255,255,255,0.78); font-size: 0.95rem; max-width: 22rem; }
-.tl-cap { width: 104px; height: auto; display: block; margin: 0 0 1rem; }
+.chapter-head { display: flex; align-items: center; gap: 1.5rem; }
+.chapter-title { color: #fff; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.12; margin: 0; letter-spacing: 0.01em; }
+.chapter-head .gold-rule { display: none; }
+.chapter-note { color: rgba(255,255,255,0.78); font-size: 0.97rem; max-width: 44rem; margin: 1.1rem 0 0; }
+.tl-cap { width: 92px; height: auto; display: block; flex: none; margin: 0; }
 .cap-stroke {
   fill: none; stroke: var(--or); stroke-width: 2.5;
   stroke-linejoin: round; stroke-linecap: round;
@@ -554,8 +550,7 @@ table.data tr:last-child td { border-bottom: 0; }
 .tl-anim.tl-visible .chrono-item:nth-child(5) { transition-delay: 0.9s; }
 
 @media (max-width: 880px) {
-  .chapter-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-  .chapter-side { position: static; }
+  .chapter-head { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .chrono-item { grid-template-columns: 5.6rem minmax(0, 1fr); gap: 1rem; }
 }
 
