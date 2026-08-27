@@ -126,6 +126,58 @@ window.UPL.config = {
     },
   ],
 
+  /* Citations de management — rotation aléatoire côté accueil.
+     Choisir des citations sourcées (attribution fiable). */
+  quotes: [
+    {
+      text: "Le management consiste à faire les choses correctement ; le leadership, à faire les bonnes choses.",
+      author: "Peter Drucker",
+    },
+    {
+      text: "Les plans ne sont que de bonnes intentions tant qu'ils ne se transforment pas immédiatement en travail.",
+      author: "Peter Drucker",
+    },
+    {
+      text: "La meilleure façon de prédire l'avenir, c'est de le créer.",
+      author: "Peter Drucker",
+    },
+    {
+      text: "Quiconque cesse d'apprendre vieillit — qu'il ait vingt ou quatre-vingts ans.",
+      author: "Henry Ford",
+    },
+    {
+      text: "L'éducation est l'arme la plus puissante qu'on puisse utiliser pour changer le monde.",
+      author: "Nelson Mandela",
+    },
+    {
+      text: "Un budget, c'est dire à son argent où aller, au lieu de se demander où il est passé.",
+      author: "John C. Maxwell",
+    },
+  ],
+
+  /* Communiqués / actualités de l'école — mis à jour ICI (le plus récent en premier).
+     Utiliser des faits réels ; date au mois, pas de date inventée. */
+  news: [
+    {
+      tag: "Communiqué",
+      date: "Août 2026",
+      title: "Inscriptions ouvertes — Executive MBA",
+      text: "Constitution du dossier : CV, parcours, diplômes — par e-mail (objet « Candidature MBA ») ou dépôt au secrétariat, Sablière. Scolarité payable en tranches.",
+    },
+    {
+      tag: "Vie de l'école",
+      date: "",
+      title: "Les cours du soir se poursuivent à la Sablière",
+      text: "Séances de 17h00 à 21h00, compatibles avec l'activité professionnelle des auditeurs. Emploi du temps remis au début de chaque module.",
+    },
+    {
+      tag: "Multimédia",
+      date: "",
+      title: "L'UPL en vidéo",
+      text: "Rentrée académique, interviews télévisées et présentation institutionnelle : trois vidéos accessibles depuis la page d'accueil.",
+    },
+  ],
+
   deploy: {
     domain: "upl-gabon.com",
     emailProvider: "PrivateEmail / Namecheap",

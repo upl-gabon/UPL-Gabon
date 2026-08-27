@@ -64,4 +64,66 @@
     });
   });
 
+
+  /* ===== Infos dynamiques (type fil d'actualité) ===== */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var C2 = (window.UPL && window.UPL.config) || {};
+  var news = C2.news || [];
+  var quotes = C2.quotes || [];
+
+  /* Bandeau "À la une" — rotation des titres de communiqués */
+  var tickerItem = document.querySelector("[data-ticker-item]");
+  if (tickerItem && news.length) {
+    var titles = news.map(function (n) { return n.title; });
+    if (reduceMotion) {
+      tickerItem.textContent = titles.join("  ·  ");
+    } else {
+      var ti = 0;
+      tickerItem.textContent = titles[0];
+      setInterval(function () {
+        ti = (ti + 1) % titles.length;
+        tickerItem.style.opacity = "0";
+        setTimeout(function () {
+          tickerItem.textContent = titles[ti];
+          tickerItem.style.opacity = "1";
+        }, 350);
+      }, 5000);
+    }
+  }
+
+  /* Communiqués — rendu depuis config.js */
+  var newsGrid = document.querySelector("[data-news-grid]");
+  if (newsGrid && news.length) {
+    newsGrid.innerHTML = news.map(function (n) {
+      var head = (n.tag ? '<span class="news-tag">' + n.tag + "</span>" : "") +
+                 (n.date ? '<span class="news-date">' + n.date + "</span>" : "");
+      return '<article class="card">' + head +
+        "<h3>" + n.title + "</h3>" +
+        '<p class="small">' + n.text + "</p></article>";
+    }).join("");
+  }
+
+  /* Citation de management — tirage aléatoire, rotation douce */
+  var qText = document.getElementById("quote-text");
+  var qAuthor = document.getElementById("quote-author");
+  if (qText && qAuthor && quotes.length) {
+    var qi = Math.floor(Math.random() * quotes.length);
+    function showQuote(i) {
+      qText.textContent = "\u00AB " + quotes[i].text + " \u00BB";
+      qAuthor.textContent = "\u2014 " + quotes[i].author;
+    }
+    showQuote(qi);
+    if (!reduceMotion && quotes.length > 1) {
+      setInterval(function () {
+        qi = (qi + 1) % quotes.length;
+        var box = qText.parentNode;
+        box.style.opacity = "0";
+        setTimeout(function () {
+          showQuote(qi);
+          box.style.opacity = "1";
+        }, 400);
+      }, 9000);
+    }
+  }
+
 })();

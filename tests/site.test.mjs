@@ -182,3 +182,27 @@ test("les 3 vidéos officielles sont présentes sur l'accueil", () => {
     assert.ok(index.includes(id), `vidéo manquante : ${id}`);
   }
 });
+
+test("infos dynamiques : config expose citations et communiqués", () => {
+  const js = read("assets/js/config.js");
+  assert.ok(js.includes("quotes:"), "tableau quotes manquant");
+  assert.ok(js.includes("news:"), "tableau news manquant");
+  assert.ok(js.includes("Peter Drucker"), "citation manquante");
+  assert.ok(js.includes("Inscriptions ouvertes"), "communiqué manquant");
+});
+
+test("accueil : ticker, citation rotative et grille de communiqués branchés", () => {
+  const index = read("index.html");
+  for (const marker of ["data-ticker", "data-quote-box", "data-news-grid", "quote-text", "quote-author"]) {
+    assert.ok(index.includes(marker), `marqueur manquant : ${marker}`);
+  }
+  const main = read("assets/js/main.js");
+  assert.ok(main.includes("youtube-nocookie.com/embed"), "lecteur vidéo intégré manquant");
+});
+
+test("a-propos : direction + liens Douala et ESSEC Douala", () => {
+  const html = read("a-propos.html");
+  assert.ok(html.includes("Serge Patrick MINANG"), "bloc président manquant");
+  assert.ok(html.includes("univ-douala.com"), "lien Université de Douala manquant");
+  assert.ok(html.includes("essec-douala.cm"), "lien ESSEC Douala manquant");
+});

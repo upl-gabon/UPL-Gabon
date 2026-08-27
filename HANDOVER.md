@@ -205,6 +205,13 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (4) — v1.4 « site vivant, à l'image du Président »**
+- Accueil : bandeau **« À la une »** (ticker) qui fait tourner les titres des communiqués ; **bandeau citation de management** (rotation aléatoire — Drucker, Ford, Mandela, Maxwell) + repères factuels (parité 655,957 FCFA/EUR BEAC, OHADA, CEMAC) ; section **Communiqués** rendue depuis `config.js` (`news: []` — le plus récent en premier, dates au mois, faits réels uniquement).
+- Rotation désactivée si `prefers-reduced-motion` (accessibilité).
+- a-propos : bloc **Direction** (Serge Patrick MINANG — Président-Fondateur, ingénieur, MBA, doctorant DBA) + **Liens utiles** : Université de Douala (partenaire MBA, univ-douala.com), ESSEC Douala (essec-douala.cm, école de gestion de l'Université de Douala), chaîne YouTube UPL.
+- Pour actualiser l'école : éditer `assets/js/config.js` (news, quotes) — c'est la source de vérité. Un vrai flux temps réel (RSS/API) pourra être branché plus tard côté V2.
+- Tests portés à **17**.
+
 **27/08/2026 (3) — v1.3 « contenu réel » (retours Président)**
 - Vidéos YouTube : lecture **intégrée dans la page** au clic (youtube-nocookie, bouton lecture + miniature).
 - MBA : modules réels des promotions précédentes (droit des affaires, comptabilité OHADA, management stratégique, qualité, marketing, étude de cas) + **exemple d'emploi du temps 2025–2026** (cours du soir 17h–21h, séances de 4 h, module ≈ 20 h, Sablière) — sans noms d'enseignants (privé).
