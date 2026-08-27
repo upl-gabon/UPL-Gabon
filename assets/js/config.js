@@ -107,12 +107,6 @@ window.UPL.config = {
 
   media: [
     {
-      title: "Rentrée 2024",
-      url: "https://youtu.be/SyUXYUPj6hc",
-      thumb: "https://i.ytimg.com/vi/SyUXYUPj6hc/hqdefault.jpg",
-      source: "U.P.L",
-    },
-    {
       title: "Interview Executive MBA",
       url: "https://youtu.be/FAKHfv8nN7I",
       thumb: "https://i.ytimg.com/vi/FAKHfv8nN7I/hqdefault.jpg",
@@ -211,7 +205,7 @@ window.UPL.config = {
       tag: "Multimédia",
       date: "",
       title: "L'UPL en vidéo",
-      text: "Rentrée académique, interviews télévisées et présentation institutionnelle : trois vidéos accessibles depuis la page d'accueil.",
+      text: "Présentation institutionnelle à la télévision (lecture automatique sur l'accueil) et interview sur l'Executive MBA — page MBA, section « Le MBA en images ».",
     },
   ],
 

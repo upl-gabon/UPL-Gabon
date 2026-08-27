@@ -205,6 +205,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (7) — v1.7 « vidéo TV en autoplay + interview sur le MBA » (retours Président)**
+- **Vidéo « Rentrée 2024 » supprimée** du site et de `config.media` (sur demande du Président).
+- Accueil : section **« Replay — L'UPL à la télévision »**, lecteur BFM-style : **démarrage automatique muet** (`autoplay=1&mute=1`, la seule méthode sans erreur d'autoplay des navigateurs), note « son coupé par défaut », panneau bleu/or avec arguments factuels + CTA vers l'interview.
+- Page MBA : nouvelle section **« Le MBA en images »** (`#en-savoir-plus`) avec **l'interview télévisée** (lecture au clic) + « Pourquoi ce programme marche » (5 arguments factuels).
+- Tests portés à 22 (nouveau test vidéos : autoplay accueil, interview MBA, absence Rentrée 2024 partout).
+
 **27/08/2026 (6) — v1.6 « ticker continu + paiement » (retours Président)**
 - Bandeau « À la une » : **défilement continu type chaîne d'infos** (marquee CSS, pause au survol, statique si prefers-reduced-motion) — contenus = communiqués + infos pratiques (`config.js → tickerExtra`).
 - Bandeau citation : **alterne citations de management et situations pratiques** (`config.js → paymentNotices`) : tranches, Airtel Money, justificatif + confirmation UPL.

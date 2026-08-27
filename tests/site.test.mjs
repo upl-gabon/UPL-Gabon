@@ -176,10 +176,18 @@ test("ton factuel : pas de langage interne ni d'éléments fictifs dans le HTML 
   }
 });
 
-test("les 3 vidéos officielles sont présentes sur l'accueil", () => {
+test("vidéos : présentation TV en autoplay (accueil), interview sur le MBA, rentrée 2024 supprimée", () => {
   const index = read("index.html");
-  for (const id of ["SyUXYUPj6hc", "FAKHfv8nN7I", "jh_iCTJuLKA"]) {
-    assert.ok(index.includes(id), `vidéo manquante : ${id}`);
+  assert.ok(index.includes("jh_iCTJuLKA"), "présentation TV manquante sur l'accueil");
+  assert.ok(/embed\/[A-Za-z0-9_-]+\?autoplay=1&mute=1/.test(index), "autoplay muet manquant (accueil)");
+  assert.ok(index.includes("Son coupé par défaut"), "note son manquante");
+  assert.ok(!index.includes("SyUXYUPj6hc"), "Rentrée 2024 encore présente sur l'accueil");
+  const mba = read("mba.html");
+  assert.ok(mba.includes("FAKHfv8nN7I"), "interview manquante sur la page MBA");
+  assert.ok(mba.includes("en-savoir-plus"), "ancre « En savoir plus » manquante");
+  for (const p of walkHtml()) {
+    const html = readFileSync(p, "utf8");
+    assert.ok(!html.includes("SyUXYUPj6hc"), "Rentrée 2024 encore présente dans " + p);
   }
 });
 

@@ -452,3 +452,18 @@ table.data tr:last-child td { border-bottom: 0; }
 .ticker-sep { color: var(--or); }
 @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* ===== Replay TV (accueil) ===== */
+.tv-frame { background: #000; border: 1px solid rgba(201,162,39,0.45); }
+.tv-frame iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; }
+.tv-panel {
+  background: var(--bleu); color: #fff; padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.tv-panel h3 { color: #fff; margin: 0; }
+.tv-panel .small { color: rgba(255,255,255,0.92); margin: 0; }
+.tv-panel .small.muted { color: rgba(255,255,255,0.65); }
+.tv-panel .btn-dark { margin-top: auto; align-self: flex-start; }
+@media (max-width: 900px) { .tv-panel { padding: 1.15rem; } }
+.tv-panel .btn-dark { background: var(--or); color: var(--bleu); font-weight: 700; }
+.tv-panel .btn-dark:hover { background: #fff; color: var(--bleu); }
