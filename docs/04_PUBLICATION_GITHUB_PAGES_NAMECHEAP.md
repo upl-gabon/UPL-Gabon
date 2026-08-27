@@ -7,17 +7,21 @@
 
 | Élément | État |
 |---|---|
-| Site en préview sur GitHub Pages | ✅ activé depuis le dépôt (branche de travail) |
+| Code + guide de publication | ✅ prêts (ce dépôt, PR à merger) |
+| GitHub Pages | ⏳ à activer par un admin (Settings → Pages — 2 clics, cf. étape A) |
 | Domaine officiel branché | ⏳ à faire côté Namecheap (étapes B et C ci-dessous) |
 | Netlify existant | conservé en secours — **ne rien supprimer** |
 
-## Étape A — GitHub Pages (fait / à vérifier)
+## Étape A — GitHub Pages (à activer par un admin du compte upl-gabon)
 
-- Dépôt → **Settings → Pages** → Source : *Deploy from a branch* → branche + dossier `/ (root)`.
-- URL de préview : `https://upl-gabon.github.io/UPL-Gabon/` (après merge sur `main`, basculer la source Pages sur `main`).
+1. (Si pas déjà fait) merger la Pull Request de passation sur `main`.
+2. Dépôt → **Settings → Pages** → Source : *Deploy from a branch* → branche `main` → dossier `/ (root)` → Save.
+3. L'URL `https://upl-gabon.github.io/UPL-Gabon/` sert alors le site.
 
-> Note : si le dépôt est **privé** et que l'offre GitHub du compte `upl-gabon` est l'offre gratuite,
-> Pages exige alors une offre payante (GitHub Pro) **ou** un dépôt public. Voir § « Confidentialité ».
+> Note : l'agent Arena ne peut pas activer Pages ni changer la visibilité du dépôt
+> (réservé aux admins). Si le dépôt est **privé** et que l'offre GitHub du compte
+> `upl-gabon` est l'offre gratuite, Pages exige alors une offre payante (GitHub Pro)
+> **ou** un dépôt public. Voir § « Confidentialité ».
 
 ## Étape B — DNS chez Namecheap (10 minutes)
 

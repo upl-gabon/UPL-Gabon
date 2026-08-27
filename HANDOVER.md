@@ -208,7 +208,7 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 **27/08/2026 — structuration du dépôt `upl-gabon/UPL-Gabon` (agent Arena)**
 - Code du site extrait du zip **à la racine** du dépôt (fini le zip versionné) — `index.html` à la racine.
 - CI **GitHub Actions** prête à activer : `docs/templates/ci-tests.yml.template` (`npm test` à chaque push/PR — 1 min par un admin, l'agent ne pouvant pas créer de workflows).
-- Publication **GitHub Pages** activée (préview) ; guide de branchement du domaine officiel **sans casser le mail** : `docs/04_PUBLICATION_GITHUB_PAGES_NAMECHEAP.md`.
+- Publication **GitHub Pages** préparée (à activer par un admin : Settings → Pages) ; guide de branchement du domaine officiel **sans casser le mail** : `docs/04_PUBLICATION_GITHUB_PAGES_NAMECHEAP.md`.
 - `netlify.toml` conservé ; déploiement Netlify existant **non touché**.
 - `npm test` : 13/13 ✅.
 - Dépôt recommandé **privé** (documents internes présents) — voir `docs/04` § Confidentialité.
