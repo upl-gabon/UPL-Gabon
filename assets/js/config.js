@@ -61,7 +61,7 @@ window.UPL.config = {
       id: "licence-1",
       schoolId: "upl-facultes",
       title: "Licence 1",
-      status: "open",
+      status: "preopen",
       tuition: "1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA",
       tuitionNote: "Frais d'inscription : 200 000 / 300 000 FCFA exigibles au dépôt du dossier — solde en 6 tranches",
     },
@@ -69,21 +69,21 @@ window.UPL.config = {
       id: "master-1",
       schoolId: "upl-facultes",
       title: "Master 1",
-      status: "open",
+      status: "preopen",
       tuition: "1 500 000 FCFA",
     },
     {
       id: "master-2",
       schoolId: "upl-facultes",
       title: "Master 2",
-      status: "open",
+      status: "preopen",
       tuition: "2 000 000 FCFA",
     },
     {
       id: "cpge",
       schoolId: "upl-cpge",
       title: "Classes préparatoires aux Grandes Écoles (CPGE)",
-      status: "open",
+      status: "preopen",
       tuition: "2 200 000 FCFA",
     },
     {
@@ -103,7 +103,7 @@ window.UPL.config = {
       id: "dba",
       schoolId: "upl-facultes",
       title: "DBA",
-      status: "open",
+      status: "preopen",
       tuition: "Sur dossier",
     },
   ],
@@ -201,7 +201,7 @@ window.UPL.config = {
 
   /* Défilement continu « À la une » : communiqués + infos pratiques. */
   tickerExtra: [
-    { fr: "Inscriptions 2026-2027 ouvertes · Licence · Master · CPGE · MBA · DBA", en: "Admissions 2026-2027 open · Bachelor's · Master's · CPGE · MBA · DBA" },
+    { fr: "Pré-inscriptions 2026-2027 · Licence · Master · CPGE · MBA · DBA", en: "Pre-registration 2026-2027 · Bachelor's · Master's · CPGE · MBA · DBA" },
     { fr: "Cours du soir 17h–21h · Sablière, Libreville", en: "Evening classes 5–9 pm · Sablière, Libreville" },
     { fr: "Scolarité payable en tranches · reçu + confirmation UPL", en: "Tuition payable in instalments · receipt + UPL confirmation" },
     { fr: "Inscriptions : contact@upl-gabon.com", en: "Admissions: contact@upl-gabon.com" },
@@ -248,10 +248,10 @@ window.UPL.config = {
     {
       tag: "Communiqué", tagEn: "Announcement",
       date: "Août 2026", dateEn: "August 2026",
-      title: "Inscriptions ouvertes — rentrée 2026-2027",
-      titleEn: "Admissions open — 2026-2027 academic year",
-      text: "Licence, Master, CPGE, Executive MBA et DBA. Dossiers à déposer dès maintenant auprès du service des admissions — places limitées.",
-      textEn: "Bachelor's, Master's, CPGE, Executive MBA and DBA. Apply now with the Admissions office — limited places.",
+      title: "Pré-inscriptions ouvertes — rentrée 2026-2027",
+      titleEn: "Pre-registration open — 2026-2027 academic year",
+      text: "Licence, Master, CPGE, Executive MBA et DBA. Pré-inscrivez-vous : le service des admissions vous rappelle — places limitées.",
+      textEn: "Bachelor's, Master's, CPGE, Executive MBA and DBA. Pre-register: the Admissions office calls you back — limited places.",
     },
     {
       tag: "Communiqué", tagEn: "Announcement",

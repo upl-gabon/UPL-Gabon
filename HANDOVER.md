@@ -205,6 +205,13 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (13) — v2.3 « palier 1 : pré-inscriptions » (arbitrage Calvin/Président)**
+- Débat : com immédiate (Président) vs attendre les partenaires (Calvin — « rien de réel à cette heure »). Arbitrage retenu : **communiquer maintenant, promettre moins** — le site passe en **« pré-inscriptions 2026-2027 »** (collecte de contacts, gratuit, sans engagement, rappel par le service des admissions) au lieu d'« inscriptions ouvertes ».
+- Tarifs officiels conservés à l'affichage (décidés, factuels) ; MBA inchangé (réellement ouvert depuis 2022).
+- `config.js` : statut des nouveaux programmes = `preopen` (MBA reste `open`).
+- **Bascule palier 2 (« inscriptions ouvertes »)** : 1 commit, dès que les 3 verrous sont levés — autorisation ministérielle des filières, partenariats/corps enseignant, capacité d'accueil. La v2.2 est l'état cible.
+- Tests 28/28 (CTA et kicker pré-inscriptions verrouillés).
+
 **27/08/2026 (12) — v2.2 « offre officielle 2026-2027 en ligne » (PIVOT validé par les supports du Président)**
 - Les roll-up/fiches officiels UPL (« Inscriptions ouvertes 2026-2027 », fiche des frais) **supersèdent** la règle « MBA seul » : l'accueil affiche la **vraie offre chiffrée** — Licence 1 (1 000 000 / 50 premières · 1 200 000 / normales), Master 1 (1 500 000), Master 2 (2 000 000), CPGE (2 200 000), Executive MBA (4 000 000), DBA (sur dossier).
 - Frais d'inscription L1 : 200 000 / 300 000 exigibles au dépôt du dossier, solde en 6 tranches ; reçu pour tout paiement ; places limitées ; échéancier conditionne la validation administrative.

@@ -266,7 +266,9 @@ test("offre officielle 2026-2027 : tarifs verrouillés sur les supports officiel
   assert.ok(index.includes("50 premières inscriptions"), "mention 50 premières inscriptions manquante");
   assert.ok(index.includes("6 tranches"), "modalité 6 tranches manquante");
   assert.ok(/places\s+limitées/i.test(index), "places limitées manquant");
-  assert.ok(index.includes("Déposer mon dossier"), "CTA dossier manquant");
+  assert.ok(index.includes("Rejoindre la liste de pré-inscription"), "CTA pré-inscription manquant");
+  assert.ok(index.includes("Pré-inscriptions 2026-2027"), "kicker pré-inscriptions manquant");
+  assert.ok(index.includes("sans engagement"), "mention sans engagement manquante");
   assert.ok(index.includes("Faculté de Gouvernance, Leadership et Management"), "pôles manquants");
   assert.ok(index.includes("200 000 FCFA") && index.includes("300 000 FCFA"), "frais d'inscription L1 manquants");
   const enIndex = read("en/index.html");
