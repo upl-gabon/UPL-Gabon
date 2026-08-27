@@ -10,7 +10,7 @@ window.UPL.config = {
     name: "Université Privée de Libreville",
     short: "UPL",
     slogan: "Excellence · Innovation · Leadership",
-    tagline: "Formez-vous aujourd'hui aux métiers de demain",
+    tagline: "Établissement privé d'enseignement supérieur — Libreville, Gabon",
     city: "Libreville",
     country: "Gabon",
     address: "Sablière, en face de la Résidence de l'Ambassade d'Arabie Saoudite — Libreville",
@@ -129,7 +129,7 @@ window.UPL.config = {
   deploy: {
     domain: "upl-gabon.com",
     emailProvider: "PrivateEmail / Namecheap",
-    preferredHost: "Netlify",
+    preferredHost: "GitHub Pages",
     keepNetlifyUntilFinal: true,
   },
 };

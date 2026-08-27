@@ -205,6 +205,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (2) — v1.2 « sobre & factuel » (retours Président)**
+- Suppression de tous les « signes IA » : plus de « grande école », « pas une coquille », « Preuve d'activité », « Comment on grandit », chips de composantes, roadmap paiement publique, mention Namecheap/PrivateEmail côté public.
+- **Illustration de campus fictive supprimée** (repo + hero CSS) : l'UPL est à la Sablière — le site ne montre aucun campus irréaliste. Hero = bleu profond uni.
+- Section **Médias** sur l'accueil avec les 3 vidéos officielles (Rentrée 2024, interview TV, présentation institutionnelle).
+- a-propos recentré : institution + vision. Tests portés à **15** (ton factuel + vidéos).
+
 **27/08/2026 — structuration du dépôt `upl-gabon/UPL-Gabon` (agent Arena)**
 - Code du site extrait du zip **à la racine** du dépôt (fini le zip versionné) — `index.html` à la racine.
 - CI **GitHub Actions** prête à activer : `docs/templates/ci-tests.yml.template` (`npm test` à chaque push/PR — 1 min par un admin, l'agent ne pouvant pas créer de workflows).

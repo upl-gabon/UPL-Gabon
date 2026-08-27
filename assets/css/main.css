@@ -274,16 +274,14 @@ table.data tr:last-child td { border-bottom: 0; }
   .section { padding: 2.5rem 0; }
 }
 
-/* ===== Grande école / multi-université preview ===== */
+/* ===== Hero accueil ===== */
 .muted-on-dark { color: rgba(255,255,255,0.65) !important; }
 .hero-ge {
   position: relative;
   min-height: 78vh;
   display: flex; align-items: flex-end;
   color: #fff;
-  background:
-    linear-gradient(105deg, rgba(11,42,91,0.97) 0%, rgba(11,42,91,0.88) 42%, rgba(11,42,91,0.55) 100%),
-    url("../img/UPL_Campus_illustration.png") center/cover no-repeat;
+  background: linear-gradient(115deg, #0B2A5B 0%, #10336B 55%, #0B2A5B 100%);
   padding: 0 0 3.5rem;
 }
 .hero-ge .container { width: min(100% - 2rem, var(--max)); margin-inline: auto; padding-top: 7rem; }
@@ -320,12 +318,6 @@ table.data tr:last-child td { border-bottom: 0; }
 .school-strip {
   display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0;
 }
-.school-chip {
-  font-size: 0.78rem; font-weight: 700; padding: 0.35rem 0.7rem;
-  border-radius: 999px; border: 1px solid var(--line); color: var(--bleu); background: #fff;
-}
-.school-chip.active { background: var(--bleu); color: #fff; border-color: var(--bleu); }
-.school-chip.planned { color: var(--muted); font-weight: 600; border-style: dashed; }
 .feature-row {
   display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: center;
 }
@@ -341,12 +333,6 @@ table.data tr:last-child td { border-bottom: 0; }
 }
 .quote-block p { color: rgba(255,255,255,0.92); font-family: var(--font); font-size: 1.15rem; margin: 0.5rem 0 1rem; padding-left: 1.5rem; }
 .quote-block cite { display: block; font-style: normal; font-size: 0.85rem; color: var(--or); padding-left: 1.5rem; }
-.pay-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
-.pay-badge {
-  font-size: 0.75rem; font-weight: 700; padding: 0.4rem 0.65rem;
-  border-radius: var(--radius); background: var(--bleu-soft); color: var(--bleu); border: 1px solid var(--line);
-}
-.pay-badge.soon { opacity: 0.7; font-weight: 600; }
 .pathway {
   display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0.75rem;
 }
@@ -357,11 +343,6 @@ table.data tr:last-child td { border-bottom: 0; }
 .pathway .step .n {
   font-family: var(--font); color: var(--or); font-size: 1.4rem; font-weight: 700;
 }
-.img-frame {
-  border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
-  box-shadow: var(--shadow); background: var(--bleu-soft);
-}
-.img-frame img { width: 100%; height: auto; display: block; }
 .contact-grid-phones {
   display: grid; gap: 0.65rem; margin: 1rem 0;
 }

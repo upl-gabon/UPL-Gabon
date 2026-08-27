@@ -154,3 +154,31 @@ if (failed) {
   process.exit(1);
 }
 console.log("All tests passed.\n");
+
+test("ton factuel : pas de langage interne ni d'éléments fictifs dans le HTML public", () => {
+  const banned = [
+    "grande école",
+    "pas une coquille",
+    "UPL_Campus_illustration",
+    "multi-université",
+    "Architecture prête",
+    "Preuve d'activité",
+    "le moment venu",
+    "PrivateEmail",
+    "Namecheap",
+    "bientôt sur le site",
+  ];
+  for (const p of walkHtml()) {
+    const html = readFileSync(p, "utf8");
+    for (const b of banned) {
+      assert.ok(!html.toLowerCase().includes(b.toLowerCase()), `"${b}" trouvé dans ${p}`);
+    }
+  }
+});
+
+test("les 3 vidéos officielles sont présentes sur l'accueil", () => {
+  const index = read("index.html");
+  for (const id of ["SyUXYUPj6hc", "FAKHfv8nN7I", "jh_iCTJuLKA"]) {
+    assert.ok(index.includes(id), `vidéo manquante : ${id}`);
+  }
+});

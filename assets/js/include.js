@@ -34,9 +34,8 @@
       '<div class="container footer-grid" style="grid-template-columns:2fr 1fr 1fr">' +
       "<div><h4>UPL</h4>" +
       "<p class=\"small\">Université Privée de Libreville — établissement d'enseignement supérieur privé, Libreville (Gabon).</p>" +
-      "<p class=\"small\">Sablière, en face de la Résidence de l'Ambassade d'Arabie Saoudite</p>" +
-      "<p class=\"small muted-on-dark\">Activité ouverte présentée : Executive MBA. Architecture prête pour d'autres composantes le moment venu.</p></div>" +
-      "<div><h4>Parcours</h4><ul>" +
+      "<p class=\"small\">Sablière, en face de la Résidence de l'Ambassade d'Arabie Saoudite</p></div>" +
+    "<div><h4>Parcours</h4><ul>" +
       '<li><a href="mba.html">Executive MBA</a></li>' +
       '<li><a href="a-propos.html">À propos</a></li>' +
       '<li><a href="contact.html">Contact / inscription</a></li>' +
