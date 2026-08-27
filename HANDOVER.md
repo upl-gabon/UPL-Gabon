@@ -205,6 +205,13 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (10) — v2.0 « animation sobre : la trajectoire » (retours Président)**
+- Arbitrage Président/agent : **panthère et pluie d'or écartées** (risque kitsch face aux universités prestigieuses) ; retenues deux animations uniques mais dignes :
+  1. **Poussière d'or du hero** (`assets/js/effects.js`, canvas) : 26 particules dorées lentes, scintillement discret. Garde-fous : coupée si `prefers-reduced-motion`, en pause onglet masqué, canvas confiné au hero.
+  2. **Ligne du temps « La trajectoire de l'UPL »** (accueil FR + EN) : chapeau de diplômé en trait doré qui se dessine (SVG stroke), ligne or qui se déploie, 5 jalons révélés au scroll (2022 → ≈80 cadres → aujourd'hui → en préparation → la vocation : référence du Gabon et d'Afrique centrale). IntersectionObserver + fallback sans JS visible + reduced-motion = statique.
+- Le « lead académique » est exprimé par les faits de la timeline, jamais par un slogan.
+- Tests portés à **28** (timeline FR/EN, garde-fous a11y).
+
 **27/08/2026 (9) — v1.9 « push-to-action + bilingue FR/EN » (retours Président)**
 - **Bandeau d'action standard** (`[data-action-band]`, injecté par include.js) sur les 10 pages : **Candidature MBA · Demander un rendez-vous · Partenariat** (mails pré-remplis) + lignes UPL. L'ancien CTA accueil remplacé.
 - **Bilinguisme complet** : dossier `en/` = 5 pages miroir traduites (lang="en", data-base="../"), bascule **FR ⇄ EN** dans le header, `sitemap.xml` bilingue. Contenus dynamiques bilingues dans `config.js` (`titleEn/textEn/tagEn/dateEn`, `textEn/sourceEn`, citations = citations originales anglaises, `tickerExtra` objets {fr,en}) — en EN, un communiqué sans traduction est masqué (jamais de mélange de langues).

@@ -156,6 +156,22 @@
   }
 
 
+  /* Trajectoire : révélation au défilement (fallback sans JS = visible) */
+  var timeline = document.querySelector("[data-timeline]");
+  if (timeline) {
+    timeline.classList.add("tl-anim");
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      timeline.classList.add("tl-visible");
+    } else {
+      var tObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { timeline.classList.add("tl-visible"); tObs.disconnect(); }
+        });
+      }, { threshold: 0.15 });
+      tObs.observe(timeline);
+    }
+  }
+
   /* Compte à rebours de rentrée — affiché uniquement si la date est confirmée dans config.js */
   var countdownEl = document.querySelector("[data-countdown]");
   if (countdownEl && C2.rentree && C2.rentree.date) {

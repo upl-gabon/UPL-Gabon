@@ -489,3 +489,73 @@ table.data tr:last-child td { border-bottom: 0; }
 }
 .band-actions .btn { flex: 1 1 12rem; }
 @media (max-width: 600px) { .band-actions .btn { flex: 1 1 100%; } }
+
+/* ===== Trajectoire animée + poussière d'or ===== */
+.hero-ge { overflow: hidden; }
+.gold-canvas { position: absolute; inset: 0; pointer-events: none; }
+
+.section-trajectory { background: #fff; }
+.tl-head { text-align: center; }
+.tl-cap { width: 116px; height: auto; display: block; margin: 0 auto 0.75rem; }
+.cap-stroke {
+  fill: none; stroke: var(--or); stroke-width: 2.5;
+  stroke-linejoin: round; stroke-linecap: round;
+  stroke-dasharray: 420; stroke-dashoffset: 420;
+  transition: stroke-dashoffset 1.8s ease;
+}
+.cap-d1 { transition-delay: 0.5s; }
+.cap-d2 { transition-delay: 1.15s; }
+.tl-visible .cap-stroke { stroke-dashoffset: 0; }
+
+.timeline { position: relative; list-style: none; margin: 2.5rem 0 0; padding: 0; }
+.timeline::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px;
+  background: linear-gradient(180deg, var(--or), rgba(201,162,39,0.25));
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 1.6s ease 0.2s;
+}
+.timeline.tl-visible::before { transform: scaleY(1); }
+
+.tl-item { position: relative; width: 50%; padding: 0 2.5rem 2.5rem 0; }
+.tl-item:nth-child(even) { margin-left: 50%; padding: 0 0 2.5rem 2.5rem; }
+.tl-dot {
+  position: absolute; top: 0.35rem; right: -7px; width: 14px; height: 14px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--or); z-index: 1;
+  transform: scale(0); transition: transform 0.5s ease 0.3s;
+}
+.tl-item:nth-child(even) .tl-dot { right: auto; left: -7px; }
+.tl-visible .tl-dot { transform: scale(1); }
+
+.tl-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.15rem; box-shadow: 0 8px 24px rgba(11,42,91,0.06);
+}
+.tl-year { font-weight: 800; color: var(--or); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.76rem; }
+.tl-card h3 { margin: 0.25rem 0 0.3rem; }
+.tl-final .tl-card { border-top: 3px solid var(--or); background: var(--bleu); border-color: var(--bleu); }
+.tl-final .tl-card h3 { color: #fff; }
+.tl-final .tl-card .small { color: rgba(255,255,255,0.88); }
+.tl-final .tl-dot { background: var(--or); }
+
+/* révélation pilotée par JS (.tl-anim posé par main.js) */
+.tl-anim .tl-item { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.tl-anim.tl-visible .tl-item { opacity: 1; transform: none; }
+.tl-anim.tl-visible .tl-item:nth-child(1) { transition-delay: 0.15s; }
+.tl-anim.tl-visible .tl-item:nth-child(2) { transition-delay: 0.35s; }
+.tl-anim.tl-visible .tl-item:nth-child(3) { transition-delay: 0.55s; }
+.tl-anim.tl-visible .tl-item:nth-child(4) { transition-delay: 0.75s; }
+.tl-anim.tl-visible .tl-item:nth-child(5) { transition-delay: 0.95s; }
+
+@media (max-width: 819px) {
+  .timeline::before { left: 10px; }
+  .tl-item, .tl-item:nth-child(even) { width: auto; margin-left: 0; padding: 0 0 1.75rem 2rem; }
+  .tl-dot, .tl-item:nth-child(even) .tl-dot { left: 4px; right: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-anim .tl-item { opacity: 1; transform: none; transition: none; }
+  .timeline::before { transform: none; transition: none; }
+  .cap-stroke { stroke-dashoffset: 0; transition: none; }
+  .tl-dot { transform: none; transition: none; }
+  .ticker-track { animation: none; }
+}

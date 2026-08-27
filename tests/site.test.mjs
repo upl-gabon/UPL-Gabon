@@ -310,3 +310,21 @@ test("sitemap bilingue", () => {
     assert.ok(sm.includes(u), "URL EN manquante : " + u);
   }
 });
+
+test("animations sobres : trajectoire animée + poussière d'or avec garde-fous d'accessibilité", () => {
+  const index = read("index.html");
+  assert.ok(index.includes("data-timeline"), "timeline manquante (accueil)");
+  assert.ok(index.includes("tl-cap"), "svg chapeau manquant");
+  assert.ok(index.includes("effects.js"), "effects.js non chargé (accueil)");
+  assert.ok(index.includes("La trajectoire de l'UPL"), "titre trajectoire manquant");
+  const enIndex = read("en/index.html");
+  assert.ok(enIndex.includes("data-timeline") && enIndex.includes("The UPL trajectory"), "timeline EN manquante");
+  const effects = read("assets/js/effects.js");
+  assert.ok(effects.includes("(prefers-reduced-motion: reduce)"), "effects.js sans garde reduced-motion");
+  assert.ok(effects.includes("visibilitychange"), "effects.js sans pause onglet masqué");
+  const main = read("assets/js/main.js");
+  assert.ok(main.includes("IntersectionObserver") && main.includes("tl-visible"), "révélation timeline manquante");
+  const css = read("assets/css/main.css");
+  assert.ok(css.includes("@media (prefers-reduced-motion: reduce)"), "fallback CSS reduced-motion manquant");
+  assert.ok(css.includes("gold-canvas"), "styles poussière d'or manquants");
+});
