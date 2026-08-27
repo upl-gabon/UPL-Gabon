@@ -21,7 +21,7 @@ SEO (JSON-LD, robots, sitemap) · CI en template (`docs/templates/`).
 
 **Reste à faire (côté Président/Calvin)** :
 1. Mettre le dépôt **privé** (Settings → General → Danger Zone) — documents internes présents.
-2. Merger la PR #1 sur `main` puis activer **GitHub Pages** (Settings → Pages → main / root).
+2. ~~Merger la PR #1~~ **FAIT (27/08)** — `main` = version finale v2.6. Reste : activer **GitHub Pages** (Settings → Pages → main / root).
 3. DNS Namecheap → `upl-gabon.com` (guide : `docs/04_…`) — sans toucher aux MX.
 4. Fournir : photos réelles (upload GitHub web), échéancier exact des tranches, date de rentrée,
    photo du Président, validation du Mot du Président.
