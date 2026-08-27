@@ -1,28 +1,29 @@
-# Playbook com — APRÈS domaine + mail + site
+# Playbook com UPL
 
-**Ne pas exécuter ce playbook** tant que
-`docs/00_DECISION_DOMAINE_MAIL_HEBERGEMENT.md` n’est pas bouclé
-(étapes 1 à 9 cochées).
+Le site **upl-gabon.com** est en ligne et **figé**. Ce playbook ne modifie pas le site.
+
+Kit rentrée 2026-2027 (brouillons, hors `main`) :
+
+- `docs/com/LANCEMENT_COM_RENTREE_2026.md` — calendrier et cibles
+- `docs/com/00_COMPTES_NEUFS_CONTACT_UPL.md` — comptes neufs avec `contact@upl-gabon.com`
+- `docs/com/TEXTES_A_VALIDER.md` — posts à faire valider
+- `docs/com/visuels/` — maquettes bleu/or
 
 ## Rappel contenu public
 
-- Site = MBA + institution seulement  
-- Pas de filières « projet »  
-- Pas de logos grandes écoles non signées  
+- Palier 1 : **pré-inscriptions** 2026-2027 (Licence, Master, CPGE, DBA) + Executive MBA **ouvert** depuis 2022
+- Pas de logos / noms de partenaires non signés
+- Pas de mails inventés (`admissions@`, `partenariats@`)
+- Calvin Blanchard MINANG : pas de contact public
 
-## Quand le mail `contact@` existe
+## Comptes
 
-1. Mettre l’adresse dans `contact.html` (`data-mailto`)
-2. Signature mail Président + Calvin
-3. Créer les réseaux **avec 2 admins UPL**
-4. Bios : lien vers le **vrai** domaine HTTPS
+Créer avec **`contact@upl-gabon.com`**, **2 admins UPL**.  
+Anciens comptes orphelins : abandonnés (codes bloqués).
 
-## Handles proposés (plus tard)
-
-- Instagram / TikTok : `@upl.gabon`
-- Facebook Page : Université Privée de Libreville — UPL
-- LinkedIn : page institutionnelle
+Utiles au Gabon : WhatsApp Business · Facebook · Instagram · TikTok · LinkedIn · YouTube `@UPLGabon`.  
+Inutiles ici : X, Snapchat, Threads, Telegram, Pinterest.
 
 ## Ownership
 
-Jamais un prestataire seul propriétaire du domaine, du Netlify, du BM Meta ou du GitHub.
+Jamais un prestataire seul propriétaire du domaine, du mail, du Business Manager Meta, du GitHub ou des pages.
