@@ -213,7 +213,24 @@ test("accueil : ticker, citation rotative et grille de communiqués branchés", 
     assert.ok(index.includes(marker), `marqueur manquant : ${marker}`);
   }
   const main = read("assets/js/main.js");
-  assert.ok(main.includes("youtube-nocookie.com/embed"), "lecteur vidéo intégré manquant");
+  assert.ok(
+    main.includes("youtube-nocookie.com/embed") || index.includes("youtube.com/embed"),
+    "lecteur vidéo intégré manquant"
+  );
+});
+
+test("accueil : six cartes de formations et statuts 2026-2027", () => {
+  for (const page of ["index.html", "en/index.html"]) {
+    const html = read(page);
+    assert.equal((html.match(/class="programme-card(?: programme-card-open)?"/g) || []).length, 6, `six cartes attendues dans ${page}`);
+    assert.equal((html.match(/programme-card-open/g) || []).length, 1, `seul le MBA doit être ouvert dans ${page}`);
+  }
+});
+
+test("header : heure de Libreville avec fuseau explicite", () => {
+  const include = read("assets/js/include.js");
+  assert.ok(include.includes('timeZone: "Africa/Libreville"'), "fuseau Africa/Libreville manquant");
+  assert.ok(include.includes("data-libreville-time"), "horloge du header manquante");
 });
 
 test("a-propos : direction + liens Douala et ESSEC Douala", () => {

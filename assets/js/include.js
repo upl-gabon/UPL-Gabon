@@ -84,6 +84,7 @@
       '<img src="' + BASE + 'assets/img/logo-upl.png" alt="Logo UPL" width="96" height="61" />' +
       '<span class="brand-text"><strong>Université Privée de Libreville</strong>' +
       "<span>" + T.slogan + "</span></span></a>" +
+      '<span class="libreville-time"><span>' + (LANG === "en" ? "Libreville time" : "Heure de Libreville") + '</span><time data-libreville-time>--:--</time></span>' +
       '<button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">' + T.menu + "</button>" +
       '<nav id="site-nav" class="nav" data-nav aria-label="' + T.navLabel + '">' +
       '<a href="' + href("home") + '">' + T.nav.home + "</a>" +
@@ -146,6 +147,16 @@
 
   var h = document.querySelector("[data-include-header]");
   if (h) h.outerHTML = headerHTML();
+
+  var clock = document.querySelector("[data-libreville-time]");
+  if (clock) {
+    var clockFormat = new Intl.DateTimeFormat(LANG === "en" ? "en-GB" : "fr-FR", {
+      timeZone: "Africa/Libreville", hour: "2-digit", minute: "2-digit", second: "2-digit"
+    });
+    var updateClock = function () { clock.textContent = clockFormat.format(new Date()); };
+    updateClock();
+    window.setInterval(updateClock, 1000);
+  }
   var f = document.querySelector("[data-include-footer]");
   if (f) f.outerHTML = footerHTML();
   var band = document.querySelector("[data-action-band]");
