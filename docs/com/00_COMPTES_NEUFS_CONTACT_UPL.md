@@ -1,9 +1,12 @@
 # Comptes officiels UPL — création neuve
 
 **Statut :** procédure interne — **ne pas merger sur `main`** (GitHub Pages publie la racine).  
-**Décision :** 27/08/2026 — le propriétaire des anciens comptes a disparu, codes bloqués.  
-**Règle :** on **ne récupère pas** les comptes orphelins. On crée **tout à neuf** avec **`contact@upl-gabon.com`**.  
+**Décision :** 27/08/2026 — le Président a **payé** des pages (Facebook, LinkedIn…) ; les agences ne répondent plus.  
+**Règle :** on **ne nie pas** ces pages. On les **réclame** avec `contact@upl-gabon.com` + factures, puis on les anime. Procédure : `01_PAGES_PAYEES_RECUPERATION.md`.  
+Page neuve **seulement** si Meta / LinkedIn refusent la réclamation.  
 **Rien n’est publié** tant que le Président n’a pas validé textes + visuels.
+
+**WhatsApp :** le compte Business du Président **existe déjà** et centralise. On le **garde** (fiche à aligner sur le site). On n’en ouvre pas un second.
 
 Ne pas confondre avec l’**Université Protestante de Lubumbashi** (RDC), déjà présente comme « Officiel UPL » sur Facebook / Instagram. Nos identifiants portent **Gabon / Libreville**.
 
@@ -15,22 +18,22 @@ Au Gabon, les cibles (bacheliers, parents, cadres, institutions) sont surtout su
 
 | Réseau | Décision | Pourquoi | Identifiant visé |
 |---|---|---|---|
-| **WhatsApp Business** | **Ouvrir** | Canal n°1 au Gabon. Parents, bacheliers, cadres. | Nom : Université Privée de Libreville — n° UPL |
-| **Facebook Page** | **Ouvrir** | ~1 million d’utilisateurs au Gabon (2025). Parents + institutions. | Nom : Université Privée de Libreville — UPL · @uplgabon |
+| **WhatsApp Business** | **Déjà en service** (Président) | Hub leads. Corriger la fiche (pas de MBA hors site, plus de vidéo 2024). | Université Privée de Libreville |
+| **Facebook Page** | **Récupérer** (payée) | Vitrine + événement 2026-2027 épinglé. Neuve seulement si réclamation refusée. | Université Privée de Libreville — UPL |
 | **Instagram** | **Ouvrir** | Même Business Manager que Facebook. Jeunes + visuels. | @upl.gabon |
 | **TikTok** | **Ouvrir** | Bacheliers. Uniquement vraies images / visuels graphiques validés — **pas de visages IA**. | @upl.gabon |
-| **LinkedIn** (page entreprise) | **Ouvrir** | Cadres MBA, RH, partenariats. | Université Privée de Libreville (UPL) |
+| **LinkedIn** (page entreprise) | **Récupérer** (payée) | Cadres MBA, RH. Neuve seulement si claim refusé. | Université Privée de Libreville (UPL) |
 | **YouTube** | **Ouvrir une chaîne UPL Gabon** | Les 2 films TV y sont déjà hébergés. L’ancien `@UPL` est trop générique / risqué. | @UPLGabon |
 | **X (Twitter)** | **Ne pas ouvrir** | Audience faible pour bacheliers/parents au Gabon. |
 | **Snapchat** | **Ne pas ouvrir** | Usage perso, pas institutionnel. |
 | **Threads** | **Ne pas ouvrir** | Faible au Gabon. |
 | **Telegram / Pinterest / Reddit** | **Ne pas ouvrir** | Hors cible. |
 
-**Anciens comptes bloqués :** les noter ici (URL) pour mémoire, **ne plus y poster**, ne plus les citer en public.
+**Pages payées (à réclamer, pas à cacher) :**
 
-| Ancien compte (URL) | Plateforme | Action |
-|---|---|---|
-| *(à remplir par le secrétariat)* | | Abandonné — propriétaire injoignable |
+| URL | Plateforme | Facture / agence | Réclamation |
+|---|---|---|---|
+| *(secrétariat)* | Facebook / LinkedIn / autre | | en cours |
 
 ---
 
@@ -49,30 +52,24 @@ Au Gabon, les cibles (bacheliers, parents, cadres, institutions) sont surtout su
 
 Faire dans cet ordre. Avoir sous la main : boîte `contact@`, logo `assets/img/logo-upl.png`, n° UPL, site `https://upl-gabon.com`.
 
-### A. WhatsApp Business (en premier — utile même si le web est coupé)
+### A. WhatsApp Business du Président (déjà ouvert — on n’en crée pas un autre)
 
-1. Téléphone **dédié UPL** (l’un des deux n° institution, pas le portable perso d’un prestataire).
-2. Application **WhatsApp Business** (pas le WhatsApp personnel).
-3. Compte professionnel : nom **Université Privée de Libreville**, catégorie Éducation.
-4. Description : voir bios § 4.
-5. Horaires secrétariat (à confirmer par le Président — ne pas inventer). Tant que non confirmés : « Réponse en jours ouvrés ».
-6. Message d’accueil : texte validé dans `TEXTES_A_VALIDER.md`.
-7. Étiquettes : Licence / Master / CPGE / MBA / DBA / Partenariat.
-8. **Listes de diffusion** (pas de groupes ouverts grand public au démarrage).
+1. Nom public du compte : **Université Privée de Libreville** (pas « Papa » en vitrine).
+2. Remplacer la description actuelle (MBA Journalisme / Sport / Santé = **hors site**) par la bio § 4.
+3. Message d’accueil : `TEXTES_A_VALIDER.md` pièce P0.
+4. Ne plus envoyer `youtu.be/SyUXYUPj6hc` (Rentrée 2024). Films TV : `jh_iCTJuLKA` et `FAKHfv8nN7I`.
+5. Étiquettes : Licence / Master / CPGE / MBA / DBA / Partenariat.
+6. Listes de diffusion (pas de groupe ouvert grand public au démarrage).
+7. Détail fiche + horaires : `01_PAGES_PAYEES_RECUPERATION.md` § 4.
 
-### B. Meta (Facebook + Instagram, une seule fois)
+### B. Meta — d’abord réclamer la Page déjà payée
 
-1. facebook.com → créer le compte **avec `contact@upl-gabon.com`** (code reçu dans PrivateEmail).
-2. Créer un **Meta Business Suite / Business Manager** au nom UPL.
-3. Ajouter le **2ᵉ admin UPL** tout de suite (pas « on verra lundi »).
-4. Créer la **Page** : Université Privée de Libreville — UPL  
-   Catégorie : Université / établissement d’enseignement supérieur.  
-   Adresse : Sablière, Libreville. Site : https://upl-gabon.com  
-   E-mail : contact@upl-gabon.com · Tél. : +241 02 62 19 78
-5. Identifiant : **uplgabon** (si pris : `upl.gabon` ou `upllibreville`).
-6. Créer **Instagram** depuis le même Business : @upl.gabon  
-   Compte **professionnel**, lié à la Page.
-7. Photo de profil : logo UPL. Couverture : visuel `01-preinscriptions-carre.png` (après validation).
+1. Compte Meta avec **`contact@upl-gabon.com`**.
+2. Business Manager UPL + **2ᵉ admin UPL** tout de suite.
+3. **Réclamer** la Page payée (factures + pièces) — voir `01_PAGES_PAYEES_RECUPERATION.md`. Ne pas en créer une jumelle tant que Meta n’a pas répondu.
+4. Si réclamation refusée seulement : créer Université Privée de Libreville — UPL · @uplgabon · site https://upl-gabon.com · contact@ · +241 02 62 19 78.
+5. Instagram @upl.gabon depuis le même Business (réclamer l’ancien s’il existe).
+6. Logo + couverture `01-preinscriptions-carre.png` (après validation). Épingler P1.
 
 ### C. TikTok
 
@@ -81,14 +78,11 @@ Faire dans cet ordre. Avoir sous la main : boîte `contact@`, logo `assets/img/l
 3. @upl.gabon — bio § 4.
 4. 2ᵉ admin : TikTok Business Center dès que le compte existe (même logique que Meta).
 
-### D. LinkedIn
+### D. LinkedIn — réclamer la page entreprise déjà payée
 
-1. Un admin UPL (Président ou secrétariat) a un profil LinkedIn **personnel**.
-2. Créer une **Page entreprise** : Université Privée de Libreville (UPL).
-3. Site : https://upl-gabon.com · Secteur : Enseignement supérieur · Libreville, Gabon.
-4. E-mail page : contact@upl-gabon.com.
-5. Ajouter le 2ᵉ admin (rôle Super administrateur) **immédiatement**.
-6. Le profil perso n’est **pas** le visage public de l’UPL ; la Page l’est.
+1. Un admin UPL a un profil LinkedIn personnel.
+2. **Claim this Company Page** sur l’URL payée (pièces + contact@). Page neuve seulement si claim refusé.
+3. Site https://upl-gabon.com · 2 super-admins UPL. Le profil perso n’est pas la vitrine.
 
 ### E. YouTube
 
@@ -135,7 +129,7 @@ https://upl-gabon.com
 - [ ] Les 6 comptes existent, e-mail = contact@
 - [ ] 2 admins UPL sur Meta, LinkedIn, TikTok Business, YouTube
 - [ ] Bios collées, logo en avatar, lien https://upl-gabon.com
-- [ ] Anciens comptes listés « abandonnés »
+- [ ] Pages payées : URL + factures dans le tableau ; réclamation envoyée
 - [ ] Premier post **validé par écrit** par le Président (kit `TEXTES_A_VALIDER.md`)
 - [ ] Les URL officielles notées ci-dessous — **le site web n’est pas modifié** tant que le Président ne l’a pas demandé (champs `config.js → social` encore vides, c’est volontaire)
 
@@ -152,4 +146,4 @@ https://upl-gabon.com
 
 ## 6. Si un ancien prestataire réapparaît
 
-Ne pas lui rendre les accès. Lui demander par écrit la **cession** des pages (Business Manager). En attendant : **seuls les comptes neufs** sont officiels. En public, on oriente vers upl-gabon.com — on ne commente pas l’affaire.
+Ne pas lui rendre les accès. Cession écrite des pages déjà payées, puis retrait. En public : WhatsApp du Président + upl-gabon.com — on ne commente pas l’affaire.

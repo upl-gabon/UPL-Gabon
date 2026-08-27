@@ -232,9 +232,8 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 ## 10. Journal des mises à jour
 
 **27/08/2026 (16) — lancement com rentrée (site inchangé)**
-- Site **non modifié** (règle figé). Kit hors ligne : `docs/com/` — comptes neufs avec `contact@upl-gabon.com` (anciens orphelins abandonnés), textes à valider, visuels, calendrier.
-- Réseaux retenus pour le Gabon : WhatsApp, Facebook, Instagram, TikTok, LinkedIn, YouTube `@UPLGabon`. Pas X / Snapchat / Threads.
-- **Ne pas merger `docs/com/` sur `main`** (Pages publierait les brouillons). Aucune publication réseau sans VALIDÉ Président.
+- Site **non modifié**. Kit `docs/com/` : WhatsApp Président = hub ; pages Facebook/LinkedIn **déjà payées** à réclamer (pas à nier) ; campagne = post épinglé + événement 2026-2027 sur la page mère.
+- **Ne pas merger `docs/com/` sur `main`**. Aucune publication sans VALIDÉ Président.
 
 **27/08/2026 (15) — v2.5 « ton assumé, fini l'autodéfense » (retour Président)**
 - Phrase signalée (« les ouvertures seront annoncées… quand elles seront réelles ») et toutes ses sœurs supprimées : la note du chapitre, le jalon +1, la chute de la trajectoire, le paragraphe vision d'À propos et le mot du Président (FR + EN).

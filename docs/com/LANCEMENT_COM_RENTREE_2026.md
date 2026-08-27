@@ -11,8 +11,9 @@ UPL : +241 02 62 19 78 / +241 07 35 95 72 · Sablière, Libreville
 
 ## 1. Ce qui a été tranché (27/08/2026)
 
-- Anciens comptes : propriétaire disparu, codes bloqués → **on ne les récupère pas**.
-- Comptes **neufs**, tous rattachés à **`contact@upl-gabon.com`**.
+- Pages Facebook / LinkedIn **déjà payées**, agences muettes → on les **réclame** (`01_PAGES_PAYEES_RECUPERATION.md`), on ne les nie pas.
+- WhatsApp Business du Président = hub. Fiche à aligner sur le site (P0b).
+- Campagne = **événement / post épinglé** sur la page mère, pas une vitrine fictive à côté.
 - Tous les réseaux **utiles au Gabon** ; on écarte X, Snapchat, Threads, Telegram, Pinterest.
 - Palier 1 public = **pré-inscriptions** (sauf Executive MBA, ouvert depuis 2022).
 - Publication : **feu vert écrit du Président** sur chaque texte.
@@ -44,10 +45,10 @@ Si le Président confirme un jour (AAAA-MM-JJ), on l’ajoute **d’abord** dans
 
 | Jour | Action | Qui |
 |---|---|---|
-| J0 | Créer WhatsApp Business + Meta (FB/IG) + TikTok + LinkedIn + YouTube @UPLGabon | Président ou secrétariat + 2ᵉ admin UPL |
-| J0 | Coller bios, logo, lien upl-gabon.com | idem |
-| J0 | Lister les URL des anciens comptes abandonnés | secrétariat |
-| J0 | Président valide **P0** (accueil WA) et **P1** (annonce) | Président |
+| J0 | WhatsApp Président : coller fiche **P0b** (VALIDÉ) | Président |
+| J0 | Recenser URL + factures des pages payées ; lancer réclamation Meta / LinkedIn | secrétariat |
+| J0 | TikTok / IG / YouTube @UPLGabon : ouvrir ou réclamer, e-mail contact@ | 2 admins UPL |
+| J0 | Président valide **P0** et **P1** | Président |
 
 Pas de post tant que Semaine 0 n’est pas cochée.
 
@@ -121,6 +122,6 @@ Hors périmètre de cette vague. Bascule site + com **uniquement** quand les 3 v
 
 ## 7. Prochaine action concrète
 
-1. Ouvrir `00_COMPTES_NEUFS_CONTACT_UPL.md` et créer les 6 comptes (90 min).
-2. Cocher **P0** et **P1** dans `TEXTES_A_VALIDER.md`.
-3. Premier post = P1 + visuel 01. Pas d’autre contenu le jour J.
+1. Valider **P0b** et mettre à jour la fiche WhatsApp du Président (aujourd’hui).
+2. Envoyer les **URL Facebook/LinkedIn payées** + factures agence → réclamation (`01_PAGES_PAYEES_RECUPERATION.md`).
+3. Dès l’accès : bio officielle + P1 **épinglé** + événement « Pré-inscriptions UPL 2026-2027 ».

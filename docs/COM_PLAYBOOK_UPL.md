@@ -5,7 +5,8 @@ Le site **upl-gabon.com** est en ligne et **figé**. Ce playbook ne modifie pas 
 Kit rentrée 2026-2027 (brouillons, hors `main`) :
 
 - `docs/com/LANCEMENT_COM_RENTREE_2026.md` — calendrier et cibles
-- `docs/com/00_COMPTES_NEUFS_CONTACT_UPL.md` — comptes neufs avec `contact@upl-gabon.com`
+- `docs/com/00_COMPTES_NEUFS_CONTACT_UPL.md` — WhatsApp Président + bios
+- `docs/com/01_PAGES_PAYEES_RECUPERATION.md` — réclamer Facebook/LinkedIn déjà payés, campagne 2026-2027 épinglée
 - `docs/com/TEXTES_A_VALIDER.md` — posts à faire valider
 - `docs/com/visuels/` — maquettes bleu/or
 

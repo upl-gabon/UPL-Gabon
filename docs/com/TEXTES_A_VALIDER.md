@@ -8,6 +8,27 @@ Légende : `[ ] à valider` · `[x] validé` · `publié le …` (date réelle s
 
 ---
 
+## P0b — Fiche WhatsApp Business du Président (remplace le texte actuel)
+
+**Réseaux :** description du compte professionnel déjà en ligne  
+**À retirer :** MBA Journalisme / Sport / Santé · « Rejoignez l’Élite » · lien Rentrée 2024 (`SyUXYUPj6hc`)
+
+```
+Université Privée de Libreville — UPL
+Établissement privé d’enseignement supérieur, Sablière.
+
+Executive MBA depuis 2022 (Université de Douala).
+Pré-inscriptions 2026-2027 : Licence, Master, CPGE, DBA.
+
+Pré-inscription gratuite, sans engagement.
+https://upl-gabon.com
+contact@upl-gabon.com
+```
+
+Validation Président : [ ]
+
+---
+
 ## P0 — Message d’accueil WhatsApp Business
 
 **Réseaux :** WhatsApp auto-réponse  
@@ -58,6 +79,16 @@ Sablière, Libreville
 Texte dit : le paragraphe ci-dessus, sans les puces.
 
 Validation Président : [ ]
+
+**Événement Facebook / LinkedIn** (une fois la page mère reprise — même texte P1) :
+
+- Nom : Pré-inscriptions UPL — rentrée 2026-2027
+- Organisateur : page Université Privée de Libreville (pas un autre compte)
+- Lieu : Sablière, Libreville
+- Lien : https://upl-gabon.com
+- Date de rentrée : **ne pas inventer**
+
+Validation Président (événement) : [ ]
 
 ---
 
