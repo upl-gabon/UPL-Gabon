@@ -231,6 +231,15 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (17) — lien ESSEC + WhatsApp 02 (consigne explicite)**
+- Lien mort `essec-douala.cm` → `https://www.essec-dla.com/concours/` (FR + EN).
+- Bouton WhatsApp `wa.me/24102621978` (ligne 02) : page Contact + bandeau d'action + pied de page.
+- Cache-bust `?v=20260827d`. Tarifs inchangés.
+
+**27/08/2026 (16) — lancement com rentrée (site inchangé)**
+- Site **non modifié**. Comptes neufs : Facebook, Instagram, TikTok, LinkedIn (`contact@`). WhatsApp = n° du Président. Pas de YouTube. Anciennes pages agences : ignorées, signalement plus tard. Kit : `docs/com/FAIRE_AUJOURDHUI.md`.
+- **Ne pas merger `docs/com/` sur `main`**. Aucune publication sans VALIDÉ Président.
+
 **27/08/2026 (15) — v2.5 « ton assumé, fini l'autodéfense » (retour Président)**
 - Phrase signalée (« les ouvertures seront annoncées… quand elles seront réelles ») et toutes ses sœurs supprimées : la note du chapitre, le jalon +1, la chute de la trajectoire, le paragraphe vision d'À propos et le mot du Président (FR + EN).
 - Remplaçants : tournures prospectives et factuelles — « la prochaine campagne d'inscription sera confirmée par communiqué officiel », « à chaque rentrée », valeurs Excellence/Innovation/Leadership en clôture du mot du Président.

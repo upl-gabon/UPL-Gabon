@@ -220,7 +220,7 @@ test("a-propos : direction + liens Douala et ESSEC Douala", () => {
   const html = read("a-propos.html");
   assert.ok(html.includes("Serge Patrick MINANG"), "bloc président manquant");
   assert.ok(html.includes("univ-douala.com"), "lien Université de Douala manquant");
-  assert.ok(html.includes("essec-douala.cm"), "lien ESSEC Douala manquant");
+  assert.ok(html.includes("essec-dla.com/concours"), "lien ESSEC Douala manquant");
 });
 
 test("mot du Président : page, nav et liens footer", () => {
