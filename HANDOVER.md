@@ -205,6 +205,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (3) — v1.3 « contenu réel » (retours Président)**
+- Vidéos YouTube : lecture **intégrée dans la page** au clic (youtube-nocookie, bouton lecture + miniature).
+- MBA : modules réels des promotions précédentes (droit des affaires, comptabilité OHADA, management stratégique, qualité, marketing, étude de cas) + **exemple d'emploi du temps 2025–2026** (cours du soir 17h–21h, séances de 4 h, module ≈ 20 h, Sablière) — sans noms d'enseignants (privé).
+- Scolarité affichée **payable en tranches** (« 4 000 000 FCFA l'année, payable en tranches ») — échéancier réel détaillé remis par le secrétariat ; ne pas inventer de montants de tranches tant que le Président ne les a pas fournis.
+- Contact : espace dédié « Vous êtes… » — candidature (envoi dossier par mail objet « Candidature MBA » ou dépôt au secrétariat), **demandes de partenariat** (objet « Partenariat »), **abonnement aux actualités** (objet « Abonnement »). Options ajoutées au formulaire.
+
 **27/08/2026 (2) — v1.2 « sobre & factuel » (retours Président)**
 - Suppression de tous les « signes IA » : plus de « grande école », « pas une coquille », « Preuve d'activité », « Comment on grandit », chips de composantes, roadmap paiement publique, mention Namecheap/PrivateEmail côté public.
 - **Illustration de campus fictive supprimée** (repo + hero CSS) : l'UPL est à la Sablière — le site ne montre aucun campus irréaliste. Hero = bleu profond uni.

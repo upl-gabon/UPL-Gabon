@@ -49,4 +49,19 @@
 
   /* Skip link focus */
   document.documentElement.classList.add("js");
+
+  /* Vidéos : lecture intégrée au clic (YouTube sans cookies) */
+  document.querySelectorAll("[data-yt]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = btn.getAttribute("data-yt");
+      var frame = document.createElement("iframe");
+      frame.className = "video-frame";
+      frame.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0");
+      frame.setAttribute("title", "Vidéo UPL");
+      frame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      frame.setAttribute("allowfullscreen", "");
+      btn.replaceWith(frame);
+    });
+  });
+
 })();
