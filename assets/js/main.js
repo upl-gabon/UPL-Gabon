@@ -62,7 +62,7 @@
       var id = btn.getAttribute("data-yt");
       var frame = document.createElement("iframe");
       frame.className = "video-frame";
-      frame.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0");
+      frame.setAttribute("src", "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0");
       frame.setAttribute("title", "Vidéo UPL");
       frame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
       frame.setAttribute("allowfullscreen", "");
