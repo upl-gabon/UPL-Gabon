@@ -168,6 +168,13 @@ test("ton factuel : pas de langage interne ni d'éléments fictifs dans le HTML 
     "PrivateEmail",
     "Namecheap",
     "bientôt sur le site",
+    "quand elles seront réelles",
+    "ce qu'il annonce",
+    "ne s'affiche pas",
+    "critère : la réalité",
+    "when they are real",
+    "is not displayed",
+    "yardstick",
   ];
   for (const p of walkHtml()) {
     const html = readFileSync(p, "utf8");

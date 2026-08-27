@@ -205,6 +205,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**27/08/2026 (15) — v2.5 « ton assumé, fini l'autodéfense » (retour Président)**
+- Phrase signalée (« les ouvertures seront annoncées… quand elles seront réelles ») et toutes ses sœurs supprimées : la note du chapitre, le jalon +1, la chute de la trajectoire, le paragraphe vision d'À propos et le mot du Président (FR + EN).
+- Remplaçants : tournures prospectives et factuelles — « la prochaine campagne d'inscription sera confirmée par communiqué officiel », « à chaque rentrée », valeurs Excellence/Innovation/Leadership en clôture du mot du Président.
+- Ces formulations défensives sont désormais **interdites par les tests** (liste noire étendue).
+- Tests 28/28.
+
 **27/08/2026 (14) — v2.4 « hero élargi + cache-busting » (retour preview Président)**
 - Bug signalé : titre du hero écrasé en colonne gauche — cause : `max-width: 14ch` conçu pour l'ancien titre long. Corrigé (pleine largeur + `text-wrap: balance`), lead élargi à 40 rem.
 - Le « fond campus » aperçu dans la capture = **ancienne illustration supprimée restée dans le cache navigateur** (aucune trace dans le code, aucun commit externe). Remède : **cache-busting** `?v=20260827b` sur CSS/JS des 10 pages — les mises à jour se voient immédiatement après refresh simple.
