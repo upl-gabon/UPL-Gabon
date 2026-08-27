@@ -10,8 +10,9 @@
  */
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var hero = document.querySelector(".hero-ge");
+  var hero = document.querySelector(".hero-ge") || document.querySelector(".page-hero");
   if (!hero || reduce) return;
+  var big = hero.classList.contains("hero-ge");
 
   var canvas = document.createElement("canvas");
   canvas.className = "gold-canvas";
@@ -22,7 +23,7 @@
 
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var W = 0, H = 0, parts = [];
-  var COUNT = 26; /* rare : sobriété */
+  var COUNT = big ? 26 : 14; /* rare : sobriété */
 
   function spawn(fromBottom) {
     return {

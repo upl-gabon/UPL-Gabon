@@ -7,6 +7,28 @@
 **Date de ce handover :** 27 août 2026  
 **Aide digital été 2026 (urgence only, non permanent) :** Calvin Blanchard MINANG — +33 7 52 97 58 09  
 
+
+---
+
+## ⭐ ÉTAT DE LIVRAISON — v2.6 (27/08/2026, fin de session)
+
+**Livré et testé (28 tests verts)** : site bilingue FR/EN (10 pages) · offre officielle 2026-2027 en
+palier 1 « pré-inscriptions » (tarifs verrouillés) · MBA ouvert (4 M, jusqu’à 8 échéances) · vidéos TV
+(autoplay accueil + interview MBA) · ticker à la une + citations de management · trajectoire éditoriale
+animée + pluie dorée discrète sur toutes les pages · mot du Président · bandeau d’action
+(candidature / RDV / partenariat) · paiements Airtel Money + justificatif/confirmation UPL ·
+SEO (JSON-LD, robots, sitemap) · CI en template (`docs/templates/`).
+
+**Reste à faire (côté Président/Calvin)** :
+1. Mettre le dépôt **privé** (Settings → General → Danger Zone) — documents internes présents.
+2. Merger la PR #1 sur `main` puis activer **GitHub Pages** (Settings → Pages → main / root).
+3. DNS Namecheap → `upl-gabon.com` (guide : `docs/04_…`) — sans toucher aux MX.
+4. Fournir : photos réelles (upload GitHub web), échéancier exact des tranches, date de rentrée,
+   photo du Président, validation du Mot du Président.
+
+**Pour une nouvelle session Arena** : ouvrir ce dépôt, lire ce fichier + `config.js`,
+coller le message d’init du § 8. Toute l’historique des décisions est dans le journal (§ 10).
+
 ---
 
 ## 1. Qu’est-ce que l’UPL (fait)
@@ -174,18 +196,22 @@ npm test
 
 ---
 
-## 8. Message d’init pour une IA
+## 8. Message d’init pour une IA (à jour — 27/08/2026, v2.6)
 
 ```
 Tu reprends le site UPL (Université Privée de Libreville).
-Lis HANDOVER.md et assets/js/config.js en premier.
-Autorisation Président supposée.
-MBA seul programme ouvert. contact@upl-gabon.com actif.
-Charte #0B2A5B / #C9A227. Ne supprime pas Netlify existant.
-Lance npm test avant de livrer. Ne publie pas de filières projet.
-Calvin = urgence été 2026 only, pas contact public permanent.
-Téléphones : UPL +241 02 62 19 78 / +241 07 35 95 72 ;
-présidence +241 05 01 56 20.
+Dépôt : github.com/upl-gabon/UPL-Gabon — lis HANDOVER.md + assets/js/config.js en premier.
+Autorisation du Président Serge Patrick MINANG supposée. contact@upl-gabon.com actif.
+Charte #0B2A5B / #C9A227. Site bilingue FR (racine) / EN (dossier en/).
+Offre affichée (supports officiels 2026-2027) : Licence, Master, CPGE, Executive MBA (ouvert
+depuis 2022), DBA — en PALIER 1 « pré-inscriptions » (pas d’encaissement promis en ligne).
+Tarifs officiels VERROUILLÉS par les tests — ne jamais modifier un chiffre sans consigne Président.
+Rentrée 2026-2027 réelle ouverte au public = bascule palier 2 « inscriptions ouvertes »
+(voir journal v2.2/v2.3). Ne jamais réintroduire de tournures défensives (liste noire des tests).
+Ton : factuel, pro, jamais défensif ; pas de campus fictif, pas de promesse, pas de « Maroc ».
+Lance npm test (28 tests) avant toute livraison. Bascule de langue FR/EN dans le header.
+Calvin = urgence digitale été 2026 only, pas contact public permanent.
+Téléphones : UPL +241 02 62 19 78 / +241 07 35 95 72 ; présidence +241 05 01 56 20.
 Tâche demandée : […]
 ```
 

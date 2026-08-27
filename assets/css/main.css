@@ -239,6 +239,7 @@ table.data tr:last-child td { border-bottom: 0; }
 /* Page hero small */
 .page-hero {
   background: var(--bleu); color: #fff; padding: 2.5rem 0 2rem;
+  position: relative; overflow: hidden;
 }
 .page-hero h1 { color: #fff; }
 .page-hero p { color: rgba(255,255,255,0.88); max-width: 44rem; margin: 0; }

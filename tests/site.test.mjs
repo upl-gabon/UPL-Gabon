@@ -341,6 +341,13 @@ test("animations sobres : trajectoire animée + poussière d'or avec garde-fous 
   const effects = read("assets/js/effects.js");
   assert.ok(effects.includes("(prefers-reduced-motion: reduce)"), "effects.js sans garde reduced-motion");
   assert.ok(effects.includes("visibilitychange"), "effects.js sans pause onglet masqué");
+  assert.ok(effects.includes('page-hero'), "effects.js doit couvrir toutes les pages (page-hero)");
+  let withEffects = 0;
+  for (const p of walkHtml()) {
+    const html = readFileSync(p, "utf8");
+    if (html.includes("effects.js")) withEffects++;
+  }
+  assert.ok(withEffects >= 10, "pluie dorée absente de certaines pages : " + withEffects);
   const main = read("assets/js/main.js");
   assert.ok(main.includes("IntersectionObserver") && main.includes("tl-visible"), "révélation timeline manquante");
   const css = read("assets/css/main.css");
