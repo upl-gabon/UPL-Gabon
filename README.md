@@ -8,7 +8,7 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 ## En 30 secondes
 
 - Site **statique** HTML/CSS/JS — zéro framework, zéro dépendance, reprise facile
-- Offre publique : **Executive MBA uniquement** (partenaire : Université de Douala)
+- Offre affichée : **Executive MBA** (depuis 2022) + **rentrée 2026-2027** : Licence, Master, CPGE, DBA — tarifs officiels UPL
 - Charte : bleu `#0B2A5B` · or `#C9A227` · blanc — rendu « grande école »
 - **Config centrale** : `assets/js/config.js` — contacts, feature flags, programmes (architecture multi-université prête)
 - **Bilingue FR ⇄ EN** (pages miroir `en/`) · bandeau d'action standard (candidature · rendez-vous · partenariat) sur chaque page
@@ -64,7 +64,7 @@ Aucun `npm install` nécessaire (aucune dépendance).
 
 ## Règles non négociables
 
-- **MBA = seul programme ouvert** affiché — pas de filière « projet » publiée
+- **L'offre affichée** = les supports officiels UPL (roll-up/fiche 2026-2027) — tarifs verrouillés par les tests, rien d'inventé
 - Pas de logo/partenariat non contractuel (HEC, Polytechnique, etc.)
 - Pas de mail inventé (`admissions@`, `partenariats@`…)
 - Calvin = appui digital été 2026 **urgence only** — jamais en contact public permanent

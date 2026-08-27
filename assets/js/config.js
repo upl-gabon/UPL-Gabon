@@ -58,6 +58,35 @@ window.UPL.config = {
    */
   programmes: [
     {
+      id: "licence-1",
+      schoolId: "upl-facultes",
+      title: "Licence 1",
+      status: "open",
+      tuition: "1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA",
+      tuitionNote: "Frais d'inscription : 200 000 / 300 000 FCFA exigibles au dépôt du dossier — solde en 6 tranches",
+    },
+    {
+      id: "master-1",
+      schoolId: "upl-facultes",
+      title: "Master 1",
+      status: "open",
+      tuition: "1 500 000 FCFA",
+    },
+    {
+      id: "master-2",
+      schoolId: "upl-facultes",
+      title: "Master 2",
+      status: "open",
+      tuition: "2 000 000 FCFA",
+    },
+    {
+      id: "cpge",
+      schoolId: "upl-cpge",
+      title: "Classes préparatoires aux Grandes Écoles (CPGE)",
+      status: "open",
+      tuition: "2 200 000 FCFA",
+    },
+    {
       id: "exec-mba",
       schoolId: "upl-executive",
       title: "Executive MBA",
@@ -70,6 +99,13 @@ window.UPL.config = {
       approxAlumni: 80,
       promoSize: 20,
     },
+    {
+      id: "dba",
+      schoolId: "upl-facultes",
+      title: "DBA",
+      status: "open",
+      tuition: "Sur dossier",
+    },
   ],
 
   /**
@@ -77,6 +113,18 @@ window.UPL.config = {
    * Ne pas inventer d'offres : status "active" seulement si vrai.
    */
   schools: [
+    {
+      id: "upl-facultes",
+      name: "Facultés UPL — 5 pôles (Gouvernance & Management · Économie Numérique & IA · Économie Bleue & Gestion Portuaire · Droit & Sciences Politiques · Assurance Maladie & Sécurité Sociale)",
+      status: "active",
+      blurb: "Formations diplômantes 2026-2027 (Licence, Master, DBA).",
+    },
+    {
+      id: "upl-cpge",
+      name: "Classes préparatoires aux Grandes Écoles (CPGE)",
+      status: "active",
+      blurb: "Préparation intensive aux concours des grandes écoles.",
+    },
     {
       id: "upl-executive",
       name: "École executive",
@@ -153,6 +201,7 @@ window.UPL.config = {
 
   /* Défilement continu « À la une » : communiqués + infos pratiques. */
   tickerExtra: [
+    { fr: "Inscriptions 2026-2027 ouvertes · Licence · Master · CPGE · MBA · DBA", en: "Admissions 2026-2027 open · Bachelor's · Master's · CPGE · MBA · DBA" },
     { fr: "Cours du soir 17h–21h · Sablière, Libreville", en: "Evening classes 5–9 pm · Sablière, Libreville" },
     { fr: "Scolarité payable en tranches · reçu + confirmation UPL", en: "Tuition payable in instalments · receipt + UPL confirmation" },
     { fr: "Inscriptions : contact@upl-gabon.com", en: "Admissions: contact@upl-gabon.com" },
@@ -196,6 +245,14 @@ window.UPL.config = {
   /* Communiqués / actualités de l'école — mis à jour ICI (le plus récent en premier).
      Utiliser des faits réels ; date au mois, pas de date inventée. */
   news: [
+    {
+      tag: "Communiqué", tagEn: "Announcement",
+      date: "Août 2026", dateEn: "August 2026",
+      title: "Inscriptions ouvertes — rentrée 2026-2027",
+      titleEn: "Admissions open — 2026-2027 academic year",
+      text: "Licence, Master, CPGE, Executive MBA et DBA. Dossiers à déposer dès maintenant auprès du service des admissions — places limitées.",
+      textEn: "Bachelor's, Master's, CPGE, Executive MBA and DBA. Apply now with the Admissions office — limited places.",
+    },
     {
       tag: "Communiqué", tagEn: "Announcement",
       date: "Août 2026", dateEn: "August 2026",

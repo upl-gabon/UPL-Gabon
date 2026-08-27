@@ -98,26 +98,27 @@ test("Calvin urgence NOT in public HTML pages", () => {
 
 test("pas de fausses offres multi-filières dans le HTML public", () => {
   const banned = [
-    "Licence 1",
-    "six filières",
-    "6 filières",
     "Sciences Po",
     "Polytechnique",
     "partenariats@upl",
     "admissions@upl-gabon.com",
+    "6 filières",
   ];
   for (const p of walkHtml()) {
     const html = readFileSync(p, "utf8");
     for (const b of banned) {
-      assert.ok(!html.includes(b), `"${b}" trouvé dans ${p}`);
+      const re = new RegExp(b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![A-Za-zÀ-ÿ])");
+      assert.ok(!re.test(html), `"${b}" trouvé dans ${p}`);
     }
   }
 });
 
-test("CPGE pas présenté comme offre ouverte (page dédiée / nav)", () => {
+test("CPGE : offre officielle sur l'accueil, hors page MBA", () => {
   const index = read("index.html");
+  assert.ok(index.includes("CPGE"), "CPGE manquant dans l'offre officielle");
+  assert.ok(index.includes("2 200 000 FCFA"), "tarif CPGE manquant");
   const mba = read("mba.html");
-  assert.ok(!/CPGE/.test(index + mba), "CPGE ne doit pas apparaître offre");
+  assert.ok(!/CPGE/.test(mba), "la page MBA doit rester centrée MBA");
 });
 
 test("pages chargent config.js puis include.js puis main.js", () => {
@@ -256,16 +257,24 @@ test("paiement : Airtel Money, justificatif et confirmation UPL — parité reti
   assert.ok(!index.includes("655,957"), "parité EUR/FCFA encore présente");
 });
 
-test("ouvertures à venir : perche tendue sans mensonge ni date", () => {
+test("offre officielle 2026-2027 : tarifs verrouillés sur les supports officiels UPL", () => {
   const index = read("index.html");
-  assert.ok(index.includes("D'autres formations en préparation"), "bloc « à venir » manquant");
-  assert.ok(index.includes("licences, masters"), "mention licences/masters manquante");
-  assert.ok(index.includes("Être informé des ouvertures"), "CTA information manquant");
-  assert.ok(index.includes("Proposer un partenariat"), "CTA partenariat manquant");
-  assert.ok(/conditions\s+pédagogiques\s+et\s+réglementaires\s+seront\s+réunies/.test(index), "garantie d'honnêteté manquante");
+  assert.ok(index.includes("Les formations de la rentrée"), "section formations manquante");
+  for (const fee of ["1 000 000 FCFA", "1 200 000 FCFA", "1 500 000 FCFA", "2 000 000 FCFA", "2 200 000 FCFA", "4 000 000 FCFA"]) {
+    assert.ok(index.includes(fee), `tarif officiel manquant ou modifié : ${fee}`);
+  }
+  assert.ok(index.includes("50 premières inscriptions"), "mention 50 premières inscriptions manquante");
+  assert.ok(index.includes("6 tranches"), "modalité 6 tranches manquante");
+  assert.ok(/places\s+limitées/i.test(index), "places limitées manquant");
+  assert.ok(index.includes("Déposer mon dossier"), "CTA dossier manquant");
+  assert.ok(index.includes("Faculté de Gouvernance, Leadership et Management"), "pôles manquants");
+  assert.ok(index.includes("200 000 FCFA") && index.includes("300 000 FCFA"), "frais d'inscription L1 manquants");
+  const enIndex = read("en/index.html");
+  for (const fee of ["1,000,000 FCFA", "1,200,000 FCFA", "1,500,000 FCFA", "2,000,000 FCFA", "2,200,000 FCFA", "4,000,000 FCFA"]) {
+    assert.ok(enIndex.includes(fee), `tarif EN manquant : ${fee}`);
+  }
   const apropos = read("a-propos.html");
-  assert.ok(apropos.includes("en préparation"), "mention a-propos manquante");
-  assert.ok(!/(ouvr(e|ai)s?|rentrée)[^.]{0,30}(202[7-9]|20[3-9][0-9])/i.test(index + apropos), "date d'ouverture inventée");
+  assert.ok(/2026-2027/.test(apropos), "mention rentrée 2026-2027 manquante (à propos)");
 });
 
 test("site bilingue : 5 pages EN câblées (lang, base, scripts, bandeau d'action)", () => {
