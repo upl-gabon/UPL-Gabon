@@ -232,7 +232,7 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 ## 10. Journal des mises à jour
 
 **27/08/2026 (16) — lancement com rentrée (site inchangé)**
-- Site **non modifié**. Kit `docs/com/` : WhatsApp Président = hub ; pages Facebook/LinkedIn **déjà payées** à réclamer (pas à nier) ; campagne = post épinglé + événement 2026-2027 sur la page mère.
+- Site **non modifié**. Comptes neufs : Facebook, Instagram, TikTok, LinkedIn (`contact@`). WhatsApp = n° du Président. Pas de YouTube. Anciennes pages agences : ignorées, signalement plus tard. Kit : `docs/com/FAIRE_AUJOURDHUI.md`.
 - **Ne pas merger `docs/com/` sur `main`**. Aucune publication sans VALIDÉ Président.
 
 **27/08/2026 (15) — v2.5 « ton assumé, fini l'autodéfense » (retour Président)**

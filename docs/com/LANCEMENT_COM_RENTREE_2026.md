@@ -9,18 +9,17 @@ UPL : +241 02 62 19 78 / +241 07 35 95 72 · Sablière, Libreville
 
 ---
 
-## 1. Ce qui a été tranché (27/08/2026)
+## 1. Tranché (simple)
 
-- Pages Facebook / LinkedIn **déjà payées**, agences muettes → on les **réclame** (`01_PAGES_PAYEES_RECUPERATION.md`), on ne les nie pas.
-- WhatsApp Business du Président = hub. Fiche à aligner sur le site (P0b).
-- Campagne = **événement / post épinglé** sur la page mère, pas une vitrine fictive à côté.
-- Tous les réseaux **utiles au Gabon** ; on écarte X, Snapchat, Threads, Telegram, Pinterest.
-- Palier 1 public = **pré-inscriptions** (sauf Executive MBA, ouvert depuis 2022).
-- Publication : **feu vert écrit du Président** sur chaque texte.
+Voir **`FAIRE_AUJOURDHUI.md`**.
 
-Procédure comptes : `00_COMPTES_NEUFS_CONTACT_UPL.md`  
-Textes : `TEXTES_A_VALIDER.md`  
-Visuels : `visuels/`
+- Ouvrir **Facebook, Instagram, TikTok, LinkedIn** (neufs, `contact@upl-gabon.com`).
+- **WhatsApp = numéro du Président.** Pas de chaîne YouTube.
+- Anciennes pages agences : **ignorer**, signaler plus tard.
+- Palier 1 = **pré-inscriptions** (MBA ouvert depuis 2022).
+- Publication = VALIDÉ Président.
+
+Textes : `TEXTES_A_VALIDER.md` · visuels : `visuels/`
 
 ---
 
@@ -41,16 +40,9 @@ YouTube = bibliothèque des 2 films TV déjà publics. On n’y « anime » pas 
 Le compte à rebours du site reste **masqué** (`config.js → rentree.date` vide).  
 Si le Président confirme un jour (AAAA-MM-JJ), on l’ajoute **d’abord** dans les posts, **ensuite** sur le site — et seulement sur consigne.
 
-### Semaine 0 — fondations (dès que le mail contact@ est sous la main)
+### Semaine 0
 
-| Jour | Action | Qui |
-|---|---|---|
-| J0 | WhatsApp Président : coller fiche **P0b** (VALIDÉ) | Président |
-| J0 | Recenser URL + factures des pages payées ; lancer réclamation Meta / LinkedIn | secrétariat |
-| J0 | TikTok / IG / YouTube @UPLGabon : ouvrir ou réclamer, e-mail contact@ | 2 admins UPL |
-| J0 | Président valide **P0** et **P1** | Président |
-
-Pas de post tant que Semaine 0 n’est pas cochée.
+Créer FB + IG + TikTok + LinkedIn (`FAIRE_AUJOURDHUI.md`). WhatsApp = Président. Valider P0b + P1. Pas de post avant.
 
 ### Semaine 1 — présence
 
@@ -120,8 +112,6 @@ Hors périmètre de cette vague. Bascule site + com **uniquement** quand les 3 v
 
 ---
 
-## 7. Prochaine action concrète
+## 7. Prochaine action
 
-1. Valider **P0b** et mettre à jour la fiche WhatsApp du Président (aujourd’hui).
-2. Envoyer les **URL Facebook/LinkedIn payées** + factures agence → réclamation (`01_PAGES_PAYEES_RECUPERATION.md`).
-3. Dès l’accès : bio officielle + P1 **épinglé** + événement « Pré-inscriptions UPL 2026-2027 ».
+`FAIRE_AUJOURDHUI.md` — les 4 comptes, puis P1.

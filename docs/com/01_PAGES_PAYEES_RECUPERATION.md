@@ -1,9 +1,10 @@
-# Pages déjà payées — on les récupère, on ne les nie pas
+# Pages agences — plus tard
 
-**Statut :** procédure interne. Site upl-gabon.com **inchangé**.  
-**Constat (27/08/2026) :** le Président a payé des agences pour Facebook / LinkedIn (et éventuellement d’autres). Les prestataires ne répondent plus. Les pages sont **mortes**, pas inexistantes.
+**Décision du 27/08/2026 (simplifiée) :** on **ignore** ces pages pour le lancement. Comptes **neufs** : voir `FAIRE_AUJOURDHUI.md`.
 
-**Décision :** on **utilise** ces pages. On ne crée pas une deuxième vitrine pour faire semblant que les anciennes n’ont jamais existé. On ne crée pas non plus de « fausse » page campagne qui se ferait passer pour la page mère.
+Signalement Facebook / LinkedIn (pages mortes, prestataire injoignable) : **pas maintenant**.
+
+Le reste de ce fichier est archivé si l’on reprend une réclamation un jour.
 
 ---
 

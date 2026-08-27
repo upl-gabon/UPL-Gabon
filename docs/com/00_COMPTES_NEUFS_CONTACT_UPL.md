@@ -1,4 +1,6 @@
-# Comptes officiels UPL — création neuve
+# Comptes officiels UPL — détail (si besoin)
+
+**La feuille utile est `FAIRE_AUJOURDHUI.md`.** Ce fichier = détail. WhatsApp = n° du Président. FB / IG / TikTok / LinkedIn neufs. Anciennes pages : ignorées.
 
 **Statut :** procédure interne — **ne pas merger sur `main`** (GitHub Pages publie la racine).  
 **Décision :** 27/08/2026 — le Président a **payé** des pages (Facebook, LinkedIn…) ; les agences ne répondent plus.  

@@ -1,0 +1,31 @@
+UPL — pack Facebook (page neuve)
+================================
+Site upl-gabon.com NON modifié.
+Anciennes pages agences : ignorées.
+
+1. COUVERTURE (tout de suite)
+   Remplacer la bannière « 66 ans / indépendance » par :
+   couverture-facebook-1640x624.jpg
+   (Photo de profil : garder le logo UPL)
+
+2. PUBLICATIONS (image JPG + coller le texte .txt)
+   Ordre, pas tout le même jour :
+   a) 01-preinscriptions  → épingler en haut de la Page
+   b) 02-licence1
+   c) 03-mba
+   d) 04-tarifs
+   e) 05-poles
+   f) 06-contact
+
+   Les PDF (dossier pdf/) : à joindre en document si besoin.
+   Facebook met mieux en avant les JPG.
+
+3. NE PAS PUBLIER (Drive)
+   Dossier Ecobank / 80 M / annexes bancaires
+   Cours complets MBA (sauf extrait autorisé plus tard)
+   Facture Namecheap
+   Vidéo Rentrée 2024
+
+4. Films TV autorisés (lien YouTube, pas de fichier)
+   https://youtu.be/jh_iCTJuLKA
+   https://youtu.be/FAKHfv8nN7I
