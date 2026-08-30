@@ -11,7 +11,7 @@ Expéditeur : **contact@upl-gabon.com** · Répondre à : Présidence (+241 05 0
 2. **Ordre d'envoi** (priorités du Président) : T1 Management → T2 Ingénieur → T3 Prépa → T4 Santé/Médecine → T5 Politique.
 3. **CCI obligatoire** : mettre votre propre adresse en « À : » et la tranche complète en « Cci : ». Jamais de destinataires visibles.
 4. **Objet** : reprendre l'objet de la tranche (personnalisé par catégorie = meilleur taux d'ouverture).
-5. **Pièce jointe UNE SEULE** : `UPL_Flyer_Partenariats.pdf` (léger, < 1 Mo). Pas de liens multiples dans le corps (spam), le site est dans la signature.
+5. **Pièce jointe UNE SEULE** : `UPL_Presentation_Partenariats.pdf` (10 slides, 98 Ko — présentation UPL complète). Pas de liens multiples dans le corps (spam), le site est dans la signature.
 6. **Texte brut** (pas de mise en forme HTML lourde), relire les crochets [ÉCOLE] avant envoi.
 7. **Relance mercredi 2 septembre au matin** (modèle §4) aux vagues sans réponse — c'est la relance qui produit les réponses.
 8. **Tableau de suivi** : date, école, vague, réponse O/N, prochaine action. Chaque réponse → proposition de créneau Teams dans la journée (3 créneaux proposés).
@@ -48,7 +48,7 @@ Expéditeur : **contact@upl-gabon.com** · Répondre à : Présidence (+241 05 0
 > Tél. +241 062 62 19 78 / +241 077 35 95 72
 > contact@upl-gabon.com · www.upl-gabon.com
 >
-> *PJ : plaquette de présentation UPL (PDF)*
+> *PJ : présentation UPL (PDF, 10 pages)*
 
 ### 2bis. Accroches par catégorie (remplacer la phrase entre **[ ]**)
 
@@ -149,7 +149,7 @@ Expéditeur : **contact@upl-gabon.com** · Répondre à : Présidence (+241 05 0
 ## 5. Règles anti-spam (important pour la délivrabilité)
 
 - 10 destinataires max en CCI par mail ✓ (nos tranches : 6 à 9)
-- 1 seule pièce jointe PDF, moins de 1 Mo ✓ (le flyer)
+- 1 seule pièce jointe PDF, moins de 1 Mo ✓ (la présentation UPL, 98 Ko)
 - Texte brut, pas de mots en MAJUSCULES ni de points d'exclamation multiples
 - Ne pas mettre 3 liens dans le corps ; le site est en signature uniquement
 - Passer par la messagerie **contact@upl-gabon.com** (pas un Gmail) — domaine authentifié
