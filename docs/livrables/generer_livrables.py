@@ -19,7 +19,7 @@ from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))          # racine du repo
 LOGO = os.path.join(ROOT, "assets", "img", "logo-upl.png")
-OUT1 = os.path.join(HERE, "UPL_Contre-proposition_Devis_Campus_MATRIX_GROUP.pdf")
+OUT1 = os.path.join(HERE, "UPL_Contre-proposition_Devis_Campus_MATRIX_GROUP_REV2.pdf")
 OUT2 = os.path.join(HERE, "UPL_Plan_de_Communication_Rentree_2026-2027.pdf")
 
 # ---------------------------------------------------------------- charte
@@ -180,13 +180,13 @@ dq = [
         ("03.03", "Traitement anticorrosion (primaire + finition polyuréthane)", "m2", 750, 6_500, 5_000)]),
     ("LOT 04", "PLANCHERS ET GALERIES DE CIRCULATION", [
         ("04.01", "Platelage contreplaqué structural phénolique ép. 19 mm", "m2", 504, 19_000, 13_500),
-        ("04.02", "Galeries simple appui (suppression des porte-à-faux 1,60 m)", "kg", 2_800, 4_400, 2_200),
+        ("04.02", "Galeries simple appui (suppression des porte-à-faux 1,60 m)", "kg", 2_800, 4_400, 2_150),
         ("04.03", "Platelage et étanchéité technique des galeries extérieures", "m2", 84, 32_000, 22_000)]),
     ("LOT 05", "ESCALIERS MÉTALLIQUES EXTÉRIEURS", [
         ("05.01", "Escalier métallique apparent (limons, marches, paliers)", "U", 3, 4_200_000, 2_400_000)]),
     ("LOT 06", "FAÇADES ET VITRERIE EXTÉRIEURE", [
-        ("06.01", "Châssis aluminium pour façades vitrées et ouvrants", "m2", 160, 115_000, 66_000),
-        ("06.02", "Vitrage de sécurité feuilleté (classe ajustée aux standards locaux)", "m2", 160, 82_000, 50_000),
+        ("06.01", "Châssis aluminium pour façades vitrées et ouvrants", "m2", 160, 115_000, 63_000),
+        ("06.02", "Vitrage de sécurité feuilleté (classe ajustée aux standards locaux)", "m2", 160, 82_000, 47_000),
         ("06.03", "Portes vitrées d'accès avec quincaillerie", "U", 9, 280_000, 170_000)]),
     ("LOT 07", "CLOISONS INTÉRIEURES ACOUSTIQUES", [
         ("07.01", "Cloisons bois double parement (cp 8 mm + ossature + laine)", "m2", 340, 24_000, 15_000)]),
@@ -204,12 +204,12 @@ dq = [
         ("12.01", "Revêtement de sol PVC acoustique U4P3 et plinthes assorties", "m2", 504, 17_500, 10_000)]),
     ("LOT 13", "ÉLECTRICITÉ - COURANTS FORTS", [
         ("13.01", "TGBT, tableaux divisionnaires, câblage et chemins de câbles", "Ens.", 1, 5_500_000, 4_200_000),
-        ("13.02", "Appareillage complet (prises, interrupteurs) et luminaires LED", "Ens.", 1, 4_800_000, 3_400_000)]),
+        ("13.02", "Appareillage complet (prises, interrupteurs) et luminaires LED", "Ens.", 1, 4_800_000, 3_105_000)]),
     ("LOT 14", "COURANTS FAIBLES ET RÉSEAUX NUMÉRIQUES", [
         ("14.01", "Réseau informatique RJ45, baie de brassage, bornes Wi-Fi", "Ens.", 1, 3_800_000, 2_800_000),
         ("14.02", "Vidéosurveillance, contrôle d'accès, pré-équipement audiovisuel", "Ens.", 1, 3_500_000, 2_200_000)]),
-    ("LOT 15", "CLIMATISATION", [
-        ("15.01", "Climatiseurs split inverter par salle", "U", 9, 680_000, 450_000)]),
+    ("LOT 15", "CLIMATISATION - RÉTABLIE INTÉGRALEMENT DANS LE MARCHÉ", [
+        ("15.01", "Climatiseurs split inverter par salle : fourniture, pose, accessoires, protections électriques, évacuations et mise en service", "U", 9, 680_000, 680_000)]),
     ("LOT 16", "PLOMBERIE ET SANITAIRES", [
         ("16.01", "Réseaux EF, évacuations EU/EV et blocs sanitaires complets", "Ens.", 1, 6_500_000, 4_500_000)]),
     ("LOT 17", "SÉCURITÉ INCENDIE (SSI)", [
@@ -219,11 +219,11 @@ dq = [
     ("LOT 19", "BRANDING - SORTI DU MARCHÉ (réalisé par le prestataire graphique de l'UPL)", [
         ("19.01", "Films adhésifs, logos et signalétique directionnelle", "Ens.", 1, 3_500_000, 0)]),
     ("LOT 20", "GARDE-CORPS MÉTALLIQUES", [
-        ("20.01", "Garde-corps contemporains pour galeries et escaliers", "ml", 80, 48_000, 30_000)]),
+        ("20.01", "Garde-corps contemporains pour galeries et escaliers", "ml", 80, 48_000, 28_000)]),
     ("LOT 21", "AMÉNAGEMENTS EXTÉRIEURS", [
         ("21.01", "Nivellement des abords, dallage piéton, caniveau, éclairage", "Ens.", 1, 4_500_000, 2_800_000)]),
-    ("LOT 22", "MOBILIER PÉDAGOGIQUE - SORTI DU MARCHÉ (plan d'équipement UPL distinct)", [
-        ("22.01", "Tables, chaises, bureau enseignant, tableaux - 9 salles", "Ens.", 1, 8_500_000, 0)]),
+    ("LOT 22", "MOBILIER PÉDAGOGIQUE DES 9 SALLES - RÉTABLI DANS LE MARCHÉ", [
+        ("22.01", "Tables, chaises étudiants, bureau enseignant et tableaux pour 9 salles", "Ens.", 1, 8_500_000, 8_500_000)]),
     ("LOT 23", "ESSAIS, NETTOYAGE ET RÉCEPTION", [
         ("23.01", "Nettoyage de fin de chantier, essais techniques et DOE", "Ens.", 1, 1_200_000, 1_000_000)]),
 ]
@@ -248,19 +248,30 @@ for code, title, lines in dq:
     lot_totals.append((code, title, st))
     grand += st
 
-TVA = round(grand * 0.18)
-TTC = grand + TVA
-assert grand == 168_525_000, f"HT inattendu: {grand}"
-assert TTC == 198_859_500, f"TTC inattendu: {TTC}"
+TRAVAUX = grand
+FG = round(TRAVAUX * 0.05)
+TOT_HT = TRAVAUX + FG
+TVA = round(TOT_HT * 0.18)
+TTC = TOT_HT + TVA
+assert TRAVAUX == 177_540_000, f"Travaux HT inattendus: {TRAVAUX}"
+assert FG == 8_877_000, f"FG inattendu: {FG}"
+assert TOT_HT == 186_417_000, f"Total HT inattendu: {TOT_HT}"
+assert TVA == 33_555_060, f"TVA inattendue: {TVA}"
+assert TTC == 219_972_060, f"TTC inattendu: {TTC}"
+rows.append(["", P("MONTANT TOTAL TRAVAUX RÉVISÉS HT", "cellb"), "", "", "", "",
+             P(fmt(TRAVAUX), "cellrb")])
+rows.append(["", P("Frais généraux et aléas (5 %)", "cellb"), "", "", "", "",
+             P(fmt(FG), "cellrb")])
 rows.append(["", P("MONTANT TOTAL HORS TAXES (HT)", "cellb"), "", "", "", "",
-             P(fmt(grand), "cellrb")])
+             P(fmt(TOT_HT), "cellrb")])
 rows.append(["", P("TVA Gabon 18 %", "cellb"), "", "", "", "", P(fmt(TVA), "cellrb")])
 rows.append(["", P("MONTANT TOTAL TTC (FCFA)", "cellb"), "", "", "", "",
              P(fmt(TTC), "cellrb")])
 
 dq_extra = [
-    ("BACKGROUND", (0, len(rows)-3), (-1, len(rows)-1), GOLD_LT),
-    ("LINEABOVE", (0, len(rows)-3), (-1, len(rows)-3), 0.9, GOLD),
+    ("BACKGROUND", (0, len(rows)-5), (-1, len(rows)-1), GOLD_LT),
+    ("LINEABOVE", (0, len(rows)-5), (-1, len(rows)-5), 0.9, GOLD),
+    ("SPAN", (0, len(rows)-5), (5, len(rows)-5)), ("SPAN", (0, len(rows)-4), (5, len(rows)-4)),
     ("SPAN", (0, len(rows)-3), (5, len(rows)-3)), ("SPAN", (0, len(rows)-2), (5, len(rows)-2)),
     ("SPAN", (0, len(rows)-1), (5, len(rows)-1)),
 ]
@@ -273,16 +284,16 @@ for i, r in enumerate(rows):
 
 def build_doc1():
     st = []
-    st += [P("Négociation de marché de travaux - réponse ferme et argumentée", "kicker"),
-           P("Contre-proposition de devis", "h1"),
+    st += [P("Négociation de marché de travaux - proposition révisée n° 2 (décision de la Présidence)", "kicker"),
+           P("Contre-proposition de devis - révisée", "h1"),
            P("Bâtiment universitaire R+2 - environ 504 m2 - campus UPL de Sablière, Libreville", "body"),
            Spacer(1, 4)]
     st += [styled_table([
         [P("Émetteur", "cellb"), P("Université Privée de Libreville (UPL) - Présidence", "cell"),
          P("Votre référence", "cellb"), P("Devis quantitatif et estimatif « DEVIS CAMPUS UPL - MATRIX GROUP » du 01/09/2026", "cell")],
         [P("Destinataire", "cellb"), P("MATRIX GROUP, Libreville", "cell"),
-         P("Notre référence", "cellb"), P("UPL/DC/2026-08-30/C01", "cell")],
-        [P("Objet", "cellb"), P("Contre-proposition chiffrée et conditions de marché", "cell"),
+         P("Notre référence", "cellb"), P("UPL/DC/2026-08-30/C02 (révision n° 2)", "cell")],
+        [P("Objet", "cellb"), P("Contre-proposition révisée et conditions de marché", "cell"),
          P("Date", "cellb"), P("Libreville, le 30 août 2026", "cell")],
     ], [2.1*cm, 6.4*cm, 2.1*cm, 6.4*cm], header=False, zebra=False,
         extra=[("BACKGROUND", (0, 0), (0, -1), BLUE_LT),
@@ -294,27 +305,35 @@ def build_doc1():
     st += section("1. Résumé exécutif")
     st += [P("L'UPL prend acte du devis quantitatif et estimatif (DQE) établi le 01/09/2026 pour la "
              "construction de son bâtiment universitaire R+2 d'environ 504 m2 à Sablière (Libreville), "
-             "arrêté à <b>409 672 872 FCFA TTC</b>. Après analyse détaillée ligne à ligne au regard des "
-             "bases de prix publiques applicables au Gabon, l'enveloppe budgétaire validée par la "
-             "Présidence de l'UPL étant fixée à <b>200 000 000 FCFA TTC maximum</b>, l'UPL soumet la "
-             "contre-proposition suivante, qui préserve l'intégralité du programme fonctionnel "
-             "(9 salles de cours climatisées, blocs sanitaires, salles techniques et numériques, "
-             "aménagements extérieurs).")]
+             "arrêté à <b>409 672 872 FCFA TTC</b>. Après examen détaillé et arbitrage de la "
+             "Présidence, l'enveloppe validée est portée à <b>220 000 000 FCFA TTC maximum</b>. La "
+             "présente révision n° 2 rétablit intégralement dans le marché la climatisation des "
+             "9 salles (fourniture, pose et mise en service) et le mobilier pédagogique complet, "
+             "et s'établit à <b>219 972 060 FCFA TTC</b>, soit une économie de "
+             "<b>189 700 812 FCFA (-46,3 %)</b> sur le devis initial, en conservant l'intégralité "
+             "du programme fonctionnel : 9 salles de cours climatisées et meublées, blocs "
+             "sanitaires, salles techniques et numériques, aménagements extérieurs.")]
     st += [styled_table([
-        [P("", "cell"), P("Devis reçu", "cellb"), P("Contre-proposition UPL", "cellb"), P("Écart", "cellb")],
+        [P("Rubrique", "cellb"), P("Devis reçu", "cellb"), P("Révision n° 2 (UPL)", "cellb"), P("Écart", "cellb")],
+        [P("Travaux HT", "cell"), P("330 648 000 FCFA", "cellr"),
+         P("177 540 000 FCFA", "cellr"), P("- 46,3 %", "cellr")],
+        [P("Frais généraux et aléas (5 %)", "cell"), P("16 532 400 FCFA", "cellr"),
+         P("8 877 000 FCFA (base recalibrée)", "cellr"), P("- 46,3 %", "cellr")],
         [P("Montant total HT", "cell"), P("347 180 400 FCFA", "cellr"),
-         P(f"{fmt(grand)} FCFA", "cellr"), P("- 51,5 %", "cellr")],
-        [P("Frais généraux 5 %", "cell"), P("16 532 400 FCFA", "cellr"),
-         P("intégrés aux prix unitaires", "cellr"), P("- 100 %", "cellr")],
+         P("186 417 000 FCFA", "cellr"), P("- 46,3 %", "cellr")],
         [P("TVA 18 %", "cell"), P("62 492 472 FCFA", "cellr"),
-         P(f"{fmt(TVA)} FCFA", "cellr"), P("", "cellr")],
+         P("33 555 060 FCFA", "cellr"), P("", "cellr")],
         [P("MONTANT TOTAL TTC", "cellb"), P("409 672 872 FCFA", "cellrb"),
-         P(f"<b>{fmt(TTC)} FCFA</b>", "cellrb"), P("<b>- 210 813 372 FCFA</b>", "cellrb")],
-        [P("Ratio HT / m2 (504 m2)", "cell"), P("689 000 FCFA/m2", "cellr"),
-         P("334 000 FCFA/m2", "cellr"), P("- 51,5 %", "cellr")],
-    ], [4.4*cm, 4.3*cm, 4.6*cm, 3.7*cm],
+         P("<b>219 972 060 FCFA</b>", "cellrb"), P("<b>- 189 700 812 FCFA</b>", "cellrb")],
+        [P("Ratio total HT / m2 (504 m2)", "cell"), P("689 000 FCFA/m2", "cellr"),
+         P("370 000 FCFA/m2", "cellr"), P("- 46,3 %", "cellr")],
+        [P("Marge sous le plafond de 220 000 000 FCFA TTC", "cellb"), P("", "cellr"),
+         P("27 940 FCFA", "cellrb"), P("", "cellr")],
+    ], [5.0*cm, 3.9*cm, 4.7*cm, 3.4*cm],
         extra=[("BACKGROUND", (0, 5), (-1, 5), GOLD_LT),
-               ("LINEABOVE", (0, 5), (-1, 5), 0.9, GOLD)])]
+               ("LINEABOVE", (0, 5), (-1, 5), 0.9, GOLD),
+               ("BACKGROUND", (0, 7), (-1, 7), GOLD_LT),
+               ("LINEABOVE", (0, 7), (-1, 7), 0.9, GOLD)])]
     st += [P("Le détail des 23 lots figure en section 4 ; la contre-proposition est transmise pour "
              "acceptation sous 10 jours ouvrés.", "note")]
 
@@ -325,7 +344,7 @@ def build_doc1():
         [P("Total HT travaux (lots 01 à 23)", "cell"), P("330 648 000", "cellr"),
          P("Base de calcul conservée pour la comparaison ligne à ligne", "cell")],
         [P("Frais généraux et aléas (5 %)", "cell"), P("16 532 400", "cellr"),
-         P("Double emploi : les prix unitaires du DQE sont réputés « tout compris »", "cell")],
+         P("Admis dans la révision n° 2 à 5 % d'une base recalibrée : 8 877 000", "cell")],
         [P("Montant total HT", "cell"), P("347 180 400", "cellr"), P("", "cell")],
         [P("TVA 18 %", "cell"), P("62 492 472", "cellr"), P("Taux conforme à la législation gabonaise", "cell")],
         [P("Montant total TTC", "cellb"), P("409 672 872", "cellrb"),
@@ -351,31 +370,37 @@ def build_doc1():
          P("28 000 kg pour 504 m2 = 55,6 kg/m2", "cell"),
          P("55,6 kg/m2", "cellr"), P("optimisable à 47 kg/m2 par étude d'exécution, sans réduction de portée ni de sécurité", "cellr")],
         [P("Frais généraux 5 %", "cell"),
-         P("usage local : incorporés aux prix unitaires", "cell"),
-         P("16 532 400 FCFA", "cellr"), P("à intégrer", "cellr")],
+         P("usage local : 5 % admis, calculés sur une base de travaux recalibrée", "cell"),
+         P("16 532 400 FCFA", "cellr"), P("ramenés à 8 877 000 FCFA", "cellr")],
     ], [4.0*cm, 6.2*cm, 3.2*cm, 3.6*cm])]
     st += [Spacer(1, 4),
-           P("<b>Ce que la contre-proposition conserve intégralement :</b> la surface développée de "
+           P("<b>Ce que la révision n° 2 conserve intégralement :</b> la surface développée de "
              "504 m2, les 9 salles de cours, l'ossature acier S275 avec traitement anticorrosion, la "
-             "climatisation par salle, les réseaux informatiques et la vidéosurveillance, la sécurité "
-             "incendie, les aménagements extérieurs et la livraison avec DOE. "
+             "climatisation par salle (9 splits inverter, 6 120 000 FCFA HT, fourniture, pose, "
+             "accessoires, protections électriques, évacuations et mise en service comprises), le "
+             "mobilier complet des 9 salles (8 500 000 FCFA HT), les réseaux informatiques et la "
+             "vidéosurveillance, la sécurité incendie, les aménagements extérieurs et la livraison "
+             "avec dossier des ouvrages exécutés. "
              "<b>Ce qu'elle ajuste :</b> (i) le prix de l'acier au niveau d'un double de la base "
              "publique, intégrant import, finition et marge d'entrepreneur ; (ii) le métré structurel, "
              "optimisé par l'étude d'exécution ; (iii) les porte-à-faux de 1,60 m remplacés par des "
              "galeries sur simple appui, à surface de circulation équivalente ; (iv) le classement du "
-             "vitrage ajusté aux standards locaux ; (v) les lots 19 (branding) et 22 (mobilier), que "
-             "l'UPL traite en direct avec ses propres prestataires ; (vi) la suppression de la ligne "
-             "« frais généraux et aléas » au profit de prix unitaires tout compris.")]
+             "vitrage ajusté aux standards locaux ; (v) le lot 19 (branding), seul, reste traité en "
+             "direct par le prestataire graphique de l'UPL ; (vi) les frais généraux et aléas "
+             "maintenus à 5 %, mais calculés sur la base de travaux recalibrée (8 877 000 FCFA "
+             "au lieu de 16 532 400 FCFA).")]
 
     # 4. DQE contre-proposition
     st += section("4. Devis quantitatif et estimatif - contre-proposition UPL",
                   "Prix unitaires cibles en FCFA hors taxes. Quantités ajustées après optimisation du métré (notes en tête de lot).")
     st += [styled_table(rows, [1.25*cm, 6.15*cm, 0.95*cm, 1.35*cm, 1.75*cm, 1.75*cm, 2.1*cm],
                         extra=dq_extra)]
-    st += [P("Montant total TTC de la contre-proposition : <b>198 859 500 FCFA</b> "
-             "(168 525 000 FCFA HT + TVA 18 %), soit moins de 1 % sous l'enveloppe de 200 000 000 FCFA "
-             "TTC validée par la Présidence. Les prix « hors marché » (lots 19 et 22) sont retirés du "
-             "périmètre et traités directement par l'UPL.", "small"),
+    st += [P("Montant total TTC de la révision n° 2 : <b>219 972 060 FCFA</b> "
+             "(travaux révisés 177 540 000 FCFA HT + frais généraux et aléas 5 % : 8 877 000 FCFA, "
+             "soit 186 417 000 FCFA HT + TVA 18 %), laissant une marge de <b>27 940 FCFA</b> sous le "
+             "plafond de 220 000 000 FCFA TTC validé par la Présidence. Le lot 19 (branding) seul "
+             "reste hors marché et est traité directement par l'UPL ; la climatisation (lot 15) et le "
+             "mobilier des 9 salles (lot 22) sont rétablis intégralement.", "small"),
            P("Nota : l'UPL étudie avec son conseil fiscal l'éligibilité du projet à des régimes "
              "d'exonération (enseignement supérieur privé, code des investissements). Le montant "
              "ci-dessus intègre la TVA à 18 % en l'état actuel de la réglementation.", "note")]
@@ -383,53 +408,34 @@ def build_doc1():
     # 5. Variante phasage
     st += section("5. Variante de phasage (si préférence pour une exécution en deux temps)")
     st += [styled_table([
-        [P("Phase", "cellb"), P("Contenu", "cellb"), P("HT (FCFA)", "cellrb"), P("TTC indicatif (FCFA)", "cellrb")],
+        [P("Phase", "cellb"), P("Contenu", "cellb"), P("Travaux HT (FCFA)", "cellrb"), P("TTC indicatif (FCFA)", "cellrb")],
         [P("Phase 1 - reprise 2026/2027", "cell"),
-         P("RDC + R+1 entièrement achevés et opérationnels (6 salles, sanitaires, locaux "
+         P("RDC + R+1 entièrement achevés, meublés et climatisés (6 salles, sanitaires, locaux "
            "techniques), structure calculée pour recevoir le R+2 ultérieurement", "cell"),
-         P("120 750 000", "cellr"), P("≈ 142 485 000", "cellrb")],
+         P("127 500 000", "cellr"), P("157 972 500", "cellrb")],
         [P("Phase 2 - croissance", "cell"),
          P("Achèvement du R+2 (3 salles complémentaires), finitions et vitrages définitifs", "cell"),
-         P("47 775 000", "cellr"), P("≈ 56 374 500", "cellrb")],
+         P("50 040 000", "cellr"), P("61 999 560", "cellrb")],
         [P("TOTAL phasé", "cellb"), P("Identique au programme complet", "cellb"),
-         P("168 525 000", "cellr"), P("198 859 500", "cellrb")],
+         P("177 540 000", "cellr"), P("219 972 060", "cellrb")],
     ], [3.4*cm, 8.3*cm, 2.8*cm, 2.9*cm], extra=[("BACKGROUND", (0, 3), (-1, 3), GOLD_LT)])]
 
     # 6. Conditions
     st += section("6. Conditions de marché proposées par l'UPL")
     st += [styled_table([
         [P("Délai d'exécution", "cellb"), P("5 mois à compter de l'ordre de service, pénalités de retard de 1/1000 du montant TTC par jour calendaire, plafonnées à 10 %", "cell")],
-        [P("Modalités de paiement", "cellb"), P("25 % à la commande (contre garantie bancaire de bonne exécution de 10 %) · 30 % à la livraison de l'ossature sur site · 25 % à la mise hors d'eau-hors d'air · 15 % à l'achèvement des lots techniques · 5 % à la réception provisoire (retenue de garantie libérée 12 mois après réception)", "cell")],
-        [P("Avantages offerts à l'entreprise", "cellb"), P("Paiements ponctuels par virement ou mobile money professionnel, accès permanent au chantier, interlocuteur unique (Présidence), perspective d'un marché de maintenance pluriannuel et de la phase 2 sans nouvelle mise en concurrence si le présent marché est exécuté dans les délais et le budget", "cell")],
-        [P("Réceptions", "cellb"), P("Réception partielle à la fin de chaque phase ; essais techniques et dossier des ouvrages exécutés (DOE) exigés avant solde", "cell")],
+        [P("Modalités de paiement", "cellb"), P("<b>25 %</b> d'avance de démarrage à la commande (contre garantie bancaire de bonne exécution de 10 %) · <b>50 %</b> à mi-chantier · <b>25 %</b> à la livraison", "cell")],
+        [P("Avantages offerts à l'entreprise", "cellb"), P("Paiements ponctuels par virement ou mobile money professionnel, accès permanent au chantier, interlocuteur unique (Présidence), perspective d'un marché de maintenance pluriannuel et d'un accès prioritaire à la phase 2 si le présent marché est exécuté dans les délais et le budget", "cell")],
         [P("Réponse attendue", "cellb"), P("Acceptation ou contre-offre argumentée ligne à ligne sous <b>10 jours ouvrés</b>", "cell")],
     ], [4.1*cm, 13.1*cm], header=False, zebra=False,
         extra=[("BACKGROUND", (0, 0), (0, -1), BLUE_LT), ("VALIGN", (0, 0), (-1, -1), "TOP")])]
 
-    # 7. Plan B
-    st += section("7. Consultation élargie engagée en parallèle (mise en concurrence)",
-                  "Liste indicative établie à partir des annuaires professionnels du BTP gabonais ; chaque candidat sera soumis au même DQE.")
-    st += [P("À défaut d'accord dans le délai imparti, l'UPL engagera la consultation des entreprises "
-             "ci-dessous sur la base du présent DQE, le marché étant attribué au mieux-disant "
-             "technique et financier après visite de site et vérification des références "
-             "(attestations fiscales et sociales, capacité financière, chantiers en cours).")]
-    st += [styled_table([
-        [P("Entreprise", "cellb"), P("Spécialité", "cellb"), P("Implantation", "cellb")],
-        [P("STMG - Société de Transformation Métallique Gabonaise", "cell"), P("Structure métallique, transformation acier", "cell"), P("Libreville", "cell")],
-        [P("Gabon Bâtiment", "cell"), P("Génie civil et construction métallique", "cell"), P("Libreville", "cell")],
-        [P("SIEC BTP", "cell"), P("Bâtiment - tous corps d'état", "cell"), P("Libreville (Nzeng-Ayong)", "cell")],
-        [P("SOCO BTP", "cell"), P("Construction de bâtiments et travaux publics", "cell"), P("Libreville", "cell")],
-        [P("Promobat Gabon", "cell"), P("Bâtiment et finitions", "cell"), P("Libreville (Glass)", "cell")],
-        [P("Kabi BTP", "cell"), P("Bâtiment", "cell"), P("Libreville (Bord de mer)", "cell")],
-        [P("ELIK Building Company", "cell"), P("Bâtiment", "cell"), P("Owendo", "cell")],
-        [P("Autres : Africa BTP, Pradi BTP, SDCG-BTP, GIM BTP...", "cell"), P("BTP", "cell"), P("Libreville", "cell")],
-    ], [6.2*cm, 6.5*cm, 4.5*cm])]
-
     st += [Spacer(1, 10),
            P("L'UPL souhaite vivement aboutir avec MATRIX GROUP, dont le dossier technique a retenu "
-             "notre attention. La présente contre-proposition, établie sur des bases publiques et "
-             "vérifiables, a pour seul objectif de ramener le marché dans l'enveloppe validée tout en "
-             "sécurisant l'entreprise sur ses paiements et son carnet de commandes. Nous restons à "
+             "notre attention. La présente révision n° 2, arrêtée à 219 972 060 FCFA TTC après "
+             "arbitrage de la Présidence, rétablit la climatisation et le mobilier dans le marché et "
+             "a pour seul objectif de conclure dans l'enveloppe validée tout en sécurisant "
+             "l'entreprise sur ses paiements et son carnet de commandes. Nous restons à "
              "disposition pour une réunion de chantier à Sablière dans la semaine suivant la réception."),
            Spacer(1, 14)]
     st += [Table([[P("Le Président-Fondateur de l'UPL", "bodyc"),
@@ -442,7 +448,7 @@ def build_doc1():
              "annuaires professionnels du BTP au Gabon (Filao, AfricanNuaire). "
              "Document établi le 30 août 2026 - valable 21 jours.", "note")]
 
-    doc = Doc(OUT1, "UPL - Contre-proposition de devis - campus de Sablière - confidentiel")
+    doc = Doc(OUT1, "UPL - Contre-proposition de devis, révision n° 2 - campus de Sablière - confidentiel")
     st = [x for x in st]
     doc.build(st)
     return doc
