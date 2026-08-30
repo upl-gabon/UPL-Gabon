@@ -19,7 +19,7 @@ from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))          # racine du repo
 LOGO = os.path.join(ROOT, "assets", "img", "logo-upl.png")
-OUT1 = os.path.join(HERE, "UPL_Contre-proposition_Devis_Campus_MATRIX_GROUP_REV2.pdf")
+OUT1 = os.path.join(HERE, "UPL_Contre-proposition_Devis_Campus_MATRIX_GROUP_REV3.pdf")
 OUT2 = os.path.join(HERE, "UPL_Plan_de_Communication_Rentree_2026-2027.pdf")
 
 # ---------------------------------------------------------------- charte
@@ -284,7 +284,7 @@ for i, r in enumerate(rows):
 
 def build_doc1():
     st = []
-    st += [P("Négociation de marché de travaux - proposition révisée n° 2 (décision de la Présidence)", "kicker"),
+    st += [P("Négociation de marché de travaux - proposition révisée n° 3 (délai d'exécution 2 mois - décision de la Présidence)", "kicker"),
            P("Contre-proposition de devis - révisée", "h1"),
            P("Bâtiment universitaire R+2 - environ 504 m2 - campus UPL de Sablière, Libreville", "body"),
            Spacer(1, 4)]
@@ -292,7 +292,7 @@ def build_doc1():
         [P("Émetteur", "cellb"), P("Université Privée de Libreville (UPL) - Présidence", "cell"),
          P("Votre référence", "cellb"), P("Devis quantitatif et estimatif « DEVIS CAMPUS UPL - MATRIX GROUP » du 01/09/2026", "cell")],
         [P("Destinataire", "cellb"), P("MATRIX GROUP, Libreville", "cell"),
-         P("Notre référence", "cellb"), P("UPL/DC/2026-08-30/C02 (révision n° 2)", "cell")],
+         P("Notre référence", "cellb"), P("UPL/DC/2026-08-30/C03 (révision n° 3)", "cell")],
         [P("Objet", "cellb"), P("Contre-proposition révisée et conditions de marché", "cell"),
          P("Date", "cellb"), P("Libreville, le 30 août 2026", "cell")],
     ], [2.1*cm, 6.4*cm, 2.1*cm, 6.4*cm], header=False, zebra=False,
@@ -334,8 +334,11 @@ def build_doc1():
                ("LINEABOVE", (0, 5), (-1, 5), 0.9, GOLD),
                ("BACKGROUND", (0, 7), (-1, 7), GOLD_LT),
                ("LINEABOVE", (0, 7), (-1, 7), 0.9, GOLD)])]
-    st += [P("Le détail des 23 lots figure en section 4 ; la contre-proposition est transmise pour "
-             "acceptation sous 10 jours ouvrés.", "note")]
+    st += [P("Décision de la Présidence du 30 août 2026 : le délai d'exécution est fixé à <b>2 mois "
+             "maximum</b>, avec réception partielle de la tranche A (RDC) à 6 semaines, afin que les "
+             "cours puissent démarrer dès septembre dans une partie du bâtiment. Le détail des 23 "
+             "lots figure en section 4 ; la contre-proposition est transmise pour acceptation sous "
+             "10 jours ouvrés.", "note")]
 
     # 2. Structure du devis reçu
     st += section("2. Rappel de la structure du devis reçu")
@@ -344,7 +347,7 @@ def build_doc1():
         [P("Total HT travaux (lots 01 à 23)", "cell"), P("330 648 000", "cellr"),
          P("Base de calcul conservée pour la comparaison ligne à ligne", "cell")],
         [P("Frais généraux et aléas (5 %)", "cell"), P("16 532 400", "cellr"),
-         P("Admis dans la révision n° 2 à 5 % d'une base recalibrée : 8 877 000", "cell")],
+         P("Admis dans la révision n° 3 à 5 % d'une base recalibrée : 8 877 000", "cell")],
         [P("Montant total HT", "cell"), P("347 180 400", "cellr"), P("", "cell")],
         [P("TVA 18 %", "cell"), P("62 492 472", "cellr"), P("Taux conforme à la législation gabonaise", "cell")],
         [P("Montant total TTC", "cellb"), P("409 672 872", "cellrb"),
@@ -358,10 +361,10 @@ def build_doc1():
     st += [styled_table([
         [P("Poste", "cellb"), P("Référence Gabon", "cellb"), P("Devis reçu", "cellb"), P("Écart", "cellb")],
         [P("Acier S275JR profilés laminés, travaillé en atelier et monté (lots 03)", "cell"),
-         P("<b>≈ 1 135 FCFA/kg</b> posé (base de prix publique CYPE Gabon, prix-construction.info, 2025)", "cell"),
+         P("<b>env. 1 135 FCFA/kg</b> posé (base de prix publique CYPE Gabon, prix-construction.info, 2025)", "cell"),
          P("4 300 FCFA/kg", "cellr"), P("× 3,8<br/>soit + 53,3 M FCFA sur le seul lot 03", "cellr")],
         [P("Main-d'œuvre charpentier métal", "cell"),
-         P("≈ 4 000 FCFA/h compagnon CP2 (même base)", "cell"),
+         P("env. 4 000 FCFA/h compagnon CP2 (même base)", "cell"),
          P("non détaillé", "cellr"), P("détail à produire", "cellr")],
         [P("Ciment CEM II 42,5", "cell"),
          P("sac 50 kg plafonné à <b>5 000 FCFA</b> Libreville/Akanda (arrêté n° 0001-23)", "cell"),
@@ -395,7 +398,7 @@ def build_doc1():
                   "Prix unitaires cibles en FCFA hors taxes. Quantités ajustées après optimisation du métré (notes en tête de lot).")
     st += [styled_table(rows, [1.25*cm, 6.15*cm, 0.95*cm, 1.35*cm, 1.75*cm, 1.75*cm, 2.1*cm],
                         extra=dq_extra)]
-    st += [P("Montant total TTC de la révision n° 2 : <b>219 972 060 FCFA</b> "
+    st += [P("Montant total TTC de la révision n° 3 : <b>219 972 060 FCFA</b> "
              "(travaux révisés 177 540 000 FCFA HT + frais généraux et aléas 5 % : 8 877 000 FCFA, "
              "soit 186 417 000 FCFA HT + TVA 18 %), laissant une marge de <b>27 940 FCFA</b> sous le "
              "plafond de 220 000 000 FCFA TTC validé par la Présidence. Le lot 19 (branding) seul "
@@ -411,7 +414,8 @@ def build_doc1():
         [P("Phase", "cellb"), P("Contenu", "cellb"), P("Travaux HT (FCFA)", "cellrb"), P("TTC indicatif (FCFA)", "cellrb")],
         [P("Phase 1 - reprise 2026/2027", "cell"),
          P("RDC + R+1 entièrement achevés, meublés et climatisés (6 salles, sanitaires, locaux "
-           "techniques), structure calculée pour recevoir le R+2 ultérieurement", "cell"),
+           "techniques), structure calculée pour recevoir le R+2 ultérieurement - tranche A (RDC) "
+           "réceptionnée en priorité à 6 semaines", "cell"),
          P("127 500 000", "cellr"), P("157 972 500", "cellrb")],
         [P("Phase 2 - croissance", "cell"),
          P("Achèvement du R+2 (3 salles complémentaires), finitions et vitrages définitifs", "cell"),
@@ -423,7 +427,7 @@ def build_doc1():
     # 6. Conditions
     st += section("6. Conditions de marché proposées par l'UPL")
     st += [styled_table([
-        [P("Délai d'exécution", "cellb"), P("5 mois à compter de l'ordre de service, pénalités de retard de 1/1000 du montant TTC par jour calendaire, plafonnées à 10 %", "cell")],
+        [P("Délai d'exécution", "cellb"), P("<b>2 mois maximum</b> à compter de l'ordre de service, en cadence renforcée (double équipe, 6 jours sur 7) : réception partielle de la tranche A (RDC, 4 à 6 salles) à <b>6 semaines</b> pour permettre la tenue des cours dès la rentrée de septembre, réception complète à 2 mois ; pénalités de retard de 1/1000 du montant TTC par jour calendaire, plafonnées à 10 %", "cell")],
         [P("Modalités de paiement", "cellb"), P("<b>25 %</b> d'avance de démarrage à la commande (contre garantie bancaire de bonne exécution de 10 %) · <b>50 %</b> à mi-chantier · <b>25 %</b> à la livraison", "cell")],
         [P("Avantages offerts à l'entreprise", "cellb"), P("Paiements ponctuels par virement ou mobile money professionnel, accès permanent au chantier, interlocuteur unique (Présidence), perspective d'un marché de maintenance pluriannuel et d'un accès prioritaire à la phase 2 si le présent marché est exécuté dans les délais et le budget", "cell")],
         [P("Réponse attendue", "cellb"), P("Acceptation ou contre-offre argumentée ligne à ligne sous <b>10 jours ouvrés</b>", "cell")],
@@ -458,7 +462,7 @@ def build_doc2():
     st = []
     st += [P("Document de pilotage - à valider par le Président avant exécution", "kicker"),
            P("Plan de communication - rentrée 2026-2027", "h1"),
-           P("Pré-inscriptions, ouverture des six filières et Executive MBA - adapté aux réalités "
+           P("Pré-inscriptions, ouverture des six filières et Executive MBA - budget intégré au crédit d'investissement de 260 M FCFA sollicité auprès d'Ecobank - adapté aux réalités "
              "du Gabon : réseaux parfois bloqués, paiements par mobile money, importance du terrain "
              "et du phoning.", "body"), Spacer(1, 4)]
 
@@ -477,7 +481,7 @@ def build_doc2():
         [P("Coût d'acquisition maximum par étudiant inscrit", "cell"), P("150 000 FCFA", "cellr")],
         [P("Délai de réponse à chaque lead (phoning / WhatsApp)", "cell"), P("moins de 48 h ouvrées", "cellr")],
     ], [11.5*cm, 5.7*cm])]
-    st += [P("Message central validé : <b>« UPL - Formez-vous aujourd'hui aux métiers de demain. »</b> "
+    st += [P("Calendrier immobilier : la rentrée 2026 démarre dans les locaux actuels de Sablière ; les cours basculent dans le nouveau bâtiment pédagogique R+2 (tranche A livrée à 6 semaines, bâtiment complet sous 2 mois) au fil des réceptions partielles.<br/>Message central validé : <b>« UPL - Formez-vous aujourd'hui aux métiers de demain. »</b> "
              "Aucune date de rentrée n'est communiquée tant qu'elle n'est pas confirmée par la Présidence.", "note")]
 
     # 2 Le Gabon en chiffres
@@ -512,7 +516,7 @@ def build_doc2():
         [P("Refus / faible usage de la carte bancaire ; l'argent mobile domine (inverse de la France)", "cell"),
          P("Airtel Money déjà intégré au site (avec justificatif + confirmation UPL) ; activation de Moov Money ; espèces acceptées uniquement au secrétariat contre reçu numéroté ; virement possible ; aucune demande de paiement par carte", "cell")],
         [P("Préférence pour la relation directe et la parole de confiance", "cell"),
-         P("Phoning structuré (section 6), journées portes ouvertes à Sablière, ambassadeurs alumni (≈ 80 cadres formés), mot du Président en rendez-vous physiques", "cell")],
+         P("Phoning structuré (section 6), journées portes ouvertes à Sablière, ambassadeurs alumni (env. 80 cadres formés), mot du Président en rendez-vous physiques", "cell")],
         [P("Presse et radio restent des médias de référence", "cell"),
          P("Encarts dans L'Union, passages radio (invitations du Président en interview), épisodes TV avec les deux films institutionnels déjà produits", "cell")],
     ], [6.3*cm, 10.9*cm])]
@@ -616,7 +620,7 @@ def build_doc2():
 
     # 8 Budget
     st += section("8. Budget : 15 000 000 FCFA (12 mois)",
-                  "Poste « communication, marketing, recrutement étudiants » du plan de financement 2026-2027.")
+                  "Poste « communication et marketing » du plan d'emploi du crédit d'investissement de 260 000 000 FCFA sollicité auprès d'Ecobank Gabon.")
     st += [styled_table([
         [P("Poste", "cellb"), P("Détail", "cellb"), P("Montant (FCFA)", "cellrb"), P("Part", "cellrb")],
         [P("Affichage et médias hors digital", "cell"), P("Affichage 4x3 Libreville/Akanda (1,9 M) · spots radio (1,2 M) · encarts presse L'Union (0,9 M)", "cell"), P("4 000 000", "cellr"), P("27 %", "cellr")],
@@ -666,10 +670,10 @@ def build_doc2():
     st += section("11. Indicateurs de pilotage et reporting")
     st += [styled_table([
         [P("Indicateur", "cellb"), P("Fréquence", "cellb"), P("Cible", "cellb")],
-        [P("Leads enregistrés (tous canaux)", "cell"), P("Hebdomadaire", "cell"), P("3 000 sur 12 mois (≈ 60/semaine)", "cell")],
+        [P("Leads enregistrés (tous canaux)", "cell"), P("Hebdomadaire", "cell"), P("3 000 sur 12 mois (env. 60/semaine)", "cell")],
         [P("Pré-inscriptions", "cell"), P("Hebdomadaire", "cell"), P("500 sur 12 mois", "cell")],
-        [P("Inscriptions confirmées et encaissées", "cell"), P("Mensuelle", "cell"), P("≥ 100 (premier palier)", "cell")],
-        [P("Coût par inscription", "cell"), P("Mensuelle", "cell"), P("≤ 150 000 FCFA", "cell")],
+        [P("Inscriptions confirmées et encaissées", "cell"), P("Mensuelle", "cell"), P("100 et plus (premier palier)", "cell")],
+        [P("Coût par inscription", "cell"), P("Mensuelle", "cell"), P("150 000 FCFA max.", "cell")],
         [P("Délai de réponse aux leads", "cell"), P("Hebdomadaire", "cell"), P("< 48 h ouvrées", "cell")],
         [P("Publications réalisées / prévues", "cell"), P("Hebdomadaire", "cell"), P("2 à 3 par semaine", "cell")],
         [P("Encaissements mobile money rapprochés", "cell"), P("Mensuelle", "cell"), P("100 % des reçus émis", "cell")],
@@ -688,8 +692,8 @@ def build_doc2():
     st += [Spacer(1, 10),
            P("Document de travail établi le 30 août 2026 pour la Présidence de l'UPL. Chiffres "
              "Gabon : DataReportal / GSMA Intelligence (Digital 2025 - Gabon) et ARCEP Gabon "
-             "(observatoire mobile T1 2025). Objectifs et budget alignés sur le plan de "
-             "développement 2026-2027 présenté au partenaire bancaire.", "note")]
+             "(observatoire mobile T1 2025). Objectifs et budget alignés sur le dossier de crédit "
+             "d'investissement de 260 000 000 FCFA (V12) présenté à Ecobank Gabon.", "note")]
 
     doc = Doc(OUT2, "UPL - Plan de communication rentrée 2026-2027 - à valider par le Président")
     doc.build(st)
