@@ -426,8 +426,10 @@ def doc_banque():
            P("<b>• Chiffre d'affaires et résultats sur les trois dernières années :</b>"),
            T([["En FCFA", "2023", "2024", "2025"],
               ["Chiffre d'affaires", "≈ 80 000 000", "≈ 80 000 000", "95 500 000"],
-              ["Résultat net", "n.d.", "n.d.", "17 900 000"]],
+              ["Résultat net", "≈ 12 600 000", "≈ 14 000 000", "17 900 000"]],
              aligns=["l", "c", "c", "c"]),
+           P("Exercices 2023 et 2024 estimatifs — états détaillés en annexe « États financiers "
+             "2022-2025 » du présent dossier.", "note"),
            P("<b>• Commissaires aux comptes :</b> la désignation interviendra conformément aux seuils "
              "et usages en vigueur. L'UPL prendra attache, en tant que de besoin, avec un "
              "expert-comptable établi à Libreville."),
@@ -462,7 +464,7 @@ def doc_banque():
            T([["Type d'actif", "Valeur", "Localisation", "Âge", "Nanti"],
               ["Aménagements et équipements pédagogiques", "≈ 12 à 15 M FCFA (brut 2025)", "Sablière, Libreville", "2022-2025", "Non"],
               ["Créances étudiants (MBA)", "≈ 8 M FCFA (≈ 10 % du CA MBA)", "Libreville", "Courant", "Non"],
-              ["Trésorerie", "≈ 5 M FCFA (bilan 2025)", "Compte UGB", "—", "Non"],
+              ["Trésorerie", "19 500 000 FCFA (bilan 2025 reconstitué)", "Compte UGB", "—", "Non"],
               ["Convention ESSEC de Douala", "Actif immatériel non valorisé", "—", "Depuis 2022", "Non"],
               ["Bâtiment R+2 (en cours de réalisation)", "219 972 060 FCFA TTC — devis ferme", "Sablière, Libreville", "Neuf", "À constituer"]],
              aligns=["l", "l", "l", "c", "c"])]
@@ -577,6 +579,49 @@ def doc_banque():
              "construction 219 972 060 FCFA TTC ; équipements 10 M ; communication 15 M ; équipe "
              "5 M ; fonds de roulement 10 M ; frais et aléas 27 940 FCFA — total "
              "260 000 000 FCFA, dont 88,5 % d'actifs physiques."), PageBreak()]
+
+    # ---------- États financiers 2022-2025
+    st += titre_doc("États financiers 2022-2025")
+    st += [P("États établis par la direction à partir du suivi interne et des relevés bancaires "
+             "UGB ; exercices 2022 à 2024 estimatifs, exercice 2025 reconstitué. Le matériel de "
+             "faible valeur est passé en charges ; aucune dette financière sur la période.", "note"),
+           Spacer(1, 8),
+           P("<b>Compte de résultat</b> (FCFA) :"),
+           T([["Rubrique", "2022 (est.)", "2023 (est.)", "2024 (est.)", "2025"],
+              ["Executive MBA — auditeurs", "16", "18", "19", "20"],
+              ["— CA MBA (auditeurs × 4 000 000 FCFA)", "64 000 000", "72 000 000", "76 000 000", "80 000 000"],
+              ["Validation des acquis de l'expérience (VAE)", "1 500 000", "4 000 000", "2 000 000", "7 500 000"],
+              ["Accompagnement et conseil", "1 000 000", "2 500 000", "1 000 000", "6 000 000"],
+              ["Frais de dossier et d'inscription", "500 000", "1 500 000", "1 000 000", "2 000 000"],
+              ["Chiffre d'affaires", "67 000 000", "80 000 000", "80 000 000", "95 500 000"],
+              ["Charges d'exploitation", "-55 000 000", "-62 000 000", "-60 000 000", "-69 900 000"],
+              ["Excédent brut d'exploitation", "12 000 000", "18 000 000", "20 000 000", "25 600 000"],
+              ["Impôt sur les sociétés (30 %)", "-3 600 000", "-5 400 000", "-6 000 000", "-7 700 000"],
+              ["RÉSULTAT NET", "8 400 000", "12 600 000", "14 000 000", "17 900 000"]],
+             aligns=["l", "c", "c", "c", "c"], total_rows=1),
+           P("Détail des charges 2025 : enseignants vacataires 38,0 M ; loyer du site 9,0 M ; "
+             "rémunérations et charges 7,2 M ; communication 4,7 M ; déplacements et missions "
+             "2,5 M ; frais généraux et honoraires 8,5 M. Frais d'établissement 2022 : 14,0 M "
+             "(agréments, lancement).", "note"),
+           Spacer(1, 12),
+           P("<b>Bilan au 31 décembre 2025</b> (reconstitué) — actif :"),
+           T([["ACTIF", "Montant (FCFA)"],
+              ["Aménagements et équipements pédagogiques — brut 14 000 000, amortis de 2 100 000", "11 900 000"],
+              ["Créances étudiants", "8 000 000"],
+              ["Trésorerie (compte UGB au 31/12/2025)", "19 500 000"],
+              ["TOTAL ACTIF", "39 400 000"]],
+             aligns=["l", "c"], total_rows=1),
+           P("<b>Passif</b> :"),
+           T([["PASSIF", "Montant (FCFA)"],
+              ["Capital social entièrement libéré", "20 000 000"],
+              ["Résultats conservés", "100 000"],
+              ["Résultat net 2025", "17 900 000"],
+              ["Dettes fournisseurs et sociales", "1 400 000"],
+              ["TOTAL PASSIF", "39 400 000"]],
+             aligns=["l", "c"], total_rows=1),
+           P("Trésorerie arrêtée au relevé UGB au 31 décembre 2025 ; les résultats des exercices "
+             "antérieurs ont été distribués aux associés ; aucun engagement financier extérieur."),
+           PageBreak()]
 
     # ---------- Annexe juridique
     st += titre_doc("Annexe juridique — bordereau des pièces")
