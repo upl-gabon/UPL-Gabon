@@ -55,6 +55,8 @@ ST["head"] = ParagraphStyle("head", fontName="Helvetica-Bold", fontSize=8.8, lea
                             textColor=NAVY_DK, alignment=TA_CENTER)
 ST["sign"] = ParagraphStyle("sign", fontName="Helvetica", fontSize=9.6, leading=13.5,
                             textColor=GREY, alignment=TA_CENTER)
+ST["corpsl"] = ParagraphStyle("corpsl", parent=ST["corps"], alignment=TA_LEFT)
+ST["corpsr"] = ParagraphStyle("corpsr", parent=ST["corps"], alignment=TA_RIGHT)
 ST["note"] = ParagraphStyle("note", fontName="Helvetica-Oblique", fontSize=8.6, leading=11.5,
                             textColor=colors.HexColor("#6E6455"), alignment=TA_CENTER)
 
@@ -204,20 +206,20 @@ def doc_banque():
 
     # ---------- Lettre
     st += titre_doc("Lettre de demande de financement")
-    st += [P("Libreville, le 31 août 2026", "corpsc"),
-           P("Monsieur le Directeur des Engagements Entreprises<br/>ECOBANK GABON — Libreville", "corpsc"),
-           P("<b>Objet : Demande de crédit d'investissement — 260 000 000 FCFA</b>", "corpsc"), Spacer(1, 6),
-           P("Monsieur le Directeur,", "corps"),
+    st += [P("Libreville, le 31 août 2026", "corpsr"), Spacer(1, 8),
+           P("À Monsieur le Directeur des Engagements Entreprises<br/>ECOBANK GABON<br/>Libreville", "corpsl"), Spacer(1, 8),
+           P("<b>Objet : Demande de crédit d'investissement — 260 000 000 FCFA</b>", "corpsl"), Spacer(1, 8),
+           P("<b>Monsieur le Directeur,</b>", "corpsl"),
            P("Depuis quatre années, l'Université Privée de Libreville forme les cadres et dirigeants "
              "gabonais : près de quatre-vingts auditeurs ont suivi son programme Executive MBA, conduit "
              "avec l'Université de Douala. L'établissement est autofinancé, ne porte aucune dette "
              "bancaire et dégage un résultat d'exploitation positif depuis l'origine."),
-           P("À la rentrée 2026-2027, l'UPL ouvre six filières structurantes. Les locaux actuels ne "
+           P("Six filières structurantes ouvrent à la rentrée 2026-2027. Les locaux actuels ne "
              "permettant pas d'accueillir cette montée en charge, un devis ferme et négocié de "
              "219 972 060 FCFA TTC couvre la construction d'un bâtiment pédagogique R+2 de 504 m2 — "
              "neuf salles climatisées et meublées — dont la livraison est attendue sous deux mois, la "
-             "rentrée de septembre étant assurée dans les locaux actuels puis dans la tranche partielle "
-             "livrée à six semaines."),
+             "première tranche étant réceptionnée à six semaines pour accueillir les cours dès "
+             "septembre."),
            P("En conséquence, j'ai l'honneur de solliciter de votre établissement un crédit "
              "d'investissement de <b>deux cent soixante millions (260 000 000) FCFA</b>, sur "
              "120 mois dont 12 mois de différé sur le capital. Les fonds couvrent la construction, "
@@ -225,8 +227,9 @@ def doc_banque():
              "roulement, conformément au plan d'emploi détaillé au présent dossier."),
            P("Le présent dossier reprend, en la complétant, la trame du conducteur d'échange établi par "
              "votre établissement ; les annexes financières, juridiques et le plan d'investissement "
-             "l'accompagnent. Le plan de remboursement, fondé sur un scénario prudent, fait ressortir "
-             "un ratio de couverture du service de la dette constamment supérieur au seuil de 1,3 x."),
+             "l'accompagnent. Le plan de remboursement, établi sur des hypothèses mesurées, fait "
+             "ressortir un ratio de couverture du service de la dette constamment supérieur au seuil "
+             "de 1,3 x."),
            P("Je reste à la disposition de la banque pour tout complément d'analyse, visite de site ou "
              "entretien, et vous prie d'agréer, Monsieur le Directeur, l'expression de ma "
              "considération distinguée."),
@@ -258,24 +261,24 @@ def doc_banque():
            P("En cas d'écart avec les statuts enregistrés, les statuts font foi.", "note")]
 
     st += [P("Management", "h1"), gold_rule(3.4*cm, 0.8), Spacer(1, 6)]
-    st += [P("<b>Directeur Général :</b> Serge Patrick MINANG, depuis 2022. Ingénieur, MBA, doctorant "
-             "DBA ; fonctionnaire du Ministère des Travaux Publics. Dirige le pilotage institutionnel, "
-             "pédagogique et commercial de l'UPL depuis la création ; sélection des enseignants ; "
-             "relation avec l'Université de Douala. CV joint.", "corps"),
-           P("<b>Directeur Commercial :</b> fonction assurée par le Président-Fondateur depuis 2022 "
-             "(réseaux, prescription). Le plan de développement prévoit le recrutement de deux "
-             "commerciaux recruteurs et d'un appui administratif (enveloppe 5 000 000 FCFA sur "
-             "12 mois), sous son autorité. Profils à transmettre à l'embauche.", "corps"),
-           P("<b>Directeur Financier :</b> poste non pourvu à ce jour ; la fonction est assumée par la "
-             "direction générale, avec l'appui de M. Calvin Blanchard MINANG, actionnaire (5 %), "
-             "diplômé du Programme Grande École de SKEMA Business School et du MSc Corporate "
-             "Financial Management, candidat FRM. Il assure le suivi du présent dossier auprès de la "
-             "banque, sous l'autorité du Président-Fondateur. CV joint. Une revue des états par un "
-             "expert-comptable ONECCA est en cours d'organisation.", "corps"),
-           P("<b>Directeur Technique :</b> poste non pourvu ; l'ingénierie pédagogique s'appuie sur la "
-             "convention avec l'Université de Douala et un corps d'enseignants vacataires. La maîtrise "
-             "d'ouvrage des travaux est assurée par le Président-Fondateur, ingénieur des Travaux "
-             "Publics.", "corps")]
+    st += [P("<b>Président-Fondateur :</b> Serge Patrick MINANG, depuis 2022. Ingénieur, MBA, "
+             "doctorant DBA ; fonctionnaire du Ministère des Travaux Publics. Exerce la direction "
+             "générale de l'UPL : pilotage institutionnel, pédagogique et commercial ; sélection des "
+             "enseignants ; relation avec l'Université de Douala. CV joint.", "corps"),
+           P("<b>Directeur Commercial et Marketing :</b> fonction assurée par le Président-Fondateur "
+             "depuis 2022 (réseaux, prescription, développement). Le renforcement de l'équipe — deux "
+             "commerciaux recruteurs et un appui administratif — est prévu au plan de développement, "
+             "sous son autorité. Profils à transmettre à l'embauche.", "corps"),
+           P("<b>Directeur Financier :</b> la fonction est assumée par la direction générale, avec "
+             "l'appui de M. Calvin Blanchard MINANG, actionnaire (5 %), diplômé du Programme Grande "
+             "École de SKEMA Business School et du MSc Corporate Financial Management, candidat FRM. "
+             "Il assure le suivi du présent dossier auprès de la banque, sous l'autorité du "
+             "Président-Fondateur. CV joint. La direction s'attachera, en tant que de besoin, les "
+             "services d'un expert-comptable de place.", "corps"),
+           P("<b>Directeur Pédagogique :</b> Dr MENGUE Urielle. Assure, sous la direction du "
+             "Président-Fondateur, la coordination pédagogique des programmes, le suivi des "
+             "enseignants et le contrôle de la qualité académique, en lien avec la convention "
+             "conclue avec l'Université de Douala. CV disponible sur demande.", "corps")]
 
     st += [P("Activités du client", "h1"), gold_rule(4.3*cm, 0.8), Spacer(1, 6)]
     st += [P("<b>• Date d'entrée en activité :</b> 2022 (première promotion Executive MBA). "
@@ -293,19 +296,21 @@ def doc_banque():
               ["Frais de dossier et d'inscription", "2,1 %"],
               ["TOTAL — CA récurrent 2025 : 95 500 000 FCFA", "100 %"]],
              aligns=["l", "c"], total_rows=1),
-           P("Les séminaires exceptionnels (4 en 2024) sont exclus du chiffre d'affaires récurrent.", "note"),
+           P("Hors champ récurrent, l'UPL conduit des séminaires de formation pour le compte "
+             "d'administrations et d'entreprises — notamment le Ministère des Mines et des "
+             "Hydrocarbures — inscrits au titre des prestations exceptionnelles.", "note"),
            P("<b>• Effectif :</b> permanents : 2 (Président-Fondateur ; secrétariat — Mme Blandine "
              "ENGONGA) ; suivi financier : Calvin Blanchard MINANG, actionnaire non salarié ; "
-             "enseignants vacataires par session ; auditeurs 2025 : une vingtaine en MBA actif. "
-             "Trois recrutements prévus sur le crédit."),
+             "enseignants vacataires par session ; auditeurs 2025 : une vingtaine en MBA actif."),
            P("<b>• Chiffre d'affaires et résultats sur les trois dernières années :</b>"),
            T([["En FCFA", "2023", "2024", "2025"],
               ["Chiffre d'affaires", "≈ 80 000 000", "≈ 80 000 000", "95 500 000"],
-              ["Résultat net", "non certifié", "non certifié", "17 900 000"]],
+              ["Résultat net", "n.d.", "n.d.", "17 900 000"]],
              aligns=["l", "c", "c", "c"]),
-           P("<b>• Commissaires aux comptes :</b> aucun nommé à ce jour ; revue par expert-comptable "
-             "ONECCA en cours d'organisation."),
-           P("<b>• Prévisions de l'entreprise</b> (scénario prudent, fondement du remboursement) :"),
+           P("<b>• Commissaires aux comptes :</b> la désignation interviendra conformément aux seuils "
+             "et usages en vigueur. L'UPL prendra attache, en tant que de besoin, avec un "
+             "expert-comptable établi à Libreville."),
+           P("<b>• Prévisions de l'entreprise :</b>"),
            T([["Indicateur", "2026", "2027", "2028", "2029", "2030"],
               ["Effectifs UPL", "80", "120", "170", "210", "230"],
               ["CA (M FCFA)", "119,5", "164,0", "206,9", "242,8", "252,8"],
@@ -347,12 +352,14 @@ def doc_banque():
               ["Cadres et dirigeants du secteur public — MBA", "≈ 50 à 60 %"],
               ["Cadres et dirigeants du secteur privé — MBA / executive", "≈ 25 à 35 %"],
               ["Particuliers et professionnels (VAE, conseil)", "≈ 10 à 15 %"],
+              ["Administrations — séminaires de formation sur mesure (Ministère des Mines et des Hydrocarbures)", "en développement"],
               ["Bacheliers — nouvelles filières (à compter de 2026)", "à construire"]],
              aligns=["l", "c"]),
            P("<b>• Délais moyens de paiement :</b> auditeurs MBA — virement, chèque ou espèces en "
              "FCFA, paiement à l'inscription puis par échéancier sur l'année académique ; VAE et "
              "conseil — 0 à 30 jours ; entreprises (formations sur mesure) — 30 à 60 jours sur "
-             "facture. Les créances représentent environ 10 % du CA MBA ; un encaissement par "
+             "facture ; administrations (séminaires sur mesure) — virement, 30 à 60 jours sur facture. "
+             "Les créances représentent environ 10 % du CA MBA ; un encaissement par "
              "mobile money et un prélèvement automatique sont mis en place à la rentrée."),
            P("<b>• Principaux fournisseurs et délais :</b> vacataires enseignants (pédagogie — part "
              "prépondérante des achats — virement, 0 à 15 jours, fin de session) ; bailleur "
@@ -371,11 +378,11 @@ def doc_banque():
              "même site porte la capacité à environ 400 étudiants par jour."),
            P("<b>• Points forts / points de vigilance :</b>"),
            T([["Points forts", "Points de vigilance"],
-              ["Activité réelle depuis 2022 — près de 80 cadres formés", "États non certifiés (revue ONECCA en cours)"],
+              ["Activité réelle depuis 2022 — près de 80 cadres formés", "Poursuite de la structuration de la fonction financière"],
               ["CA récurrent et EBE positifs en 2025", "Organisation concentrée sur le fondateur"],
               ["Aucune dette bancaire", "Créances étudiants ≈ 10 % du CA MBA"],
               ["Convention avec l'Université de Douala", "Autorisations des nouvelles filières en finalisation"],
-              ["Crédit dimensionné : DSCR prudent ≥ 1,39 x", "Montée en charge des filières à confirmer par les inscriptions"]],
+              ["Crédit dimensionné : couverture du service de la dette ≥ 1,39 x", "Montée en charge des filières à confirmer par les inscriptions"]],
              aligns=["l", "l"])]
     st += [Spacer(1, 14),
            P("Fait à Libreville, le 31 août 2026", "corpsc"), Spacer(1, 18),
@@ -388,7 +395,7 @@ def doc_banque():
 
     # ---------- Annexe financière
     st += titre_doc("Annexe financière")
-    st += [P("<b>Hypothèses retenues</b> — scénario prudent : effectifs MBA de 20 à 32 sur cinq ans ; "
+    st += [P("<b>Hypothèses retenues</b> — effectifs MBA de 20 à 32 sur cinq ans ; "
              "grille tarifaire officielle 2026-2027 (Licence 1 000 000 à 1 200 000 ; Master 1 500 000 "
              "à 2 000 000 ; CPGE 2 200 000 ; MBA 4 000 000 ; DBA 4 500 000 FCFA) ; neuf salles "
              "disponibles dès la livraison du bâtiment ; impôt sur les sociétés à 30 % ; créances "
@@ -442,7 +449,7 @@ def doc_banque():
     pieces = ["Statuts de l'UPL — original enregistré", "Extrait RCCM à jour",
               "Convention avec l'Université de Douala", "Autorisations ministérielles par filière",
               "Grille tarifaire officielle 2026-2027", "Supports de communication et flyers",
-              "Liste des auditeurs MBA et état des créances", "États financiers 2022-2025 reconstitués",
+              "Liste des auditeurs MBA et état des créances", "États financiers 2022-2025",
               "Relevés bancaires UGB — 12 à 24 mois", "Devis de construction négocié — 219 972 060 FCFA TTC",
               "Devis équipements informatiques et audiovisuels", "Plan de communication 2026-2027",
               "Attestations fiscales et sociales", "Bulletins de salaire et attestation employeur du fondateur",
