@@ -13,7 +13,9 @@ from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT, TA_RIGHT
 from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
-                                Spacer, Table, TableStyle, PageBreak, KeepTogether)
+                                Spacer, Table, TableStyle, PageBreak, KeepTogether, Image)
+from reportlab.platypus.tableofcontents import TableOfContents
+from reportlab.lib.utils import ImageReader
 
 from generer_livrables import LOGO
 
@@ -59,6 +61,12 @@ ST["corpsl"] = ParagraphStyle("corpsl", parent=ST["corps"], alignment=TA_LEFT)
 ST["corpsr"] = ParagraphStyle("corpsr", parent=ST["corps"], alignment=TA_RIGHT)
 ST["note"] = ParagraphStyle("note", fontName="Helvetica-Oblique", fontSize=8.6, leading=11.5,
                             textColor=colors.HexColor("#6E6455"), alignment=TA_CENTER)
+ST["toch0"] = ParagraphStyle("toch0", parent=ST["h1"])
+ST["toch1"] = ParagraphStyle("toch1", parent=ST["h1"])
+ST["toc0"] = ParagraphStyle("toc0", fontName="Helvetica-Bold", fontSize=10.5, leading=20,
+                            textColor=NAVY)
+ST["toc1"] = ParagraphStyle("toc1", fontName="Helvetica", fontSize=9.6, leading=17,
+                            textColor=GREY, leftIndent=16)
 
 def P(t, s="corps"): return Paragraph(t, ST[s])
 
@@ -67,10 +75,35 @@ def gold_rule(width=W, thick=1.2):
     t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), GOLD),
                            ("TOPPADDING", (0, 0), (-1, -1), 0),
                            ("BOTTOMPADDING", (0, 0), (-1, -1), 0)]))
+    t._is_rule = True
     return t
 
 def titre_doc(txt):
-    return [P(txt.upper(), "h1"), gold_rule(9*cm, 1.0), Spacer(1, 10)]
+    p = P(txt.upper(), "toch0"); p._toctxt = txt
+    return [p, gold_rule(9*cm, 1.0), Spacer(1, 10)]
+
+def ht1(txt, rule=4.6*cm):
+    p = P(txt, "toch1"); p._toctxt = txt
+    return [p, gold_rule(rule, 0.8), Spacer(1, 6)]
+
+def anti_coupure(story):
+    """Un titre n'est jamais orphelin en bas de page ; un tableau n'est jamais coupé."""
+    out = []
+    for f in story:
+        if isinstance(f, Table) and getattr(f, "_is_data", False) and out:
+            grp, pris = [f], 0
+            while out and pris < 4:
+                q = out[-1]
+                if isinstance(q, PageBreak) or (isinstance(q, Table) and getattr(q, "_is_data", False)):
+                    break
+                if isinstance(q, (Paragraph, Spacer)) or (isinstance(q, Table) and getattr(q, "_is_rule", False)):
+                    grp.insert(0, out.pop()); pris += 1
+                else:
+                    break
+            out.append(KeepTogether(grp))
+        else:
+            out.append(f)
+    return out
 
 def sec(txt):
     return [Spacer(1, 6), P(txt, "h1"), gold_rule(7*cm, 0.9), Spacer(1, 8)]
@@ -93,7 +126,7 @@ def T(data, aligns=None, header=True, total_rows=0, zebra=True, fs=8.8):
             else:
                 row.append(Paragraph(str(cell), ST["cellb" if i >= len(data) - total_rows else "cell"]))
         rows.append(row)
-    t = Table(rows, colWidths=[W/n]*n, hAlign="CENTER")
+    t = Table(rows, colWidths=[W/n]*n, hAlign="CENTER", repeatRows=1 if header else 0)
     cmds = [("GRID", (0, 0), (-1, -1), 0.5, LINE),
             ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
             ("LEFTPADDING", (0, 0), (-1, -1), 5), ("RIGHTPADDING", (0, 0), (-1, -1), 5),
@@ -109,6 +142,7 @@ def T(data, aligns=None, header=True, total_rows=0, zebra=True, fs=8.8):
         cmds += [("BACKGROUND", (0, len(rows) - k), (-1, len(rows) - k), GOLD_SILK),
                  ("LINEABOVE", (0, len(rows) - k), (-1, len(rows) - k), 0.9, GOLD_DK)]
     t.setStyle(TableStyle(cmds))
+    t._is_data = True
     return t
 
 # ------------------------------------------------ gabarits
@@ -140,6 +174,14 @@ class DocS(BaseDocTemplate):
         c.setFillColor(colors.HexColor("#7A7264")); c.setFont("Helvetica", 7.6)
         c.drawCentredString(w/2, 1.15*cm, f"— {doc.page} —")
         c.restoreState()
+
+    def afterFlowable(self, f):
+        if isinstance(f, Paragraph) and f.style.name in ("toch0", "toch1"):
+            txt = getattr(f, "_toctxt", f.getPlainText())
+            if txt == "Sommaire":
+                return
+            lvl = 0 if f.style.name == "toch0" else 1
+            self.notify("TOCEntry", (lvl, txt, self.page))
 
 def fmt(n): return f"{int(round(n)):,}".replace(",", " ")
 
@@ -184,8 +226,13 @@ assert sum(m for _, m in LOTS) == TRAV
 # ================================================================
 def doc_banque():
     st = []
-    # ---------- Page de garde
-    st += [Spacer(1, 1.6*cm)]
+    # ---------- Page de couverture
+    def _logo(w=3.6*cm):
+        if os.path.exists(LOGO):
+            iw, ih = ImageReader(LOGO).getSize()
+            return Image(LOGO, width=w, height=w*ih/iw)
+        return Spacer(1, w)
+    st += [Spacer(1, 1.0*cm), _logo(), Spacer(1, 0.7*cm)]
     st += [P("UNIVERSITÉ PRIVÉE DE LIBREVILLE", "titre"), gold_rule(10*cm, 1.4),
            Spacer(1, 14),
            P("DOSSIER DE DEMANDE DE FINANCEMENT", "titre"),
@@ -201,8 +248,14 @@ def doc_banque():
               ["Contact", "062 62 19 78 / 077 35 95 72 — contact@upl-gabon.com"],
               ["Date du dossier", "Libreville, le 31 août 2026"]],
             aligns=["c", "l"], header=False, zebra=True)]
-    st += [Spacer(1, 30), P("Conducteur d'échange établi conformément à la trame ECOBANK", "note"),
+    st += [Spacer(1, 24), P("Conducteur d'échange établi conformément à la trame ECOBANK", "note"),
            Spacer(1, 8), P("DOCUMENT RÉSERVÉ À L'USAGE BANCAIRE", "note"), PageBreak()]
+
+    # ---------- Sommaire
+    toc = TableOfContents()
+    toc.levelStyles = [ST["toc0"], ST["toc1"]]
+    toc.dotsMinLevel = 0
+    st += titre_doc("Sommaire") + [Spacer(1, 10), toc, PageBreak()]
 
     # ---------- Lettre
     st += titre_doc("Lettre de demande de financement")
@@ -241,6 +294,7 @@ def doc_banque():
     st += titre_doc("Conducteur d'échange — ECOBANK S.A")
     st += [P("Trame ECOBANK complétée par l'UPL — Libreville, 31 août 2026", "note"), Spacer(1, 6)]
 
+    st += ht1("Identité et actionnariat", 4.6*cm)
     st += sec2("• Nom de la structure :")
     st += [P("Université Privée de Libreville (UPL)")]
     st += sec2("• Forme juridique de la société :")
@@ -253,34 +307,33 @@ def doc_banque():
               ["Blandine ENGONGA", "Épouse du fondateur", "15 %"],
               ["Stan MINANG", "Enfant du fondateur", "5 %"],
               ["Vianney Aldrin MINANG", "Enfant du fondateur", "5 %"],
-              ["Calvin Blanchard MINANG", "Enfant du fondateur — suivi du dossier financier", "5 %"],
+              ["Calvin Blanchard MINANG", "Enfant du fondateur", "5 %"],
               ["Cléanne MINANG", "Enfant du fondateur", "5 %"],
               ["Diamant Eudalia MINANG", "Enfant du fondateur", "5 %"],
               ["TOTAL", "Capital détenu à 100 % par la famille du fondateur", "100 %"]],
             aligns=["l", "l", "c"], total_rows=1),
            P("En cas d'écart avec les statuts enregistrés, les statuts font foi.", "note")]
 
-    st += [P("Management", "h1"), gold_rule(3.4*cm, 0.8), Spacer(1, 6)]
-    st += [P("<b>Président-Fondateur :</b> Serge Patrick MINANG, depuis 2022. Ingénieur, MBA, "
-             "doctorant DBA ; fonctionnaire du Ministère des Travaux Publics. Exerce la direction "
+    st += [PageBreak()] + ht1("Management et organisation", 5.4*cm)
+    st += [P("<b>Président-Fondateur :</b> Serge Patrick MINANG, depuis 2022. Ingénieur et MBA, docteur "
+             "en administration des affaires (DBA) en instance de soutenance ; fonctionnaire du "
+             "Ministère des Travaux Publics. Exerce la direction "
              "générale de l'UPL : pilotage institutionnel, pédagogique et commercial ; sélection des "
              "enseignants ; relation avec l'Université de Douala. CV joint.", "corps"),
            P("<b>Directeur Commercial et Marketing :</b> fonction assurée par le Président-Fondateur "
              "depuis 2022 (réseaux, prescription, développement). Le renforcement de l'équipe — deux "
              "commerciaux recruteurs et un appui administratif — est prévu au plan de développement, "
              "sous son autorité. Profils à transmettre à l'embauche.", "corps"),
-           P("<b>Directeur Financier :</b> la fonction est assumée par la direction générale, avec "
-             "l'appui de M. Calvin Blanchard MINANG, actionnaire (5 %), diplômé du Programme Grande "
-             "École de SKEMA Business School et du MSc Corporate Financial Management, candidat FRM. "
-             "Il assure le suivi du présent dossier auprès de la banque, sous l'autorité du "
-             "Président-Fondateur. CV joint. La direction s'attachera, en tant que de besoin, les "
-             "services d'un expert-comptable de place.", "corps"),
+           P("<b>Direction financière :</b> fonction assurée par la direction générale, avec l'appui "
+             "d'un ingénieur financier diplômé du Programme Grande École de SKEMA Business School et "
+             "du MSc Corporate Financial Management. La direction s'attachera, en tant que de "
+             "besoin, les services d'un expert-comptable de place.", "corps"),
            P("<b>Directeur Pédagogique :</b> Dr MENGUE Urielle. Assure, sous la direction du "
              "Président-Fondateur, la coordination pédagogique des programmes, le suivi des "
              "enseignants et le contrôle de la qualité académique, en lien avec la convention "
              "conclue avec l'Université de Douala. CV disponible sur demande.", "corps")]
 
-    st += [P("Activités du client", "h1"), gold_rule(4.3*cm, 0.8), Spacer(1, 6)]
+    st += [PageBreak()] + ht1("Activités du client", 4.3*cm)
     st += [P("<b>• Date d'entrée en activité :</b> 2022 (première promotion Executive MBA). "
              "Activité principale : enseignement supérieur privé — formation de cadres et dirigeants. "
              "Historique : 2022 lancement du MBA avec l'Université de Douala ; 2022-2025 "
@@ -300,7 +353,7 @@ def doc_banque():
              "d'administrations et d'entreprises — notamment le Ministère des Mines et des "
              "Hydrocarbures — inscrits au titre des prestations exceptionnelles.", "note"),
            P("<b>• Effectif :</b> permanents : 2 (Président-Fondateur ; secrétariat — Mme Blandine "
-             "ENGONGA) ; suivi financier : Calvin Blanchard MINANG, actionnaire non salarié ; "
+             "ENGONGA) ; appui financier ponctuel d'un actionnaire non salarié ; "
              "enseignants vacataires par session ; auditeurs 2025 : une vingtaine en MBA actif."),
            P("<b>• Chiffre d'affaires et résultats sur les trois dernières années :</b>"),
            T([["En FCFA", "2023", "2024", "2025"],
@@ -323,7 +376,7 @@ def doc_banque():
              "taux indicatif 10 %. Mensualité en différé : 2 166 667 FCFA (intérêts seuls) ; "
              "mensualité en régime : 3 660 458 FCFA.", "note")]
 
-    st += [P("Relations bancaires", "h1"), gold_rule(3.6*cm, 0.8), Spacer(1, 6)]
+    st += [PageBreak()] + ht1("Relations bancaires", 3.6*cm)
     st += [P("<b>• Banques en relation avec le client :</b>"),
            T([["Banque", "Nature de la relation", "Engagement de crédit"],
               ["UGB", "Compte de fonctionnement principal de l'UPL", "Aucun crédit en cours"],
@@ -335,8 +388,8 @@ def doc_banque():
              "260 000 000 FCFA au titre du plan de développement 2026-2027 :"),
            T([["Poste", "Montant (FCFA)"]] + [[l, fmt(m)] for l, m in EMPLOI] +
              [["TOTAL", fmt(260_000_000)]], aligns=["l", "c"], total_rows=1),
-           P("Devis de la construction : négocié et joint (219 972 060 FCFA TTC). Devis équipements : "
-             "à produire avant décaissement de la tranche correspondante.", "note"),
+           P("Devis de la construction : négocié et joint (219 972 060 FCFA TTC) ; équipements "
+             "engagés selon le calendrier du projet.", "note"),
            P("<b>• Principaux actifs de la société :</b>"),
            T([["Type d'actif", "Valeur", "Localisation", "Âge", "Nanti"],
               ["Aménagements et équipements pédagogiques", "≈ 12 à 15 M FCFA (brut 2025)", "Sablière, Libreville", "2022-2025", "Non"],
@@ -346,19 +399,24 @@ def doc_banque():
               ["Bâtiment R+2 (en cours de réalisation)", "219 972 060 FCFA TTC — devis ferme", "Sablière, Libreville", "Neuf", "À constituer"]],
              aligns=["l", "l", "l", "c", "c"])]
 
-    st += [P("Clients", "h1"), gold_rule(2.2*cm, 0.8), Spacer(1, 6)]
+    st += [PageBreak()] + ht1("Clients et marché", 3.4*cm)
     st += [P("<b>• Principaux clients</b> (auditeurs et étudiants) :"),
            T([["Famille de clients", "Part dans les ventes"],
               ["Cadres et dirigeants du secteur public — MBA", "≈ 50 à 60 %"],
               ["Cadres et dirigeants du secteur privé — MBA / executive", "≈ 25 à 35 %"],
               ["Particuliers et professionnels (VAE, conseil)", "≈ 10 à 15 %"],
-              ["Administrations — séminaires de formation sur mesure (Ministère des Mines et des Hydrocarbures)", "en développement"],
+              ["Ministère des Mines et des Hydrocarbures — séminaires de formation sur mesure", "en développement"],
+              ["Ministère de la Fonction Publique — agents publics en formation", "en développement"],
+              ["ANBG — boursiers nationaux (l'État accompagne la scolarisation par les bourses)", "en développement"],
               ["Bacheliers — nouvelles filières (à compter de 2026)", "à construire"]],
              aligns=["l", "c"]),
+           P("Sept familles de clients au total, dont trois relais de croissance publique : "
+             "administrations, Fonction Publique et boursiers ANBG.", "note"),
            P("<b>• Délais moyens de paiement :</b> auditeurs MBA — virement, chèque ou espèces en "
              "FCFA, paiement à l'inscription puis par échéancier sur l'année académique ; VAE et "
              "conseil — 0 à 30 jours ; entreprises (formations sur mesure) — 30 à 60 jours sur "
-             "facture ; administrations (séminaires sur mesure) — virement, 30 à 60 jours sur facture. "
+             "facture ; administrations (séminaires sur mesure) — virement, 30 à 60 jours sur facture ; "
+             "boursiers ANBG — paiement public sur notification de bourse. "
              "Les créances représentent environ 10 % du CA MBA ; un encaissement par "
              "mobile money et un prélèvement automatique sont mis en place à la rentrée."),
            P("<b>• Principaux fournisseurs et délais :</b> vacataires enseignants (pédagogie — part "
@@ -366,41 +424,48 @@ def doc_banque():
              "immobilier (loyer de Sablière — mensuel) ; prestataires de communication (sur devis) ; "
              "fournisseurs IT, mobilier et BTP au titre du présent investissement (paiement selon "
              "devis : 25 % à la commande, 50 % à mi-chantier, 25 % à la livraison)."),
-           P("<b>• Situation de la concurrence et position sur le marché :</b>"),
-           T([["Produits", "Concurrents / acteurs de référence", "Position UPL"],
-              ["Executive MBA", "Écoles privées de Libreville, programmes executive", "Niche établie depuis 2022"],
-              ["Licence / Master", "Université Omar Bongo, USTM, privés", "Entrant — rentrée 2026"],
-              ["CPGE", "Offre limitée au Gabon", "Entrant — première CPGE privée"],
-              ["Assurance / sécurité sociale", "Peu d'offres spécialisées", "Entrant spécialisé"]],
-             aligns=["l", "l", "l"]),
+           P("<b>• Situation de la concurrence et position sur le marché :</b> l'UPL est reconnue "
+             "comme offrant le meilleur MBA de la place, appréciation portée autant par le marché "
+             "que par les concurrents eux-mêmes. Le comparatif des scolarités conforte cette "
+             "position :"),
+           T([["Établissement", "Offre MBA", "Scolarité (FCFA)", "Observation"],
+              ["UPL", "Executive MBA avec l'Université de Douala", "4 000 000", "Meilleur rapport qualité-prix de la place"],
+              ["BBS", "MBA dispensé en anglais", "5 000 000", "Formation en anglais, peu adaptée au marché local"],
+              ["Université Internationale de Libreville (UIL)", "MBA", "9 000 000", "Tarif élevé"],
+              ["Autres acteurs", "Universités Mundiapolis, de Nice, etc.", "—", "Présence limitée — formats à distance ou partenariats"]],
+             aligns=["l", "l", "c", "l"]),
+           P("Sur les autres segments — licences et masters, classes préparatoires, assurance — "
+             "l'offre locale reste restreinte (université Omar Bongo, USTM, rares privés) ; "
+             "aucune CPGE privée et peu de formations spécialisées en assurance maladie : l'UPL "
+             "y fait son entrée à la rentrée 2026.", "note"),
            P("<b>• Points de vente :</b> Sablière, Libreville — site pédagogique loué ; chiffre "
              "d'affaires moyen mensuel 2025 : ≈ 8 000 000 FCFA. Le bâtiment R+2 construit sur ce "
              "même site porte la capacité à environ 400 étudiants par jour."),
            P("<b>• Points forts / points de vigilance :</b>"),
            T([["Points forts", "Points de vigilance"],
-              ["Activité réelle depuis 2022 — près de 80 cadres formés", "Poursuite de la structuration de la fonction financière"],
+              ["Meilleur MBA de la place — près de 80 cadres formés depuis 2022", "Poursuite de la structuration de la fonction financière"],
               ["CA récurrent et EBE positifs en 2025", "Organisation concentrée sur le fondateur"],
               ["Aucune dette bancaire", "Créances étudiants ≈ 10 % du CA MBA"],
-              ["Convention avec l'Université de Douala", "Autorisations des nouvelles filières en finalisation"],
+              ["Convention avec l'Université de Douala", "Habilitation et autorisation des filières par l'Enseignement Supérieur en cours"],
               ["Crédit dimensionné : couverture du service de la dette ≥ 1,39 x", "Montée en charge des filières à confirmer par les inscriptions"]],
              aligns=["l", "l"])]
-    st += [Spacer(1, 14),
-           P("Fait à Libreville, le 31 août 2026", "corpsc"), Spacer(1, 18),
-           Table([[P("<b>Serge Patrick MINANG</b><br/>Président-Fondateur<br/><br/><br/>Signature et cachet", "sign"),
-                   P("<b>Calvin Blanchard MINANG</b><br/>Actionnaire — suivi du dossier financier<br/><br/><br/>Tél. +33 7 52 97 58 09", "sign")]],
-                 colWidths=[W/2, W/2], hAlign="CENTER",
+    st += [Spacer(1, 30),
+           P("Fait à Libreville, le 31 août 2026", "corpsc"), Spacer(1, 22),
+           Table([[P("<b>Serge Patrick MINANG</b><br/>Président-Fondateur<br/><br/><br/>Signature et cachet", "sign")]],
+                 colWidths=[9*cm], hAlign="CENTER",
                  style=TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"),
                                    ("TOPPADDING", (0, 0), (-1, -1), 8)])),
-           Spacer(1, 10), P("ECOBANK GABON", "note"), PageBreak()]
+           Spacer(1, 12), P("ECOBANK GABON", "note"), PageBreak()]
 
     # ---------- Annexe financière
     st += titre_doc("Annexe financière")
-    st += [P("<b>Hypothèses retenues</b> — effectifs MBA de 20 à 32 sur cinq ans ; "
+    st += [P("<b>Hypothèses retenues — scénario :</b> effectifs MBA de 20 à 32 sur cinq ans ; "
              "grille tarifaire officielle 2026-2027 (Licence 1 000 000 à 1 200 000 ; Master 1 500 000 "
              "à 2 000 000 ; CPGE 2 200 000 ; MBA 4 000 000 ; DBA 4 500 000 FCFA) ; neuf salles "
              "disponibles dès la livraison du bâtiment ; impôt sur les sociétés à 30 % ; créances "
-             "étudiantes ≈ 10 % du CA MBA ; salaire public du fondateur (≈ 8 M FCFA/an) non intégré "
-             "au calcul du ratio de couverture."),
+             "étudiantes ≈ 10 % du CA MBA ; traitements publics du fondateur et de son épouse "
+             "(≈ 8 et 12 M FCFA par an), tous deux fonctionnaires, non intégrés au calcul du "
+             "ratio de couverture."),
            P("<b>Compte de résultat prévisionnel</b> (millions de FCFA) :"),
            T([["Rubrique", "2025", "2026", "2027", "2028", "2029", "2030"],
               ["Chiffre d'affaires", "95,5", "119,5", "164,0", "206,9", "242,8", "252,8"],
@@ -436,8 +501,9 @@ def doc_banque():
              aligns=["l", "c", "c", "c", "c"]),
            P("Il ressort de l'analyse que l'épreuve dégradée est absorbée par la trésorerie "
              "constituée dès 2026 — fonds de roulement de 10 M FCFA et CAF cumulée 2026-2027 de "
-             "75,8 M FCFA — ainsi que par les ressources personnelles du fondateur, non intégrées au "
-             "calcul. Le scénario de crise conduirait à un aménagement d'échéancier avec la banque, "
+             "75,8 M FCFA — ainsi que par les ressources personnelles du fondateur et de son épouse "
+             "(≈ 8 et 12 M FCFA par an), non intégrées au calcul. Le scénario de crise conduirait "
+             "à un aménagement d'échéancier avec la banque, "
              "que la structure du crédit — différé de douze mois — permet d'anticiper."),
            P("<b>Plan d'emploi des fonds</b> : tel que détaillé au conducteur d'échange — "
              "construction 219 972 060 FCFA TTC ; équipements 10 M ; communication 15 M ; équipe "
@@ -447,22 +513,21 @@ def doc_banque():
     # ---------- Annexe juridique
     st += titre_doc("Annexe juridique — bordereau des pièces")
     pieces = ["Statuts de l'UPL — original enregistré", "Extrait RCCM à jour",
-              "Convention avec l'Université de Douala", "Autorisations ministérielles par filière",
+              "Convention avec l'Université de Douala",
+              "Habilitation et autorisations des filières — Ministère de l'Enseignement Supérieur",
               "Grille tarifaire officielle 2026-2027", "Supports de communication et flyers",
               "Liste des auditeurs MBA et état des créances", "États financiers 2022-2025",
-              "Relevés bancaires UGB — 12 à 24 mois", "Devis de construction négocié — 219 972 060 FCFA TTC",
-              "Devis équipements informatiques et audiovisuels", "Plan de communication 2026-2027",
-              "Attestations fiscales et sociales", "Bulletins de salaire et attestation employeur du fondateur",
+              "Relevés bancaires UGB — 12 à 24 mois",
+              "Devis de construction négocié — 219 972 060 FCFA TTC",
+              "Plan de communication 2026-2027", "Attestations fiscales et sociales",
               "CV du Président-Fondateur et de l'équipe", "Répartition du capital"]
-    statuts = ["Disponible", "Disponible", "Disponible", "Disponible / en cours", "Disponible",
-               "Disponible", "Disponible", "Disponible", "À produire", "Joint au présent dossier",
-               "À produire avant décaissement", "Joint", "À produire", "Disponible",
+    statuts = ["Disponible", "Disponible", "Disponible", "En cours", "Disponible",
+               "Disponible", "Disponible", "Disponible", "Disponibles",
+               "Joint au présent dossier", "Joint", "Sur demande",
                "Disponible", "Disponible"]
     st += [T([["N°", "Pièce", "Statut"]] +
              [[str(i+1), p, s] for i, (p, s) in enumerate(zip(pieces, statuts))],
-             aligns=["c", "l", "c"]),
-           P("Les pièces marquées « à produire » seront remises à l'analyste crédit dans le cours de "
-             "l'instruction, conformément aux usages de la banque."), PageBreak()]
+             aligns=["c", "l", "c"]), PageBreak()]
 
     # ---------- Plan d'investissement
     st += titre_doc("Plan d'investissement 2026-2027")
@@ -495,7 +560,7 @@ def doc_banque():
            P("Fait à Libreville, le 31 août 2026", "corpsc"),
            P("<b>Serge Patrick MINANG</b><br/>Président-Fondateur — Université Privée de Libreville", "sign")]
     d = DocS(OUT1, "UNIVERSITÉ PRIVÉE DE LIBREVILLE — DOSSIER BANCAIRE ECOBANK — 260 000 000 FCFA")
-    d.build(st)
+    d.multiBuild(anti_coupure(st))
     return d
 
 # ================================================================
@@ -612,7 +677,7 @@ def doc_interne():
            P("Libreville, le 31 août 2026", "corpsc"),
            P("<b>Serge Patrick MINANG</b><br/>Président-Fondateur — Direction de l'UPL", "sign")]
     d = DocS(OUT2, "UPL — DOCUMENT INTERNE — PLAN DE CONQUÊTE 500 ÉTUDIANTS — DIFFUSION RESTREINTE")
-    d.build(st)
+    d.build(anti_coupure(st))
     return d
 
 if __name__ == "__main__":
