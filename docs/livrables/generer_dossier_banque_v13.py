@@ -13,7 +13,8 @@ from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT, TA_RIGHT
 from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
-                                Spacer, Table, TableStyle, PageBreak, KeepTogether, Image)
+                                Spacer, Table, TableStyle, PageBreak, KeepTogether, Image,
+                                NextPageTemplate)
 from reportlab.platypus.tableofcontents import TableOfContents
 from reportlab.lib.utils import ImageReader
 
@@ -63,6 +64,16 @@ ST["note"] = ParagraphStyle("note", fontName="Helvetica-Oblique", fontSize=8.6, 
                             textColor=colors.HexColor("#6E6455"), alignment=TA_CENTER)
 ST["toch0"] = ParagraphStyle("toch0", parent=ST["h1"])
 ST["toch1"] = ParagraphStyle("toch1", parent=ST["h1"])
+ST["titrecov"] = ParagraphStyle("titrecov", fontName="Helvetica-Bold", fontSize=21, leading=26,
+                                textColor=NAVY, alignment=TA_CENTER)
+ST["goldcaps"] = ParagraphStyle("goldcaps", fontName="Helvetica", fontSize=9.5, leading=13,
+                                textColor=GOLD_DK, alignment=TA_CENTER)
+ST["carteh"] = ParagraphStyle("carteh", fontName="Helvetica-Bold", fontSize=10, leading=13,
+                              textColor=GOLD, alignment=TA_CENTER)
+ST["cartek"] = ParagraphStyle("cartek", fontName="Helvetica-Bold", fontSize=9, leading=12,
+                              textColor=NAVY_DK, alignment=TA_LEFT)
+ST["cartev"] = ParagraphStyle("cartev", fontName="Helvetica", fontSize=9.4, leading=12.5,
+                              textColor=GREY, alignment=TA_LEFT)
 ST["toc0"] = ParagraphStyle("toc0", fontName="Helvetica-Bold", fontSize=10.5, leading=20,
                             textColor=NAVY)
 ST["toc1"] = ParagraphStyle("toc1", fontName="Helvetica", fontSize=9.6, leading=17,
@@ -148,12 +159,44 @@ def T(data, aligns=None, header=True, total_rows=0, zebra=True, fs=8.8):
 # ------------------------------------------------ gabarits
 class DocS(BaseDocTemplate):
     """Dossier banque — blanc, filets or, sobre."""
-    def __init__(self, path, bandeau, **kw):
+    def __init__(self, path, bandeau, couverture=True, **kw):
         super().__init__(path, pagesize=A4, leftMargin=2*cm, rightMargin=2*cm,
                          topMargin=2.5*cm, bottomMargin=2.1*cm, **kw)
         self.bandeau = bandeau
         fr = Frame(self.leftMargin, self.bottomMargin, self.width, self.height, id="m")
-        self.addPageTemplates([PageTemplate(id="p", frames=[fr], onPage=self._pg)])
+        tpl = [PageTemplate(id="cover", frames=[fr], onPage=self._cover),
+               PageTemplate(id="p", frames=[fr], onPage=self._pg)]
+        if not couverture:
+            tpl = [tpl[1], tpl[0]]
+        self.addPageTemplates(tpl)
+
+    def _cover(self, c, doc):
+        """Couverture : fond soie, cadre double or, bandes de losanges, accents de coins."""
+        w, h = A4
+        c.saveState()
+        c.setFillColor(GOLD_PALE)
+        c.rect(0, 0, w, h, stroke=0, fill=1)
+        c.setStrokeColor(GOLD); c.setLineWidth(1.5)
+        c.rect(1.05*cm, 1.05*cm, w - 2.1*cm, h - 2.1*cm)
+        c.setStrokeColor(GOLD_DK); c.setLineWidth(0.6)
+        c.rect(1.22*cm, 1.22*cm, w - 2.44*cm, h - 2.44*cm)
+        def band(y):
+            x0, x1, n, r = 1.7*cm, w - 1.7*cm, 38, 0.13*cm
+            step = (x1 - x0) / n
+            for i in range(n + 1):
+                x = x0 + i * step
+                c.setFillColor(GOLD if i % 2 == 0 else GOLD_SILK)
+                pa = c.beginPath()
+                pa.moveTo(x, y + r); pa.lineTo(x + r, y); pa.lineTo(x, y - r); pa.lineTo(x - r, y)
+                pa.close()
+                c.drawPath(pa, stroke=0, fill=1)
+        band(h - 1.72*cm)
+        band(1.72*cm)
+        for (x, y) in [(1.05*cm, h - 1.05*cm), (w - 1.05*cm, h - 1.05*cm),
+                       (1.05*cm, 1.05*cm), (w - 1.05*cm, 1.05*cm)]:
+            c.setFillColor(GOLD)
+            c.rect(x - 0.1*cm, y - 0.1*cm, 0.2*cm, 0.2*cm, stroke=0, fill=1)
+        c.restoreState()
 
     def _pg(self, c, doc):
         w, h = A4
@@ -232,24 +275,48 @@ def doc_banque():
             iw, ih = ImageReader(LOGO).getSize()
             return Image(LOGO, width=w, height=w*ih/iw)
         return Spacer(1, w)
-    st += [Spacer(1, 1.0*cm), _logo(), Spacer(1, 0.7*cm)]
-    st += [P("UNIVERSITÉ PRIVÉE DE LIBREVILLE", "titre"), gold_rule(10*cm, 1.4),
-           Spacer(1, 14),
-           P("DOSSIER DE DEMANDE DE FINANCEMENT", "titre"),
+    st += [NextPageTemplate("p"),
+           Spacer(1, 0.8*cm), _logo(3.3*cm), Spacer(1, 0.5*cm),
+           P("UNIVERSITÉ PRIVÉE DE LIBREVILLE", "titre"),
+           P("Enseignement supérieur privé — Libreville · Gabon", "goldcaps"),
+           gold_rule(10*cm, 1.4),
+           Spacer(1, 22),
+           P("DOSSIER DE DEMANDE", "titrecov"),
+           P("DE FINANCEMENT", "titrecov"),
+           Spacer(1, 8),
            P("Crédit d'investissement — deux cent soixante millions (260 000 000) FCFA", "soustitre"),
-           Spacer(1, 26)]
-    st += [T([["Établissement", "Université Privée de Libreville (UPL) — SAS"],
-              ["Président-Fondateur", "M. Serge Patrick MINANG"],
-              ["Banque sollicitée", "ECOBANK GABON"],
-              ["Objet", "Construction du bâtiment pédagogique R+2, équipements et lancement des six filières"],
-              ["Montant sollicité", "260 000 000 FCFA"],
-              ["Durée", "120 mois, dont 12 mois de différé sur le capital"],
-              ["Siège", "Sablière, face Résidence de l'Ambassade d'Arabie Saoudite — Libreville"],
-              ["Contact", "062 62 19 78 / 077 35 95 72 — contact@upl-gabon.com"],
-              ["Date du dossier", "Libreville, le 31 août 2026"]],
-            aligns=["c", "l"], header=False, zebra=True)]
-    st += [Spacer(1, 24), P("Conducteur d'échange établi conformément à la trame ECOBANK", "note"),
-           Spacer(1, 8), P("DOCUMENT RÉSERVÉ À L'USAGE BANCAIRE", "note"), PageBreak()]
+           Spacer(1, 6),
+           P("Au titre du plan de développement 2026-2027", "goldcaps"),
+           Spacer(1, 20)]
+    carte = Table(
+        [[P("FICHE SYNTHÉTIQUE DU DOSSIER", "carteh"), ""]] +
+        [[P(k, "cartek"), P(v, "cartev")] for k, v in [
+            ("Établissement", "Université Privée de Libreville (UPL) — SAS"),
+            ("Président-Fondateur", "M. Serge Patrick MINANG"),
+            ("Banque sollicitée", "ECOBANK GABON — Libreville"),
+            ("Objet", "Construction du bâtiment pédagogique R+2, équipements et lancement des six filières"),
+            ("Montant sollicité", "260 000 000 FCFA"),
+            ("Durée", "120 mois, dont 12 mois de différé sur le capital"),
+            ("Siège", "Sablière, face Résidence de l'Ambassade d'Arabie Saoudite — Libreville"),
+            ("Contact", "062 62 19 78 / 077 35 95 72 — contact@upl-gabon.com"),
+            ("Établi le", "31 août 2026 — Libreville")]],
+        colWidths=[4.6*cm, W - 4.6*cm], hAlign="CENTER")
+    carte.setStyle(TableStyle([
+        ("SPAN", (0, 0), (1, 0)),
+        ("BACKGROUND", (0, 0), (1, 0), NAVY),
+        ("LINEBELOW", (0, 0), (1, 0), 1.0, GOLD),
+        ("GRID", (0, 1), (-1, -1), 0.5, LINE),
+        ("BACKGROUND", (0, 1), (0, -1), GOLD_PALE),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("TOPPADDING", (0, 0), (-1, -1), 4.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 4.5),
+        ("LEFTPADDING", (0, 0), (-1, -1), 7), ("RIGHTPADDING", (0, 0), (-1, -1), 7)]))
+    st += [carte,
+           Spacer(1, 20), gold_rule(3*cm, 1.0), Spacer(1, 9),
+           P("Conducteur d'échange établi conformément à la trame ECOBANK", "note"),
+           P("Annexes financière et juridique — plan d'investissement joint", "note"),
+           Spacer(1, 10),
+           P("DOCUMENT RÉSERVÉ À L'USAGE BANCAIRE", "note"),
+           PageBreak()]
 
     # ---------- Sommaire
     toc = TableOfContents()
@@ -267,9 +334,10 @@ def doc_banque():
              "gabonais : près de quatre-vingts auditeurs ont suivi son programme Executive MBA, conduit "
              "avec l'ESSEC de Douala — École Supérieure des Sciences Économiques et Commerciales, dixième business school d'Afrique francophone. L'établissement est autofinancé, ne porte aucune dette "
              "bancaire et dégage un résultat d'exploitation positif depuis l'origine."),
-           P("Six filières structurantes ouvrent à la rentrée 2026-2027. Les locaux actuels ne "
+           P("<b>Six filières structurantes ouvrent à la rentrée 2026-2027.</b> Les locaux actuels ne "
              "permettant pas d'accueillir cette montée en charge, un devis ferme et négocié de "
-             "219 972 060 FCFA TTC couvre la construction d'un bâtiment pédagogique R+2 de 504 m2 — "
+             "<b>219 972 060 FCFA TTC couvre la construction d'un bâtiment pédagogique R+2 de "
+             "504 m2</b> — "
              "neuf salles climatisées et meublées — dont la livraison est attendue sous deux mois, la "
              "première tranche étant réceptionnée à six semaines pour accueillir les cours dès "
              "septembre."),
@@ -567,7 +635,7 @@ def doc_banque():
 #  DOCUMENT 2 — INTERNE (ambition 500)
 # ================================================================
 def doc_interne():
-    st = []
+    st = [NextPageTemplate("p")]
     st += [Spacer(1, 1.5*cm),
            P("DOCUMENT INTERNE — DIRECTION DE L'UPL", "soustitre"), gold_rule(6*cm, 1.2),
            Spacer(1, 14),
@@ -676,7 +744,8 @@ def doc_interne():
            Spacer(1, 18),
            P("Libreville, le 31 août 2026", "corpsc"),
            P("<b>Serge Patrick MINANG</b><br/>Président-Fondateur — Direction de l'UPL", "sign")]
-    d = DocS(OUT2, "UPL — DOCUMENT INTERNE — PLAN DE CONQUÊTE 500 ÉTUDIANTS — DIFFUSION RESTREINTE")
+    d = DocS(OUT2, "UPL — DOCUMENT INTERNE — PLAN DE CONQUÊTE 500 ÉTUDIANTS — DIFFUSION RESTREINTE",
+            couverture=False)
     d.build(anti_coupure(st))
     return d
 
