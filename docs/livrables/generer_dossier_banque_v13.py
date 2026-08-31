@@ -265,7 +265,7 @@ def doc_banque():
            P("<b>Monsieur le Directeur,</b>", "corpsl"),
            P("Depuis quatre années, l'Université Privée de Libreville forme les cadres et dirigeants "
              "gabonais : près de quatre-vingts auditeurs ont suivi son programme Executive MBA, conduit "
-             "avec l'Université de Douala. L'établissement est autofinancé, ne porte aucune dette "
+             "avec l'ESSEC de Douala — École Supérieure des Sciences Économiques et Commerciales, dixième business school d'Afrique francophone. L'établissement est autofinancé, ne porte aucune dette "
              "bancaire et dégage un résultat d'exploitation positif depuis l'origine."),
            P("Six filières structurantes ouvrent à la rentrée 2026-2027. Les locaux actuels ne "
              "permettant pas d'accueillir cette montée en charge, un devis ferme et négocié de "
@@ -319,7 +319,7 @@ def doc_banque():
              "en administration des affaires (DBA) en instance de soutenance ; fonctionnaire du "
              "Ministère des Travaux Publics. Exerce la direction "
              "générale de l'UPL : pilotage institutionnel, pédagogique et commercial ; sélection des "
-             "enseignants ; relation avec l'Université de Douala. CV joint.", "corps"),
+             "enseignants ; relation avec l'ESSEC de Douala. CV joint.", "corps"),
            P("<b>Directeur Commercial et Marketing :</b> fonction assurée par le Président-Fondateur "
              "depuis 2022 (réseaux, prescription, développement). Le renforcement de l'équipe — deux "
              "commerciaux recruteurs et un appui administratif — est prévu au plan de développement, "
@@ -331,12 +331,12 @@ def doc_banque():
            P("<b>Directeur Pédagogique :</b> Dr MENGUE Urielle. Assure, sous la direction du "
              "Président-Fondateur, la coordination pédagogique des programmes, le suivi des "
              "enseignants et le contrôle de la qualité académique, en lien avec la convention "
-             "conclue avec l'Université de Douala. CV disponible sur demande.", "corps")]
+             "conclue avec l'ESSEC de Douala. CV disponible sur demande.", "corps")]
 
     st += [PageBreak()] + ht1("Activités du client", 4.3*cm)
     st += [P("<b>• Date d'entrée en activité :</b> 2022 (première promotion Executive MBA). "
              "Activité principale : enseignement supérieur privé — formation de cadres et dirigeants. "
-             "Historique : 2022 lancement du MBA avec l'Université de Douala ; 2022-2025 "
+             "Historique : 2022 lancement du MBA avec l'ESSEC de Douala ; 2022-2025 "
              "consolidation (une vingtaine d'auditeurs par an, près de 80 cadres formés), VAE et "
              "conseil ; 2026-2027 ouverture de six filières : Gouvernance et Management, Économie "
              "Numérique et Intelligence Artificielle, Économie Bleue, Droit, Assurance Maladie et "
@@ -395,7 +395,7 @@ def doc_banque():
               ["Aménagements et équipements pédagogiques", "≈ 12 à 15 M FCFA (brut 2025)", "Sablière, Libreville", "2022-2025", "Non"],
               ["Créances étudiants (MBA)", "≈ 8 M FCFA (≈ 10 % du CA MBA)", "Libreville", "Courant", "Non"],
               ["Trésorerie", "≈ 5 M FCFA (bilan 2025)", "Compte UGB", "—", "Non"],
-              ["Convention Université de Douala", "Actif immatériel non valorisé", "—", "Depuis 2022", "Non"],
+              ["Convention ESSEC de Douala", "Actif immatériel non valorisé", "—", "Depuis 2022", "Non"],
               ["Bâtiment R+2 (en cours de réalisation)", "219 972 060 FCFA TTC — devis ferme", "Sablière, Libreville", "Neuf", "À constituer"]],
              aligns=["l", "l", "l", "c", "c"])]
 
@@ -429,7 +429,7 @@ def doc_banque():
              "que par les concurrents eux-mêmes. Le comparatif des scolarités conforte cette "
              "position :"),
            T([["Établissement", "Offre MBA", "Scolarité (FCFA)", "Observation"],
-              ["UPL", "Executive MBA avec l'Université de Douala", "4 000 000", "Meilleur rapport qualité-prix de la place"],
+              ["UPL", "Executive MBA avec l'ESSEC de Douala", "4 000 000", "Meilleur rapport qualité-prix de la place"],
               ["BBS", "MBA dispensé en anglais", "5 000 000", "Formation en anglais, peu adaptée au marché local"],
               ["Université Internationale de Libreville (UIL)", "MBA", "9 000 000", "Tarif élevé"],
               ["Autres acteurs", "Universités Mundiapolis, de Nice, etc.", "—", "Présence limitée — formats à distance ou partenariats"]],
@@ -446,7 +446,7 @@ def doc_banque():
               ["Meilleur MBA de la place — près de 80 cadres formés depuis 2022", "Poursuite de la structuration de la fonction financière"],
               ["CA récurrent et EBE positifs en 2025", "Organisation concentrée sur le fondateur"],
               ["Aucune dette bancaire", "Créances étudiants ≈ 10 % du CA MBA"],
-              ["Convention avec l'Université de Douala", "Habilitation et autorisation des filières par l'Enseignement Supérieur en cours"],
+              ["Convention avec l'ESSEC de Douala", "Habilitation et autorisation des filières par l'Enseignement Supérieur en cours"],
               ["Crédit dimensionné : couverture du service de la dette ≥ 1,39 x", "Montée en charge des filières à confirmer par les inscriptions"]],
              aligns=["l", "l"])]
     st += [Spacer(1, 30),
@@ -513,7 +513,7 @@ def doc_banque():
     # ---------- Annexe juridique
     st += titre_doc("Annexe juridique — bordereau des pièces")
     pieces = ["Statuts de l'UPL — original enregistré", "Extrait RCCM à jour",
-              "Convention avec l'Université de Douala",
+              "Convention avec l'ESSEC de Douala",
               "Habilitation et autorisations des filières — Ministère de l'Enseignement Supérieur",
               "Grille tarifaire officielle 2026-2027", "Supports de communication et flyers",
               "Liste des auditeurs MBA et état des créances", "États financiers 2022-2025",
