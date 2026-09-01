@@ -70,7 +70,7 @@ test("config.js expose email et programmes", () => {
   assert.ok(js.includes("contact@upl-gabon.com"));
   assert.ok(js.includes("exec-mba"));
   assert.ok(js.includes('status: "open"'));
-  assert.ok(js.includes("public: false"), "calvin doit rester public:false");
+  assert.ok(js.includes("contact: {"), "config.js doit toujours porter le bloc contact public");
 });
 
 test("contact@upl-gabon.com sur les pages HTML", () => {
@@ -147,6 +147,212 @@ test("HANDOVER mentionne autorisation Président et tests", () => {
 test("formulaire contact pointe vers contact@", () => {
   const html = read("contact.html");
   assert.ok(html.includes('data-mailto="contact@upl-gabon.com"'));
+});
+
+
+/* ---------- Réseaux : bios, compteurs, liste noire ---------- */
+const SOCIAL_LIMITS = {
+  "facebook.bio": 101, "facebook.about": 255,
+  "instagram.bio": 150, "tiktok.bio": 80,
+  "linkedin.headline": 220, "linkedin.tagline": 200, "linkedin.about": 2000, "linkedin.aboutEn": 2000,
+  "whatsapp.bio": 139, "whatsapp.about": 256,
+  "youtube.bio": 150, "youtube.about": 1000,
+  "google.about": 750, "x.bio": 160,
+};
+
+function loadUplConfig(rel) {
+  const win = {};
+  new Function("window", read(rel))(win);
+  if (!win.UPL || !win.UPL.config) throw new Error("window.UPL.config introuvable");
+  return win.UPL.config;
+}
+
+function socialTexts(cfg) {
+  const out = [];
+  for (const [net, entry] of Object.entries(cfg.social || {})) {
+    for (const field of ["bio", "about", "aboutEn", "headline", "tagline", "name", "category"]) {
+      if (typeof entry[field] === "string") out.push([`${net}.${field}`, entry[field]]);
+    }
+  }
+  return out;
+}
+
+test("bios des réseaux : dans les limites de chaque plateforme", () => {
+  const cfg = loadUplConfig("assets/js/config.js");
+  for (const [key, text] of socialTexts(cfg)) {
+    if (!/\.(bio|about|aboutEn|headline|tagline)$/.test(key)) continue;
+    const limit = SOCIAL_LIMITS[key];
+    assert.ok(limit, `limite non documentée pour ${key}`);
+    assert.ok(text.length <= limit, `${key} : ${text.length} caractères > ${limit} (éditer le texte dans config.js, jamais dans le doc)`);
+    if (/\.(bio|about|aboutEn|headline|tagline)$/.test(key)) {
+      const entry = cfg.social[key.split(".")[0]];
+      const declared = entry[(key.split(".")[1]) + "Max"] ?? entry.bioMax;
+      assert.equal(declared, limit, `${key}: la limite déclarée dans config.js doit coller au compteur de la plateforme`);
+    }
+  }
+});
+
+test("bios : la charte éditoriale est respectée (liste noire)", () => {
+  const cfg = loadUplConfig("assets/js/config.js");
+  const banned = [
+    "admissions@", "partenariats@", "president@upl", "upl.com", "Maroc", "Ecobank",
+    "garanti", "diplômé à coup sûr", "500 étudiants", "Calvin", "gmail.com", "Sciences Po",
+    "Polytechnique", "HEC", "Journalisme", "Rejoignez l'Élite", "SyUXYUPj6hc", "remboursement",
+    "bourse", "campus",
+  ];
+  for (const [key, text] of socialTexts(cfg)) {
+    for (const b of banned) {
+      assert.ok(!text.toLowerCase().includes(b.toLowerCase()), `${b} présent dans ${key}`);
+    }
+  }
+});
+
+test("bios : palier 1 = pré-inscriptions (et MBA ouvert depuis 2022)", () => {
+  const cfg = loadUplConfig("assets/js/config.js");
+  const open = ["facebook.bio", "instagram.bio", "tiktok.bio", "whatsapp.bio", "linkedin.tagline"];
+  const joined = socialTexts(cfg).map(([k, v]) => v).join("\n");
+  for (const key of open) {
+    const [net, field] = key.split(".");
+    assert.ok(cfg.social[net][field].includes("2026-2027"), `${key} doit porter la campagne 2026-2027`);
+  }
+  assert.ok(!/inscriptions ouvertes/i.test(joined) || /Executive MBA : inscriptions ouvertes/i.test(joined),
+    "« inscriptions ouvertes » n'est admis que pour l'Executive MBA");
+  assert.ok(joined.includes("2022"), "l'antériorité du MBA (2022) doit apparaître");
+});
+
+test("aucun handle générique @UPL sur les pages publiques (tiers, pas l'UPL)", () => {
+  for (const p of walkHtml()) {
+    const html = readFileSync(p, "utf8");
+    assert.ok(!/youtube\.com\/@UPL\b/.test(html), `lien @UPL (générique) dans ${p}`);
+    assert.ok(!/twitter\.com\/@UPL\b|x\.com\/@UPL\b/.test(html), `lien X @UPL dans ${p}`);
+    assert.ok(!/upl\.com(?![-.a-z])/i.test(html.replace(/upl-gabon\.com/g, "")), `référence à upl.com dans ${p}`);
+  }
+});
+
+test("bloc réseaux du site : rien d'affiché tant qu'un compte n'est pas live", () => {
+  const cfg = loadUplConfig("assets/js/config.js");
+  for (const [net, entry] of Object.entries(cfg.social)) {
+    assert.ok(["live", "pending", "off"].includes(entry.status), `statut inconnu pour ${net} : ${entry.status}`);
+    if (entry.status === "live") {
+      assert.ok(/^https:\/\/(www\.)?(facebook|instagram|tiktok|linkedin|youtube|x)\./.test(entry.url),
+        `${net} est à "live" sans URL officielle du bon domaine : ${entry.url}`);
+      assert.ok(typeof entry.bio === "string" && entry.bio.length > 10, `${net} est à "live" sans bio`);
+    }
+  }
+  const include = read("assets/js/include.js");
+  assert.ok(include.includes('net.status !== "live"'), "include.js doit filtrer sur status 'live'");
+  assert.ok(include.includes("showSocialLinks"), "include.js doit respecter le commutateur features.showSocialLinks");
+  for (const f of ["contact.html", "en/contact.html"]) {
+    assert.ok(read(f).includes("data-social"), `monteur [data-social] manquant dans ${f}`);
+  }
+  const css = read("assets/css/main.css");
+  assert.ok(css.includes(".social-row") && css.includes(".social-panel"), "styles du bloc réseaux manquants");
+});
+
+test("BIOS_RESEAUX_2026.md reste calé sur config.js (générateur)", () => {
+  const doc = read("docs/com/BIOS_RESEAUX_2026.md");
+  assert.ok(!doc.includes("{{bio:"), "marqueurs non générés — lancer npm run bios:sync");
+  const cfg = loadUplConfig("assets/js/config.js");
+  for (const [net, entry] of Object.entries(cfg.social)) {
+    for (const field of ["bio", "about", "headline", "tagline", "aboutEn"]) {
+      if (typeof entry[field] !== "string") continue;
+      for (const line of entry[field].split("\n").filter((l) => l.trim())) {
+        assert.ok(doc.includes(line), `${net}.${field} introuvable dans le doc — npm run bios:sync`);
+      }
+    }
+  }
+});
+
+test("flyers : le contenu généré vient bien de config.js (zéro chiffre recopié)", () => {
+  const data = JSON.parse(read("docs/com/flyers/data/flyers.json"));
+  const cfg = loadUplConfig("assets/js/config.js");
+  assert.equal(data.tarifs.length, cfg.programmes.length, "un programme du site manque dans les flyers");
+  cfg.programmes.forEach((p, i) => {
+    assert.equal(data.tarifs[i].price, p.tuition, `tarif ${p.id} différent de config.js`);
+    assert.equal(data.tarifs[i].label, p.title, `libellé ${p.id} différent de config.js`);
+  });
+  assert.equal(data.contact.email, cfg.contact.email);
+  assert.deepEqual(data.contact.phones, cfg.contact.phonesUpl.map((p) => p.display));
+  const index = read("index.html");
+  for (const pole of data.poles) {
+    assert.ok(index.includes(pole), `pôle absent du site : ${pole}`);
+  }
+  const flat = JSON.stringify(data.flyers) + JSON.stringify(data.copy);
+  for (const b of ["admissions@", "upl.com", "Maroc", "inscriptions ouvertes pour la Licence"]) {
+    assert.ok(!flat.includes(b), `${b} dans les flyers`);
+  }
+});
+
+test("pack réseaux : visuels générés, aucun tarif codé à la main dans le script", () => {
+  const script = read("docs/com/pack-reseaux/_build_pack.py");
+  assert.ok(!/\d \d{3} \d{3} FCFA/.test(script), "un tarif figé dans _build_pack.py — passer par flyers.json");
+  assert.ok(!script.includes("upl.com"), "upl.com dans le script du pack");
+  for (const must of ["P11", "P12", "visage IA", "ZONES SÛRES", "256"]) {
+    assert.ok(read("docs/com/pack-reseaux/2026-09/MODE-EMPLOI.txt").includes(must), `MODE-EMPLOI.txt sans ${must}`);
+  }
+  const files = readdirSync(join(ROOT, "docs/com/pack-reseaux/2026-09"));
+  assert.ok(files.filter((f) => f.endsWith(".png")).length >= 20, "pack incomplet : " + files.length + " fichiers");
+});
+
+/* ---------- Sécurité : le dépôt ne publie pas les affaires internes ---------- */
+test("GitHub Pages n'expose ni docs/, ni HANDOVER.md, ni README.md", () => {
+  const cfg = read("_config.yml");
+  for (const must of ["docs", "HANDOVER.md", "README.md", "tests"]) {
+    assert.ok(cfg.includes("- " + must), `_config.yml doit exclure ${must}`);
+  }
+  assert.ok(!cfg.includes("- CNAME"), "CNAME doit rester publié (domaine upl-gabon.com)");
+  assert.ok(!existsSync(join(ROOT, ".nojekyll")), ".nojekyll réactiverait la publication brute des docs");
+});
+
+test("Netlify (secours) renvoie le matériel interne en 404", () => {
+  const t = read("netlify.toml");
+  for (const path of ["/docs/*", "/HANDOVER.md", "/README.md"]) {
+    assert.ok(t.includes(`from = "${path}"`), `règle 404 manquante pour ${path}`);
+  }
+});
+
+test("les fichiers publiés par le site sont propres (ni lien Drive, ni contact personnel)", () => {
+  const published = walkHtml().concat(
+    walkHtml(join(ROOT, "assets")).map((f) => f.slice(ROOT.length + 1)),
+    ["robots.txt", "sitemap.xml", "CNAME", "_config.yml"]
+  );
+  for (const abs of new Set(published)) {
+    const rel = abs.startsWith(ROOT) ? abs.slice(ROOT.length + 1) : abs;
+    const txt = read(rel);
+    assert.ok(!/drive\.google\.com\/drive\/folders\/[A-Za-z0-9_-]+/.test(txt), `lien Drive dans ${rel}`);
+    assert.ok(!/blanchardminang00|\+33 7 52 97/.test(txt), `contact personnel dans ${rel}`);
+  }
+});
+
+test("aucun lien de dossier Drive nulle part dans le dépôt (docs internes inclus)", () => {
+  const skip = new Set([".git", "node_modules"]);
+  const re = /drive\.google\.com\/drive\/folders\/[A-Za-z0-9_-]{10,}/;
+  (function walk(dir) {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      if (skip.has(e.name)) continue;
+      const abs = join(dir, e.name);
+      if (e.isDirectory()) walk(abs);
+      else if (/\.(md|html|js|toml|yml|xml|txt)$/.test(e.name)) {
+        const txt = readFileSync(abs, "utf8");
+        assert.ok(!re.test(txt), `lien Drive dans ${abs.slice(ROOT.length + 1)} — le lien d'un dossier partagé n'a rien à faire dans un dépôt`);
+      }
+    }
+  })(ROOT);
+});
+
+test("config.js ne porte plus les coordonnées privées (calvinEmergency retiré)", () => {
+  const cfg = read("assets/js/config.js");
+  assert.ok(!cfg.includes("calvinEmergency"), "coordonnées privées encore dans le fichier chargé par le navigateur");
+  assert.ok(existsSync(join(ROOT, "docs/CONTACTS_HORS_SITE.md")), "les contacts internes doivent vivre dans docs/");
+});
+
+test("le kit de prompts vidéo verrouille le rendu et les interdits", () => {
+  const f = read("docs/com/PROMPT_VIDEO_IA.md");
+  for (const must of ["NE GÉNÈRE AUCUNE VIDÉO", "INTERDITS ABSOLUS", "[À COMPLÉTER PAR L'ÉCOLE]",
+                      "FAITS VÉRIFIÉS", "Un seul rendu"]) {
+    assert.ok(f.includes(must), `garde-fou manquant dans le kit de prompts : ${must}`);
+  }
+  assert.ok(!/upl\.com(?!-gabon)/.test(f.replace(/jamais upl\.com/g, "")), "upl.com nu (sans -gabon)");
 });
 
 console.log("");

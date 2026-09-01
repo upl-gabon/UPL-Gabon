@@ -1,46 +1,80 @@
 # À faire — version simple
 
-Site **non touché**. Rien n’est publié sans VALIDÉ du Président.
+**Mise à jour : 1er septembre 2026.** Site **non modifié sur le fond** (bios et réseaux préparés en
+`config.js`, rien d'affiché tant qu'un compte n'est pas validé). Rien n'est publié sans **VALIDÉ** du Président.
 
-## On ouvre (e-mail : contact@upl-gabon.com)
+Ce fichier = la feuille d'action. Les textes : `BIOS_RESEAUX_2026.md` · l'état des comptes :
+`RESEAUX_ETAT.md` · la Page de 2022 : `FACEBOOK_PAGE_500.md` · les mails : `EMAIL_ROUTAGE.md`.
 
-| | Compte | Nom |
+---
+
+## 1. Le principe retenu
+
+```
+bio validée  →  bio collée sur le réseau (+ 2 admins UPL)  →  status "live" dans config.js  →  le réseau apparaît sur le site
+```
+
+Un compte en cours n'apparaît **pas** sur le site. Aucun encart vide, aucun « à venir ».
+
+## 2. Bios — une par réseau, déjà écrites
+
+**Pour remplir les 4 comptes vides tout de suite : `FICHE_COLLAGE_BIOS.md`** (texte prêt à coller,
+Facebook · Instagram · TikTok · LinkedIn, avec les compteurs). Le détail et les autres réseaux :
+`BIOS_RESEAUX_2026.md`.
+
+| Réseau | Champ | Où la coller |
 |---|---|---|
-| 1 | **Facebook** Page neuve | Université Privée de Libreville — UPL |
-| 2 | **Instagram** | @upl.gabon |
-| 3 | **TikTok** | @upl.gabon |
-| 4 | **LinkedIn** Page entreprise | Université Privée de Libreville (UPL) |
+| Facebook **Page** | bio (101) + À propos (255) | `BIOS_RESEAUX_2026.md` § 4.1 |
+| Instagram | bio (150) | § 4.2 |
+| TikTok | bio (80) | § 4.3 |
+| LinkedIn | titre du profil (220) + tagline Page (200) + À propos FR/EN | § 4.4 |
+| WhatsApp (Président) | À propos (139) + description (256) | § 4.5 |
+| Google (fiche d'établissement) | description (750) | § 4.7 |
+| YouTube `@UPLGabon`, X `@uplgabon` | réservés, **non publiés** | § 4.6 et § 4.8 |
 
-Deux admins UPL sur chaque compte. Logo + lien https://upl-gabon.com + bio ci-dessous.
+**Partout** : e-mail du compte = `contact@upl-gabon.com`, lien = `https://upl-gabon.com`,
+nom = **Université Privée de Libreville**, logo `assets/img/logo-upl.png`.
+**Jamais** `upl.com` dans une bio (c'est un tiers — voir § 2 du fichier des bios).
 
-## On n’ouvre pas
+## 3. Trois corrections de sécurité avant de publier quoi que ce soit
 
-YouTube · X · Snapchat · « chaîne » WhatsApp.  
-**WhatsApp = le numéro du Président**, déjà en service. Pas de second numéro.
+- [ ] **2ᵉ admin UPL** sur Google, Facebook/Meta, TikTok, LinkedIn, GitHub, Netlify, Namecheap
+- [ ] **2FA par application** sur un téléphone de l'école + codes de secours sous enveloppe au secrétariat
+- [ ] le **compte de gestion Facebook** prend un nom de personne réelle du secrétariat ; le nom de
+      l'institution reste sur la **Page** (une Page a des abonnés, un profil a des amis)
 
-## Anciennes pages payées (agences muettes)
+## 4. La Page Facebook de 2022 (≈ 500 abonnés)
 
-On **ignore**. On ne les anime pas, on n’en parle pas. Signalement Facebook/LinkedIn : **plus tard**.
+1. Tenter la reprise par `contact@upl-gabon.com` (réinitialisation), puis réclamation Meta avec la
+   facture de l'agence + la pièce du Président + le document d'existence de l'UPL.
+2. **Pas de Page jumelle** avant la réponse de Meta.
+3. Si elle est perdue : une seule Page neuve, et le **pont** (textes T1-T4, 10 commentaires/jour,
+   **aucun message privé en masse**). Pièce **P12** à faire valider.
+4. Récupérer le travail d'il y a 4 ans : exporter l'ancien contenu, garder les 3 meilleures
+   publications, les **rééditer** avec les infos 2026-2027, répondre aux commentaires historiques.
 
-## Bio (partout)
+## 5. Mails
 
-```
-Université Privée de Libreville — UPL. Executive MBA depuis 2022. Pré-inscriptions 2026-2027 : Licence, Master, CPGE, DBA. Sablière.
-upl-gabon.com
-contact@upl-gabon.com
-```
+- [ ] alias `secretariat@` (puis `mba@`) créés dans Private Email, livrés dans `contact@` — **non publiés**
+- [ ] lecture de `contact@` depuis le compte Google (IMAP ou transfert **avec copie conservée**) ; MX intouchés
+- [ ] 7 étiquettes + filtres par objet (Pré-inscription · MBA · RDV · Partenariat · Abonnement · Scolarité · Presse)
+- [ ] notifications des boîtes de réception réseaux → `contact@` ; tout contact reçu sur un réseau est
+      **recopié par mail** sous 24 h (nom, téléphone, formation, réponse faite)
+- [ ] compte Google : e-mail et téléphone de récupération = UPL, personne de confiance ajoutée
 
-## WhatsApp Président (fiche à coller, après VALIDÉ)
+## 6. Sur le site, à la fin seulement
 
-Retirer : MBA Journalisme / Sport / Santé · vidéo Rentrée 2024.
+- [ ] `config.js → social.<reseau>.url` + `status: "live"` pour les comptes finis
+- [ ] `features.showSocialLinks = true`
+- [ ] `npm test` vert (les blocs « Nous suivre » du pied de page et de la page Contact ne s'affichent qu'alors)
 
-```
-Université Privée de Libreville — UPL
-Pré-inscriptions 2026-2027 : Licence, Master, CPGE, DBA.
-Executive MBA depuis 2022.
-https://upl-gabon.com
-```
+## 6b. Vidéos (une fois les visuels en ligne)
 
-## Premier post (après VALIDÉ) — les 4 réseaux + statut WhatsApp
+`VIDEO_AI_PLAYBOOK.md` : l'IA monte **nos** rushes, elle n'invente rien. Trois prompts prêts à coller,
+pièce **P14** à valider. ⚠️ Avant tout : passer les dossiers Drive en accès **restreint** (le dossier
+de com contient aussi le dossier bancaire et les annexes juridiques).
 
-Texte **P1** dans `TEXTES_A_VALIDER.md` + visuel `visuels/01-preinscriptions-carre.png`.
+## 7. Premier post (après VALIDÉ)
+
+Texte **P1** de `TEXTES_A_VALIDER.md` + visuel `visuels/01-preinscriptions-carre.png`, épinglé sur
+chaque réseau prêt. Toujours : **pré-inscriptions** (pas « inscriptions ouvertes »), sauf Executive MBA.

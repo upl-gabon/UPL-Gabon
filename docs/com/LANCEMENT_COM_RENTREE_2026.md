@@ -101,7 +101,7 @@ Tableau secrétariat (papier ou tableur hors GitHub) : date, nom, tél, formatio
 - Photos campus réelles (Drive) — **interdit** d’en générer.
 - 2FA GitHub (autre chantier, pas la com).
 
-Drive interne : https://drive.google.com/drive/folders/1bGyjIuiPA1FWZU567_In7J1z9Vb-7Mkx  
+Drive interne : [lien du dossier Drive — dans la messagerie du secrétariat, jamais dans un fichier publié]  
 À n’utiliser que fichiers **choisis** par le Président.
 
 ---

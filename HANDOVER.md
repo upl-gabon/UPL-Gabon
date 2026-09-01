@@ -193,6 +193,16 @@ npm test
 | `docs/01_DEPLOIEMENT_NETLIFY_NAMECHEAP.md` | Brancher www sans casser MX |
 | `docs/02_GITHUB_ET_VISION_SITE.md` | GitHub + vision produit |
 | `docs/03_CREATE_GITHUB_NOW.md` | Checklist création compte 10 min |
+| `docs/com/BIOS_RESEAUX_2026.md` | ★ Une bio par réseau (générée depuis `config.js → social`) |
+| `docs/com/FICHE_COLLAGE_BIOS.md` | Fiche de collage pour les comptes vides (FB, IG, TikTok, LinkedIn) |
+| `docs/com/EMAIL_ROUTAGE.md` | Alias, transferts, étiquettes, comptes Google — où arrivent les mails |
+| `docs/com/FACEBOOK_PAGE_500.md` | Reprise de la Page de 2022 (≈500 abonnés) + pont vers le compte officiel |
+| `docs/com/RESEAUX_ETAT.md` | Registre des comptes : URL, admins, 2FA, statut |
+| `docs/com/flyers/` | Fabrication des flyers (contenu généré depuis `config.js`, PDF/WhatsApp) |
+| `docs/com/VIDEO_AI_PLAYBOOK.md` | Vidéos courtes avec une IA de montage : prompts, garde-fous, indicateurs, **sécurité du Drive** |
+| `docs/com/PROMPT_VIDEO_IA.md` | les blocs à coller dans l'outil vidéo (storyboard d'abord, un seul rendu) |
+| `docs/05_SECURITE_EXPOSITION_PUBLIQUE.md` | **incident 01/09/2026** : le dépôt public publiait les docs internes + le lien du Drive ; remédiation |
+| `docs/com/pack-reseaux/` | **Pack visuels réseaux** (blanc · or · bleu léger) — 22 fichiers + `_build_pack.py` |
 
 ---
 
@@ -209,7 +219,7 @@ Tarifs officiels VERROUILLÉS par les tests — ne jamais modifier un chiffre sa
 Rentrée 2026-2027 réelle ouverte au public = bascule palier 2 « inscriptions ouvertes »
 (voir journal v2.2/v2.3). Ne jamais réintroduire de tournures défensives (liste noire des tests).
 Ton : factuel, pro, jamais défensif ; pas de campus fictif, pas de promesse, pas de « Maroc ».
-Lance npm test (28 tests) avant toute livraison. Bascule de langue FR/EN dans le header.
+Lance npm test (38 tests) avant toute livraison. Bascule de langue FR/EN dans le header.
 Calvin = urgence digitale été 2026 only, pas contact public permanent.
 Téléphones : UPL +241 02 62 19 78 / +241 07 35 95 72 ; présidence +241 05 01 56 20.
 Tâche demandée : […]
@@ -218,6 +228,14 @@ Tâche demandée : […]
 ---
 
 ## 9. Lien dossier bancaire (contexte séparé)
+
+⚠️ **Constat du 01/09/2026 (dossier complet : `docs/05_SECURITE_EXPOSITION_PUBLIQUE.md`) :**
+le dossier Drive qui sert de dépôt de fichiers à l'école
+(`…1bGyjIuiPA1FWZU567_In7J1z9Vb-7Mkx`) est **accessible sans authentification** et mélange les
+visuels de communication avec le dossier bancaire (80 M), les annexes juridiques, la facture Namecheap
+et les scans CamScanner. À corriger immédiatement : accès restreint + séparation com / privilégié.
+Voir `docs/com/VIDEO_AI_PLAYBOOK.md` § 0. **Aucun de ces fichiers ne doit être téléversé dans un
+service d'IA en ligne**, et aucun lien Drive ne doit apparaître en public.
 
 Package crédit Ecobank : `/home/user/UPL_Dossier_Ecobank_V12/`  
 Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`  
@@ -230,6 +248,32 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 ---
 
 ## 10. Journal des mises à jour
+
+**01/09/2026 (18) — réseaux : une bio par plateforme, routage des mails, Page de 2022**
+- `config.js → social` devient la **source de vérité des bios** : 9 entrées (Facebook, Instagram, TikTok,
+  LinkedIn, WhatsApp, YouTube, Google, X), chacune avec son texte, sa **limite de plateforme** (`bioMax`,
+  `aboutMax`…) et un `status` (`live` / `pending` / `off`). Les 4 comptes vides sont remplis avec
+  `docs/com/FICHE_COLLAGE_BIOS.md`.
+- Site : bloc « Nous suivre » (pied de page + page Contact) **conditionné** à `features.showSocialLinks`
+  **et** `status: "live"` — rien ne s'affiche pour un compte inachevé, aucun emplacement vide.
+- **Bug corrigé** : `a-propos.html` (FR + EN) et `config.js` pointaient vers `youtube.com/@UPL`, un handle
+  **générique qui n'appartient pas à l'UPL** (UPL Ltd / Lubumbashi). Remplacé par les deux films réels
+  (`jh_iCTJuLKA`, `FAKHfv8nN7I`). Nouveau test : plus aucun `@UPL` ni `upl.com` sur le site.
+- **Pack visuels réseaux** (`docs/com/pack-reseaux/`, palette **blanc + or + bleu léger** sur demande du Président,
+  le bleu nuit ne sert plus qu'au texte) : emblème **redessiné en vectoriel** car le logo du dépôt ne fait que
+  256x163 px — avatars, couvertures FB/LinkedIn/X, 6 posts 1080x1350, 2 stories, visuel WhatsApp, 2 miniatures
+  YouTube, `MODE-EMPLOI.txt` (quel fichier dans quel champ). Régénérer : `/tmp/fv/bin/python docs/com/pack-reseaux/_build_pack.py`.
+  Pièce **P13** à faire valider avant publication.
+- Docs nouveaux : `BIOS_RESEAUX_2026.md` (généré par `npm run bios:sync`), `EMAIL_ROUTAGE.md` (une seule
+  adresse publique `contact@`, alias Private Email, IMAP/transfert **avec copie conservée**, 7 étiquettes,
+  remontée des boîtes de réception réseaux vers `contact@`), `FACEBOOK_PAGE_500.md` (reprise de la Page
+  payée en 2022, pont en 5 textes, plafonds anti-blocage), `RESEAUX_ETAT.md` (registre), kit **flyers**
+  (`docs/com/flyers/`, contenu généré depuis `config.js` → `npm run flyers:data`).
+- Pièces de validation ajoutées : **P11** (bios) et **P12** (pont Facebook) dans `TEXTES_A_VALIDER.md`.
+- Tests portés à **38** (compteurs de bios, liste noire « palier 1 », doc synchronisé, gating `live`,
+  flyers non divergents de `config.js`, pack visuels sans tarif codé à la main). Cache-busting `?v=20260901a`. Site **toujours** sans nouvelle
+  offre ni date de rentrée.
+
 
 **27/08/2026 (17) — lien ESSEC + WhatsApp 02 (consigne explicite)**
 - Lien mort `essec-douala.cm` → `https://www.essec-dla.com/concours/` (FR + EN).

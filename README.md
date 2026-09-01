@@ -10,14 +10,19 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 - Site **statique** HTML/CSS/JS — zéro framework, zéro dépendance, reprise facile
 - Offre affichée : **Executive MBA** (depuis 2022) + **rentrée 2026-2027** : Licence, Master, CPGE, DBA — tarifs officiels UPL
 - Charte : bleu `#0B2A5B` · or `#C9A227` · blanc — rendu « grande école »
-- **Config centrale** : `assets/js/config.js` — contacts, feature flags, programmes (architecture multi-université prête)
+- **Config centrale** : `assets/js/config.js` — contacts, feature flags, programmes, **bios des réseaux** (`social`)
+- **Réseaux 2026-2027** : une bio par réseau dans `config.js → social` ; le bloc « Nous suivre »
+  du site ne s'affiche que pour un compte à `status: "live"` + `features.showSocialLinks = true`
+- Kit com (bios, routage des mails, reprise de la Page Facebook, flyers) : `docs/com/` — **interne, à ne pas merger sur `main`**
 - **Bilingue FR ⇄ EN** (pages miroir `en/`) · bandeau d'action standard (candidature · rendez-vous · partenariat) sur chaque page
 - Hébergement : **GitHub Pages** — Netlify existant conservé en secours, non supprimé
 
 ## Démarrage
 
 ```bash
-npm test          # 28 tests de stabilité — OBLIGATOIRE avant toute livraison
+npm test          # 38 tests de stabilité — OBLIGATOIRE avant toute livraison
+npm run bios:sync # recale docs/com/BIOS_RESEAUX_2026.md sur les bios de config.js
+npm run flyers:data # regroupe les tarifs/contacts/pôles utilisés par les flyers et le pack visuels
 npm run serve     # serveur local → http://127.0.0.1:5173
 ```
 
@@ -42,6 +47,9 @@ Aucun `npm install` nécessaire (aucune dépendance).
 │       └── main.js       Nav, formulaire
 ├── tests/site.test.mjs   28 tests de stabilité (Node ≥ 18)
 ├── docs/                 Décisions & guides (domaine, DNS, GitHub, com)
+│   └── com/          BIOS_RESEAUX_2026.md · FICHE_COLLAGE_BIOS.md · EMAIL_ROUTAGE.md
+│                     FACEBOOK_PAGE_500.md · RESEAUX_ETAT.md · VIDEO_AI_PLAYBOOK.md
+│                     flyers/ · pack-reseaux/ (visuels réseaux)
 ├── HANDOVER.md           ★ Passation — à lire en premier
 └── netlify.toml          Config Netlify conservée (publish = ".")
 ```

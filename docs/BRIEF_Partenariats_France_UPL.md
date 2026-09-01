@@ -154,4 +154,4 @@ Mise à disposition d’espaces ou services pour le partenaire.
 - Site web source : repo `upl-web`  
 - Médias : vidéos YouTube UPL / TV régionale  
 
-**Drive :** https://drive.google.com/drive/folders/1bGyjIuiPA1FWZU567_In7J1z9Vb-7Mkx
+**Drive :** [lien du dossier Drive — dans la messagerie du secrétariat, jamais dans un fichier publié]

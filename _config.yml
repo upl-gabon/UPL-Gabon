@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll) — le dépôt contient du matériel interne qui ne doit PAS être publié.
+# Pages publie la racine ; ces exclusions retirent les docs du site généré.
+# ⚠️ Ne pas ajouter `.nojekyll` : sans Jekyll, tout est copié tel quel et les docs republient.
+# CNAME est conservé (domaine upl-gabon.com).
+exclude:
+  - docs
+  - tests
+  - HANDOVER.md
+  - README.md
+  - package.json
+  - netlify.toml
+  - _config.yml
