@@ -9,4 +9,3 @@ exclude:
   - README.md
   - package.json
   - netlify.toml
-  - _config.yml
