@@ -1,0 +1,433 @@
+{
+  "generatedFrom": "assets/js/config.js + index.html — npm run flyers:data",
+  "institution": {
+    "name": "Université Privée de Libreville",
+    "short": "UPL",
+    "president": "Serge Patrick MINANG"
+  },
+  "brand": {
+    "bleu": "#0B2A5B",
+    "or": "#C9A227",
+    "blanc": "#FFFFFF"
+  },
+  "contact": {
+    "email": "contact@upl-gabon.com",
+    "phones": [
+      "+241 02 62 19 78",
+      "+241 07 35 95 72"
+    ],
+    "whatsapp": "https://wa.me/24102621978",
+    "whatsappDisplay": "+241 02 62 19 78",
+    "site": "https://upl-gabon.com",
+    "siteShort": "upl-gabon.com",
+    "addressShort": "Sablière, Libreville — Gabon",
+    "addressLong": "Sablière, en face de la Résidence de l'Ambassade d'Arabie Saoudite — Libreville",
+    "president": "Serge Patrick MINANG"
+  },
+  "tarifs": [
+    {
+      "id": "licence-1",
+      "label": "Licence 1",
+      "price": "1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA",
+      "note": "Frais d'inscription : 200 000 / 300 000 FCFA exigibles au dépôt du dossier — solde en 6 tranches",
+      "status": "preopen"
+    },
+    {
+      "id": "master-1",
+      "label": "Master 1",
+      "price": "1 500 000 FCFA",
+      "note": "",
+      "status": "preopen"
+    },
+    {
+      "id": "master-2",
+      "label": "Master 2",
+      "price": "2 000 000 FCFA",
+      "note": "",
+      "status": "preopen"
+    },
+    {
+      "id": "cpge",
+      "label": "Classes préparatoires aux Grandes Écoles (CPGE)",
+      "price": "2 200 000 FCFA",
+      "note": "",
+      "status": "preopen"
+    },
+    {
+      "id": "exec-mba",
+      "label": "Executive MBA",
+      "price": "4 000 000 FCFA",
+      "note": "Droit de scolarité — promotion type",
+      "status": "open"
+    },
+    {
+      "id": "dba",
+      "label": "DBA",
+      "price": "Sur dossier",
+      "note": "",
+      "status": "preopen"
+    }
+  ],
+  "poles": [
+    "Faculté de Gouvernance, Leadership et Management",
+    "Faculté de l'Économie Numérique et de l'Intelligence Artificielle",
+    "Faculté de l'Économie Bleue, Gestion Portuaire et Développement Durable",
+    "Faculté de Droit et Sciences Politiques",
+    "École d'Assurance Maladie et de Sécurité Sociale",
+    "Classes préparatoires aux Grandes Écoles (CPGE)"
+  ],
+  "copy": {
+    "kicker": "Campagne 2026-2027",
+    "title": "Pré-inscriptions 2026-2027",
+    "programmesCourt": "Licence · Master · CPGE · Executive MBA · DBA",
+    "lead": "La pré-inscription est gratuite et sans engagement. Le secrétariat rappelle chaque candidat pour les pièces du dossier et les places disponibles.",
+    "lieu": "Sablière, Libreville — cours du soir et en journée",
+    "depuis": "Executive MBA ouvert depuis 2022, avec l'appui académique de l'Université de Douala.",
+    "places": "Places limitées — rentrée 2026-2027.",
+    "note": "Tarifs indiqués en droits de scolarité annuels. Un reçu est délivré pour tout paiement. Règlement par Airtel Money : conservez votre justificatif, la confirmation de l'UPL est indispensable.",
+    "etapes": [
+      "Écrire à contact@upl-gabon.com (objet « Pré-inscription 2026-2027 ») : nom, téléphone, formation souhaitée, dernier diplôme obtenu.",
+      "Le secrétariat rappelle et remet la liste des pièces du dossier.",
+      "Après validation du profil : inscription et règlement auprès du secrétariat, Sablière."
+    ],
+    "mbaLignes": [
+      "Public : cadres et dirigeants en activité.",
+      "Cours du soir, 17h–21h, Sablière — promotion d'environ 20 auditeurs.",
+      "Près de 80 cadres formés depuis 2022.",
+      "Scolarité : 4 000 000 FCFA l'année, payable en tranches (jusqu'à huit échéances).",
+      "Candidature : CV, parcours et diplômes, par e-mail (objet « Candidature MBA ») ou dépôt au secrétariat."
+    ],
+    "l1Lignes": [
+      "Droits de scolarité : 1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA.",
+      "Frais d'inscription exigibles au dépôt du dossier : 200 000 FCFA (50 premières inscriptions) ou 300 000 FCFA (inscriptions normales).",
+      "Solde en 6 tranches. Un reçu est délivré pour tout paiement.",
+      "Un socle universitaire pour construire son parcours dans les pôles d'enseignement de l'UPL."
+    ],
+    "reseauxTitre": "Les suivre",
+    "mentions": [
+      "Université Privée de Libreville — établissement privé d'enseignement supérieur, Libreville (Gabon).",
+      "Les formations de la rentrée 2026-2027 sont annoncées en pré-inscriptions ; les modalités de dossier et de règlement sont précisées par le secrétariat."
+    ]
+  },
+  "social": {
+    "facebook": {
+      "label": "Facebook",
+      "handle": "@uplgabon",
+      "url": "",
+      "status": "pending"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "handle": "@upl.gabon",
+      "url": "",
+      "status": "pending"
+    },
+    "tiktok": {
+      "label": "TikTok",
+      "handle": "@upl.gabon",
+      "url": "",
+      "status": "pending"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "handle": "/company/upl-gabon",
+      "url": "",
+      "status": "pending"
+    },
+    "whatsapp": {
+      "label": "WhatsApp Business",
+      "handle": "",
+      "url": "https://wa.me/24102621978",
+      "status": "pending"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "handle": "@UPLGabon",
+      "url": "",
+      "status": "off"
+    },
+    "google": {
+      "label": "Google (compte + fiche d'établissement)",
+      "handle": "",
+      "url": "",
+      "status": "pending"
+    },
+    "x": {
+      "label": "X (Twitter)",
+      "handle": "@uplgabon",
+      "url": "",
+      "status": "off"
+    }
+  },
+  "qr": {
+    "contact": {
+      "label": "Se pré-inscrire — formulaire du site",
+      "value": "https://upl-gabon.com/contact.html"
+    },
+    "whatsapp": {
+      "label": "WhatsApp secrétariat",
+      "value": "https://wa.me/24102621978"
+    }
+  },
+  "flyers": [
+    {
+      "id": "01-preinscriptions",
+      "format": "A5",
+      "title": "Pré-inscriptions 2026-2027",
+      "kicker": "Campagne 2026-2027",
+      "lead": "Licence · Master · CPGE · Executive MBA · DBA",
+      "blocks": [
+        {
+          "type": "lead",
+          "text": "La pré-inscription est gratuite et sans engagement. Le secrétariat rappelle chaque candidat pour les pièces du dossier et les places disponibles."
+        },
+        {
+          "type": "table",
+          "title": "Droits de scolarité 2026-2027",
+          "rows": [
+            {
+              "id": "licence-1",
+              "label": "Licence 1",
+              "price": "1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA",
+              "note": "Frais d'inscription : 200 000 / 300 000 FCFA exigibles au dépôt du dossier — solde en 6 tranches",
+              "status": "preopen"
+            },
+            {
+              "id": "master-1",
+              "label": "Master 1",
+              "price": "1 500 000 FCFA",
+              "note": "",
+              "status": "preopen"
+            },
+            {
+              "id": "master-2",
+              "label": "Master 2",
+              "price": "2 000 000 FCFA",
+              "note": "",
+              "status": "preopen"
+            },
+            {
+              "id": "cpge",
+              "label": "Classes préparatoires aux Grandes Écoles (CPGE)",
+              "price": "2 200 000 FCFA",
+              "note": "",
+              "status": "preopen"
+            },
+            {
+              "id": "exec-mba",
+              "label": "Executive MBA",
+              "price": "4 000 000 FCFA",
+              "note": "Droit de scolarité — promotion type",
+              "status": "open"
+            },
+            {
+              "id": "dba",
+              "label": "DBA",
+              "price": "Sur dossier",
+              "note": "",
+              "status": "preopen"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "title": "Comment se pré-inscrire",
+          "lines": [
+            "Écrire à contact@upl-gabon.com (objet « Pré-inscription 2026-2027 ») : nom, téléphone, formation souhaitée, dernier diplôme obtenu.",
+            "Le secrétariat rappelle et remet la liste des pièces du dossier.",
+            "Après validation du profil : inscription et règlement auprès du secrétariat, Sablière."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Places limitées — rentrée 2026-2027. Executive MBA ouvert depuis 2022, avec l'appui académique de l'Université de Douala."
+        }
+      ]
+    },
+    {
+      "id": "02-licence1",
+      "format": "A5",
+      "title": "Licence 1 — rentrée 2026-2027",
+      "kicker": "Pré-inscriptions",
+      "lead": "Un socle universitaire, cinq pôles d'enseignement, une scolarité payable en tranches.",
+      "blocks": [
+        {
+          "type": "lines",
+          "title": "Scolarité et inscription",
+          "lines": [
+            "Droits de scolarité : 1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA.",
+            "Frais d'inscription exigibles au dépôt du dossier : 200 000 FCFA (50 premières inscriptions) ou 300 000 FCFA (inscriptions normales).",
+            "Solde en 6 tranches. Un reçu est délivré pour tout paiement.",
+            "Un socle universitaire pour construire son parcours dans les pôles d'enseignement de l'UPL."
+          ]
+        },
+        {
+          "type": "note",
+          "title": "Comment se pré-inscrire",
+          "lines": [
+            "Écrire à contact@upl-gabon.com (objet « Pré-inscription 2026-2027 ») : nom, téléphone, formation souhaitée, dernier diplôme obtenu.",
+            "Le secrétariat rappelle et remet la liste des pièces du dossier.",
+            "Après validation du profil : inscription et règlement auprès du secrétariat, Sablière."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Places limitées — rentrée 2026-2027."
+        }
+      ]
+    },
+    {
+      "id": "03-mba",
+      "format": "A5",
+      "title": "Executive MBA",
+      "kicker": "Depuis 2022 · Université de Douala (appui académique)",
+      "lead": "Le programme de l'UPL pour les cadres et dirigeants en activité.",
+      "blocks": [
+        {
+          "type": "lines",
+          "title": "Le programme en pratique",
+          "lines": [
+            "Public : cadres et dirigeants en activité.",
+            "Cours du soir, 17h–21h, Sablière — promotion d'environ 20 auditeurs.",
+            "Près de 80 cadres formés depuis 2022.",
+            "Scolarité : 4 000 000 FCFA l'année, payable en tranches (jusqu'à huit échéances).",
+            "Candidature : CV, parcours et diplômes, par e-mail (objet « Candidature MBA ») ou dépôt au secrétariat."
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Droits de scolarité 2026-2027",
+          "rows": [
+            {
+              "id": "exec-mba",
+              "label": "Executive MBA",
+              "price": "4 000 000 FCFA",
+              "note": "Droit de scolarité — promotion type",
+              "status": "open"
+            },
+            {
+              "id": "dba",
+              "label": "DBA",
+              "price": "Sur dossier",
+              "note": "",
+              "status": "preopen"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "title": "Candidature",
+          "lines": [
+            "Écrire à contact@upl-gabon.com (objet « Pré-inscription 2026-2027 ») : nom, téléphone, formation souhaitée, dernier diplôme obtenu.",
+            "Le secrétariat rappelle et remet la liste des pièces du dossier."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04-tarifs-poles",
+      "format": "A4",
+      "title": "Grille des frais et pôles d'enseignement",
+      "kicker": "Rentrée 2026-2027",
+      "lead": "Licence · Master · CPGE · Executive MBA · DBA",
+      "blocks": [
+        {
+          "type": "table",
+          "title": "Droits de scolarité 2026-2027",
+          "rows": [
+            {
+              "id": "licence-1",
+              "label": "Licence 1",
+              "price": "1 000 000 FCFA (50 premières inscriptions) / 1 200 000 FCFA",
+              "note": "Frais d'inscription : 200 000 / 300 000 FCFA exigibles au dépôt du dossier — solde en 6 tranches",
+              "status": "preopen"
+            },
+            {
+              "id": "master-1",
+              "label": "Master 1",
+              "price": "1 500 000 FCFA",
+              "note": "",
+              "status": "preopen"
+            },
+            {
+              "id": "master-2",
+              "label": "Master 2",
+              "price": "2 000 000 FCFA",
+              "note": "",
+              "status": "preopen"
+            },
+            {
+              "id": "cpge",
+              "label": "Classes préparatoires aux Grandes Écoles (CPGE)",
+              "price": "2 200 000 FCFA",
+              "note": "",
+              "status": "preopen"
+            },
+            {
+              "id": "exec-mba",
+              "label": "Executive MBA",
+              "price": "4 000 000 FCFA",
+              "note": "Droit de scolarité — promotion type",
+              "status": "open"
+            },
+            {
+              "id": "dba",
+              "label": "DBA",
+              "price": "Sur dossier",
+              "note": "",
+              "status": "preopen"
+            }
+          ]
+        },
+        {
+          "type": "lines",
+          "title": "Frais d'inscription (Licence 1)",
+          "lines": [
+            "200 000 FCFA (50 premières inscriptions) ou 300 000 FCFA (inscriptions normales), exigibles au dépôt du dossier — solde en 6 tranches. Un reçu est délivré pour tout paiement."
+          ]
+        },
+        {
+          "type": "lines",
+          "title": "Cinq pôles d'enseignement, plus les classes préparatoires",
+          "lines": [
+            "Faculté de Gouvernance, Leadership et Management",
+            "Faculté de l'Économie Numérique et de l'Intelligence Artificielle",
+            "Faculté de l'Économie Bleue, Gestion Portuaire et Développement Durable",
+            "Faculté de Droit et Sciences Politiques",
+            "École d'Assurance Maladie et de Sécurité Sociale",
+            "Classes préparatoires aux Grandes Écoles (CPGE)"
+          ]
+        },
+        {
+          "type": "note",
+          "title": "À retenir",
+          "lines": [
+            "Tarifs indiqués en droits de scolarité annuels. Un reçu est délivré pour tout paiement. Règlement par Airtel Money : conservez votre justificatif, la confirmation de l'UPL est indispensable.",
+            "Pré-inscriptions gratuites et sans engagement."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05-contact",
+      "format": "A6",
+      "title": "Université Privée de Libreville",
+      "kicker": "Secrétariat · Sablière, Libreville",
+      "lead": "Écrire, appeler, se déplacer — le secrétariat répond en jours ouvrés.",
+      "blocks": [
+        {
+          "type": "qr-pair",
+          "left": {
+            "label": "Se pré-inscrire — formulaire du site",
+            "value": "https://upl-gabon.com/contact.html"
+          },
+          "right": {
+            "label": "WhatsApp secrétariat",
+            "value": "https://wa.me/24102621978"
+          }
+        }
+      ]
+    }
+  ],
+  "rentreeNote": "La rentrée 2026-2027 Licences, masters, programmes spécialisés : la prochaine campagne d'inscription sera confirmée par communiqué officiel."
+}

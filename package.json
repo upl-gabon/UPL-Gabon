@@ -5,6 +5,8 @@
   "description": "Site institutionnel Université Privée de Libreville — Executive MBA",
   "scripts": {
     "test": "node tests/site.test.mjs",
+    "bios:sync": "node docs/com/_sync_bios.mjs",
+    "flyers:data": "node docs/com/flyers/_build_data.mjs",
     "serve": "python3 -m http.server 5173 --bind 0.0.0.0",
     "check": "npm test"
   },

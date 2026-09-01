@@ -1,0 +1,10 @@
+blanc           #FFFFFF
+ivoire          #FAFBFD
+bleu-leger      #E8F0FA
+bleu-filet      #CDDEF2
+or              #C9A227
+or-pale         #E9D38A
+bleu-bonnet     #2B8FD6
+bleu-nuit       #0B2A5B
+encre           #1A263A
+gris            #5C697D

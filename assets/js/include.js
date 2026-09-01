@@ -22,6 +22,8 @@
     footerAddress: "Sablière, opposite the Residence of the Embassy of Saudi Arabia",
     colPath: "Programmes",
     colContact: "Contact",
+    colFollow: "Follow",
+    socialLead: "Official channels, run by the UPL Secretariat.",
     form: "Form",
     tel: "Tel. ",
     footerBottom: "Blue & gold charter · Institutional website",
@@ -44,6 +46,8 @@
     footerAddress: "Sablière, en face de la Résidence de l'Ambassade d'Arabie Saoudite",
     colPath: "Parcours",
     colContact: "Contact",
+    colFollow: "Nous suivre",
+    socialLead: "Canaux officiels de l'UPL, animés par le secrétariat.",
     form: "Formulaire",
     tel: "Tél. ",
     footerBottom: "Charte bleu & or · Site institutionnel",
@@ -61,6 +65,53 @@
 
   var PAGES = { home: "index.html", mba: "mba.html", about: "a-propos.html", president: "president.html", contact: "contact.html" };
   function href(key) { return BASE + PAGES[key]; }
+
+  /**
+   * Réseaux sociaux — seul ce qui est prêt sort à l'écran.
+   * Un réseau est affiché si features.showSocialLinks = true ET config.social[k].status = "live"
+   * ET qu'une URL officielle est renseignée. Tant qu'une bio n'est pas validée par le Président,
+   * le réseau reste à "pending" : rien n'apparaît, aucun emplacement vide.
+   */
+  var SOCIAL_ORDER = ["facebook", "instagram", "tiktok", "linkedin", "youtube", "x"];
+  function liveSocial() {
+    var cfg = (C.features && C.features.showSocialLinks) ? (C.social || {}) : {};
+    var out = [];
+    SOCIAL_ORDER.forEach(function (key) {
+      var net = cfg[key];
+      if (!net || net.status !== "live" || !net.url) return;
+      out.push({ key: key, label: net.label || key, url: net.url, handle: net.handle || "" });
+    });
+    return out;
+  }
+
+  function socialFooterHTML(items) {
+    if (!items.length) return "";
+    return (
+      '<div><h4>' + T.colFollow + '</h4><ul class="social-row">' +
+      items.map(function (it) {
+        return '<li><a href="' + it.url + '" target="_blank" rel="noopener me">' + it.label + "</a></li>";
+      }).join("") +
+      "</ul></div>"
+    );
+  }
+
+  function socialPanelHTML(items) {
+    if (!items.length) return "";
+    return (
+      '<div class="social-panel">' +
+      '<p class="small">' + T.socialLead + "</p>" +
+      '<ul class="social-row social-row-pills">' +
+      items.map(function (it) {
+        return (
+          '<li><a class="btn btn-outline" href="' + it.url + '" target="_blank" rel="noopener me">' +
+          it.label + (it.handle ? ' <span class="social-handle">' + it.handle + "</span>" : "") +
+          "</a></li>"
+        );
+      }).join("") +
+      "</ul></div>"
+    );
+  }
+
 
   function langSwitchHTML() {
     var file = location.pathname.split("/").pop() || "index.html";
@@ -101,9 +152,11 @@
     var phones = (contact.phonesUpl || []).map(function (p) {
       return "<li>" + T.tel + p.display + "</li>";
     }).join("");
+    var socialItems = liveSocial();
+    var cols = socialItems.length ? "2fr 1fr 1fr 1fr" : "2fr 1fr 1fr";
     return (
       '<footer class="site-footer">' +
-      '<div class="container footer-grid" style="grid-template-columns:2fr 1fr 1fr">' +
+      '<div class="container footer-grid" style="grid-template-columns:' + cols + '">' +
       "<div><h4>UPL</h4>" +
       '<p class="small">' + T.footerTagline + "</p>" +
       '<p class="small">' + T.footerAddress + "</p></div>" +
@@ -118,7 +171,9 @@
       '<li><a href="' + ((contact.whatsapp && contact.whatsapp.href) || "https://wa.me/24102621978") + '" target="_blank" rel="noopener">WhatsApp ' + ((contact.whatsapp && contact.whatsapp.display) || "+241 02 62 19 78") + "</a></li>" +
       '<li><a href="mailto:' + email + '">' + email + "</a></li>" +
       '<li><a href="' + href("contact") + '">' + T.form + "</a></li>" +
-      "</ul></div></div>" +
+      "</ul></div>" +
+      socialFooterHTML(socialItems) +
+      "</div>" +
       '<div class="container footer-bottom">' +
       "<span>© <span data-year></span> Université Privée de Libreville</span>" +
       "<span>" + T.footerBottom + "</span>" +
@@ -161,4 +216,8 @@
   if (f) f.outerHTML = footerHTML();
   var band = document.querySelector("[data-action-band]");
   if (band) band.outerHTML = bandHTML();
+  /* Panneau « Nous suivre » (page Contact) — disparaît si aucun réseau n'est live. */
+  document.querySelectorAll("[data-social]").forEach(function (mount) {
+    mount.outerHTML = socialPanelHTML(liveSocial());
+  });
 })();

@@ -307,6 +307,71 @@ Validation Président : [ ]
 
 ---
 
+## P11 — Bios officielles des réseaux (campagne 2026-2027)
+
+**Réseaux :** Facebook (Page), Instagram, TikTok, LinkedIn (Page + titre du profil), WhatsApp,
+Google (fiche d'établissement), YouTube et X (réservés, non publiés)
+**Source des textes :** `assets/js/config.js → social` — le fichier `BIOS_RESEAUX_2026.md` en est la
+copie générée (`npm run bios:sync`). Les compteurs de chaque plateforme sont vérifiés par `npm test`.
+
+**À valider :** les 14 blocs de texte de `BIOS_RESEAUX_2026.md` § 4, tels quels. Si une formulation ne
+plaît pas, on la corrige **dans `config.js`** puis on régénère le document — jamais l'inverse.
+
+**Effet de la validation :** bio collée sur le réseau → `status: "live"` dans `config.js` → le réseau
+apparaît dans le pied de page et sur la page Contact du site. Sans validation, le réseau reste `pending`
+et n'apparaît nulle part.
+
+Validation Président : [ ]
+
+---
+
+## P14 — Vidéos courtes (TikTok / Reels / Shorts)
+
+**Réseaux :** TikTok, Instagram Reels, Facebook, YouTube Shorts, LinkedIn (MBA)
+**Mode d'emploi, prompts et garde-fous :** `VIDEO_AI_PLAYBOOK.md`
+
+**À valider :** les textes affichés à l'écran de chaque vidéo (accroche, 3 sous-titres maximum, carte
+finale) et la liste des rushes utilisés. Une vidéo se valide **plan par plan**, pas « globalement ».
+
+**Contrôles automatiques avant publication :** aucun visage ou voix généré, aucune image de stock,
+aucun logo de partenaire non signé, aucun tarif hors grille, aucune date de rentrée, aucune promesse
+(emploi, bourse, remboursement), sous-titres en français, carte finale `upl-gabon.com`.
+
+**Ajouté au contrôle éditorial :** le dossier Drive de l'école ne doit plus être en « toute personne
+ayant le lien » (pièces bancaires et juridiques présentes à côté des visuels) — voir `VIDEO_AI_PLAYBOOK.md` § 0.
+
+Validation Président : [ ]
+
+---
+
+## P13 — Visuels des réseaux (pack blanc · or · bleu léger)
+
+**Réseaux :** Facebook, Instagram, TikTok, LinkedIn, WhatsApp, X (réserve), YouTube (miniatures)
+**Dossier :** `docs/com/pack-reseaux/2026-09/` · regenerated par `docs/com/pack-reseaux/_build_pack.py`
+**À valider :** les 22 fichiers du dossier, avant toute mise en ligne. Rappel : **aucune image générée,
+aucun visage synthétique, aucune photo de stock de campus** — le pack est typographique jusqu'à
+l'arrivée des photos réelles et du logo en haute définition.
+
+Validation Président : [ ]
+
+---
+
+## P12 — Pont Facebook (Page de 2022, ≈ 500 abonnés)
+
+**Réseaux :** commentaires sous les anciennes publications de la Page + publication épinglée du compte officiel
+**Procédure et plafonds :** `FACEBOOK_PAGE_500.md` § 4 (10 commentaires par jour maximum, textes alternés,
+**aucun message privé en masse** aux anciens abonnés)
+
+**Textes à valider :** T1 (commentaire long), T2 (variante courte), T3 (réponse à une demande précise),
+T4 (publication épinglée « compte officiel, tenu par le secrétariat ») — dans `FACEBOOK_PAGE_500.md` § 4.
+
+**À ne pas publier :** toute phrase laissant croire que l'ancienne page « n'existe pas », tout appel à
+« suivez le nouveau compte » hors des publications de l'UPL, tout ajout massif d'amis ou d'abonnés.
+
+Validation Président : [ ]
+
+---
+
 ## Formules interdites (rappel)
 
 Ne jamais écrire : garanti, sécurisé, diplômé à coup sûr, 500 étudiants (sauf « ambition » interne, pas en public remboursement), tarif DBA, Maroc, Calvin, admissions@, partenariats@, « inscriptions ouvertes » pour Licence / Master / CPGE / DBA, logos ou noms de partenaires non signés, date de rentrée tant qu’elle n’est pas confirmée par l’école.

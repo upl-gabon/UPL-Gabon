@@ -1,0 +1,41 @@
+PACK RÉSEAUX UPL — blanc · or · bleu léger (campagne 2026-2027)
+Généré par docs/com/pack-reseaux/_build_pack.py. Contenu repris de assets/js/config.js
+via docs/com/flyers/data/flyers.json : aucun tarif recopié à la main.
+
+OÙ METTRE CHAQUE FICHIER
+  00-emblem-vectoriel-*.png .............. emblème redessiné, fond transparent (usage libre)
+  01/02-verrou-marque-*.png .............. bloc de marque complet (emblème + UNIVERSITÉ + devise)
+  03-logo-original-256px-agrandi.png ..... comparaison : le fichier du dépôt ne fait que 256 px
+  10-avatar-carre-500 / 1024 ............. photo de profil : Facebook (Page), LinkedIn (Page + profil), X
+  11-avatar-cercle-1024 .................. Instagram et TikTok (rognés en rond)
+  20-couverture-facebook-1640x624 ........ couverture de la Page Facebook
+  21-couverture-linkedin-page ............ bannière de la Page entreprise LinkedIn (1584x396)
+  22-couverture-x ........................ compte X réservé (1500x500)
+  23-couverture-linkedin-profil .......... bannière du profil de travail du secrétariat
+  30 à 35-post-1080x1350 ................. publications fil Facebook / Instagram / LinkedIn (4:5)
+  35-...-tarifs-table ..................... la grille en tableau : la plus lisible sur mobile
+  40 / 41-story-1080x1920 ................ Story Instagram et Facebook, statut WhatsApp
+  50-whatsapp-carre-1080 ................ envoi WhatsApp (conversation, listes de diffusion)
+  51 / 52-miniature-youtube ............... miniatures des deux films TV (1280x720)
+
+PALETTE
+  blanc #FFFFFF · ivoire #FAFBFD · bleu léger #E8F0FA · filet #CDDEF2
+  or #C9A227 · or pâle #E9D38A · bleu du bonnet #2B8FD6
+  bleu nuit #0B2A5B : texte et filets uniquement, plus de grands aplats (demande du Président)
+
+AVANT DE PUBLIER
+  1. Faire valider les visuels avec les textes : pièces P1, P11 et P12 de docs/com/TEXTES_A_VALIDER.md.
+  2. Fournir le logo en haute définition (SVG ou PNG >= 1200 px) : celui du dépôt fait 256x163 et ne
+     tient pas l'impression. Le pack utilise un emblème redessiné en attendant — le jour où le vrai
+     fichier vectoriel arrive, on remplace `emblem()` et on régénère tout.
+  3. Photos réelles du campus / des promotions : les insérer dans la partie haute des posts 30 à 35,
+     en gardant le bandeau de contact. Aucune image générée, aucun visage IA (règle du playbook).
+  4. Un tarif qui bouge se corrige dans assets/js/config.js, puis `npm run flyers:data` et ce script.
+     `npm test` casse si un flyer contredit le site.
+
+ZONES SÛRES
+  Stories et Reels : ~250 px libres en haut, ~320 px en bas (nom du compte, barre de réponse, bouton
+  d'envoi). Les visuels 40/41 les respectent déjà.
+  Facebook recadre les couvertures sur mobile : l'essentiel reste dans les 60 % centraux.
+
+© Université Privée de Libreville — Sablière, Libreville (Gabon).

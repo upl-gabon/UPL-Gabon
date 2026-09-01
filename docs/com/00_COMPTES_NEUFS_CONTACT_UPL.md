@@ -25,7 +25,7 @@ Au Gabon, les cibles (bacheliers, parents, cadres, institutions) sont surtout su
 | **Instagram** | **Ouvrir** | Même Business Manager que Facebook. Jeunes + visuels. | @upl.gabon |
 | **TikTok** | **Ouvrir** | Bacheliers. Uniquement vraies images / visuels graphiques validés — **pas de visages IA**. | @upl.gabon |
 | **LinkedIn** (page entreprise) | **Récupérer** (payée) | Cadres MBA, RH. Neuve seulement si claim refusé. | Université Privée de Libreville (UPL) |
-| **YouTube** | **Ouvrir une chaîne UPL Gabon** | Les 2 films TV y sont déjà hébergés. L’ancien `@UPL` est trop générique / risqué. | @UPLGabon |
+| **YouTube** | **Handle réservé, pas de chaîne animée au lancement** | Les 2 films TV sont déjà en ligne et relayés par le site. `@UPL` est un handle générique pris par un tiers — à ne jamais relayer. Chaîne `@UPLGabon` créée quand il y a de la vidéo à publier. | @UPLGabon |
 | **X (Twitter)** | **Ne pas ouvrir** | Audience faible pour bacheliers/parents au Gabon. |
 | **Snapchat** | **Ne pas ouvrir** | Usage perso, pas institutionnel. |
 | **Threads** | **Ne pas ouvrir** | Faible au Gabon. |
@@ -99,7 +99,12 @@ Faire dans cet ordre. Avoir sous la main : boîte `contact@`, logo `assets/img/l
 
 ---
 
-## 4. Bios à coller (identiques partout, factuelles)
+## 4. Bios à coller — **remplacées** par `BIOS_RESEAUX_2026.md`
+
+Depuis le 01/09/2026, les bios sont une fois par réseau (compteurs vérifiés), stockées dans
+`assets/js/config.js → social` et recopiées dans `BIOS_RESEAUX_2026.md` (`npm run bios:sync`).
+Les deux textes ci-dessous restent la référence de style ; en cas d'écart, **le fichier des bios fait foi**.
+
 
 **Courte (Instagram, TikTok, WhatsApp — 150 caractères max) :**
 
@@ -121,6 +126,8 @@ contact@upl-gabon.com
 +241 02 62 19 78 · +241 07 35 95 72
 https://upl-gabon.com
 ```
+
+**Rappel domaine :** `upl-gabon.com` uniquement. `upl.com` appartient à un tiers (UPL Ltd, agrochimie, Inde).
 
 **Ne pas écrire dans une bio :** Maroc · partenaires français non signés · admissions@ · Calvin · « inscriptions ouvertes » pour Licence/Master/CPGE/DBA (palier 1 = **pré-inscriptions**) · tarif DBA · 500 étudiants · Ecobank · « garanti / sécurisé / diplômé à coup sûr ».
 

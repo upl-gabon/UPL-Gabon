@@ -41,19 +41,9 @@ window.UPL.config = {
     phonesDirection: [
       { label: "Présidence / secrétariat", display: "+241 05 01 56 20", tel: "+24105015620" },
     ],
-    /**
-     * Calvin Blanchard MINANG — aide technique été 2026 UNIQUEMENT.
-     * Ne pas afficher comme permanent sur le site grand public.
-     * Urgence projet digital seulement.
-     */
-    calvinEmergency: {
-      name: "Calvin Blanchard MINANG",
-      role: "Appui digital (été 2026 — urgence only)",
-      phone: "+33 7 52 97 58 09",
-      tel: "+33752975809",
-      email: "blanchardminang00@gmail.com",
-      public: false,
-    },
+    /* Les coordonnées personnelles (appui digital, portable privé, Gmail) ne sont PAS ici :
+       config.js est chargé par le navigateur de n'importe quel visiteur. Elles vivent dans
+       docs/CONTACTS_HORS_SITE.md — jamais dans un fichier publié. */
   },
 
   /**
@@ -148,14 +138,135 @@ window.UPL.config = {
     showMobileMoneyCheckout: false,
     showLibrary: false,
     showPresidentDashboard: false,
+    /* Bloc « Suivre l'UPL » (footer + page Contact). Passer à true UNIQUEMENT quand les bios
+       sont validées par le Président et qu'au moins un réseau est à status "live". */
+    showSocialLinks: false,
   },
 
+  /**
+   * Réseaux sociaux + bios officielles — SOURCE DE VÉRITÉ.
+   * Mode d'emploi complet : docs/com/BIOS_RESEAUX_2026.md
+   *
+   * status : "pending" = compte non repris ou bio non validée → rien n'est affiché sur le site
+   *          "live"    = compte contrôlé par l'UPL (2 admins) + bio collée → lien affiché
+   *          "off"     = décision assumée de ne pas animer (le texte reste pour référence)
+   * bioMax / aboutMax : compteurs des plateformes. npm test casse si une bio dépasse.
+   *
+   * Règle domaine : upl-gabon.com UNIQUEMENT. Jamais « upl.com » (appartient à un tiers —
+   * le groupe indien UPL Ltd exploite upl-ltd.com, et « UPL » désigne aussi l'Université
+   * Protestante de Lubumbashi). Un handle @UPL seul est également hors de portée :
+   * viser uplgabon / upl.gabon / UPLGabon partout.
+   */
   social: {
-    /* Remplir quand les comptes officiels UPL sont créés (2 admins UPL) */
-    facebook: "",
-    instagram: "",
-    linkedin: "",
-    youtube: "https://www.youtube.com/@UPL",
+    facebook: {
+      label: "Facebook",
+      status: "pending",
+      url: "",                        /* la Page mère (créée 2022, ≈500 abonnés) — voir docs/com/FACEBOOK_PAGE_500.md */
+      handle: "@uplgabon",            /* si pris : @upl.gabon ou @upllibreville */
+      name: "Université Privée de Libreville",
+      category: "Université · Établissement d'enseignement supérieur",
+      bio: "Université Privée de Libreville, Gabon. Pré-inscriptions 2026-2027 : Licence, Master, CPGE, MBA, DBA",
+      bioMax: 101,
+      about:
+        "Établissement privé d’enseignement supérieur, Sablière, Libreville.\n" +
+        "Executive MBA depuis 2022, avec l’appui académique de l’Université de Douala — près de 80 cadres formés, cours du soir 17h–21h.\n" +
+        "contact@upl-gabon.com · +241 02 62 19 78 · upl-gabon.com",
+      aboutMax: 255,
+    },
+    instagram: {
+      label: "Instagram",
+      status: "pending",
+      url: "",
+      handle: "@upl.gabon",
+      name: "Université Privée de Libreville",
+      bio: "Université Privée de Libreville (Gabon) · Sablière · Pré-inscriptions 2026-2027 : Licence, Master, CPGE, MBA, DBA",
+      bioMax: 150,
+    },
+    tiktok: {
+      label: "TikTok",
+      status: "pending",
+      url: "",
+      handle: "@upl.gabon",
+      name: "Université Privée de Libreville",
+      bio: "Université Privée de Libreville · Pré-inscriptions 2026-2027",
+      bioMax: 80,
+    },
+    linkedin: {
+      label: "LinkedIn",
+      status: "pending",
+      url: "",                        /* URL de la PAGE ENTREPRISE — le profil perso n'est pas la vitrine */
+      handle: "/company/upl-gabon",
+      name: "Université Privée de Libreville (UPL)",
+      /* Profil personnel qui sert d'administrateur (ex. linkedin.com/in/upl-contact-…) */
+      headline:
+        "Secrétariat — Université Privée de Libreville (UPL) · Executive MBA depuis 2022 · Pré-inscriptions 2026-2027 : Licence, Master, CPGE, DBA · Libreville, Gabon",
+      headlineMax: 220,
+      tagline:
+        "Établissement privé d’enseignement supérieur à Libreville. Executive MBA depuis 2022 · Pré-inscriptions 2026-2027.",
+      taglineMax: 200,
+      about:
+        "Université Privée de Libreville (UPL) — établissement privé d’enseignement supérieur, Sablière, Libreville (Gabon).\n\n" +
+        "Executive MBA ouvert depuis 2022, avec l’appui académique de l’Université de Douala. Près de 80 cadres formés. Cours du soir 17h–21h, compatibles avec une activité professionnelle. Scolarité payable en tranches.\n\n" +
+        "Pré-inscriptions 2026-2027 : Licence, Master, CPGE, Executive MBA, DBA — gratuites et sans engagement. Le secrétariat rappelle chaque candidat pour les pièces et les places disponibles.\n\n" +
+        "Entreprises et institutions : coopérations étudiées au cas par cas (stages, modules professionnels, formation des équipes) après un premier échange avec le secrétariat.\n\n" +
+        "contact@upl-gabon.com · +241 02 62 19 78 · https://upl-gabon.com",
+      aboutMax: 2000,
+      aboutEnMax: 2000,
+      aboutEn:
+        "Université Privée de Libreville (UPL) — private higher-education institution, Sablière, Libreville (Gabon).\n\n" +
+        "Executive MBA running since 2022, with the academic support of the University of Douala. Nearly 80 professionals trained. Evening classes, 5 to 9 pm, compatible with full-time work. Tuition payable in instalments.\n\n" +
+        "Pre-registration for the 2026-2027 academic year: Bachelor's, Master's, CPGE, Executive MBA, DBA — free and without commitment.\n\n" +
+        "contact@upl-gabon.com · +241 02 62 19 78 · https://upl-gabon.com",
+    },
+    whatsapp: {
+      label: "WhatsApp Business",
+      status: "pending",              /* compte du Président déjà en service — fiche à aligner sur le site */
+      url: "https://wa.me/24102621978",
+      name: "Université Privée de Libreville",
+      bio: "Université Privée de Libreville — Sablière. Pré-inscriptions 2026-2027. Executive MBA depuis 2022.",
+      bioMax: 139,
+      about:
+        "Établissement privé d’enseignement supérieur, Sablière, Libreville. Executive MBA depuis 2022 (appui Université de Douala). Pré-inscriptions 2026-2027 : Licence, Master, CPGE, DBA.",
+      aboutMax: 256,
+    },
+    youtube: {
+      label: "YouTube",
+      status: "off",                  /* chaîne à ouvrir sous @UPLGabon — ne pas publier tant qu'elle n'est pas à l'UPL */
+      url: "",                        /* ⚠️ youtube.com/@UPL n'EST PAS l'UPL : handle générique, à ne jamais relayer */
+      handle: "@UPLGabon",
+      name: "Université Privée de Libreville — UPL",
+      bio: "Université Privée de Libreville (Gabon) — Executive MBA depuis 2022, pré-inscriptions 2026-2027.",
+      bioMax: 150,
+      about:
+        "Chaîne de l'Université Privée de Libreville (UPL), Sablière, Libreville (Gabon).\n\n" +
+        "Executive MBA depuis 2022, avec l'appui académique de l'Université de Douala. Pré-inscriptions 2026-2027 : Licence, Master, CPGE, DBA.\n\n" +
+        "Films de télévision déjà publiés : présentation institutionnelle et interview Executive MBA.\n" +
+        "https://upl-gabon.com · contact@upl-gabon.com · +241 02 62 19 78",
+      aboutMax: 1000,
+    },
+    google: {
+      label: "Google (compte + fiche d'établissement)",
+      status: "pending",
+      url: "",
+      name: "Université Privée de Libreville",
+      /* Compte Google « particulier » créé avec l'adresse upl : sert à gérer la fiche Google
+         Business Profile, YouTube et Drive. Voir docs/com/EMAIL_ROUTAGE.md § 3 (rôle et limites). */
+      about:
+        "Université Privée de Libreville (UPL) — établissement privé d’enseignement supérieur, Sablière, Libreville (Gabon).\n\n" +
+        "Executive MBA ouvert depuis 2022, avec l’appui académique de l’Université de Douala : près de 80 cadres formés, cours du soir 17h–21h, scolarité payable en tranches.\n\n" +
+        "Rentrée 2026-2027 : pré-inscriptions gratuites et sans engagement en Licence, Master, CPGE et DBA.\n\n" +
+        "contact@upl-gabon.com · +241 02 62 19 78 · https://upl-gabon.com",
+      aboutMax: 750,
+    },
+    x: {
+      label: "X (Twitter)",
+      status: "off",                  /* handle réservé, pas d'animation — audience bacheliers/parents faible au Gabon */
+      url: "",
+      handle: "@uplgabon",
+      name: "Université Privée de Libreville",
+      bio: "Université Privée de Libreville (Gabon) · Executive MBA depuis 2022 · upl-gabon.com",
+      bioMax: 160,
+    },
   },
 
   media: [
