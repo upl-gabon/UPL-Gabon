@@ -1,11 +1,27 @@
-# UPL — Site institutionnel
+# UPL-Gabon — dépôt à priorité THÈSE
+
+> **NOUVELLE CONVERSATION ? → lire [`REPRISE.md`](./REPRISE.md) en premier**
+> (protocole de reprise instantanée : où on s'est arrêté, chantiers, jury).
+
+**Décision du 08/09/2026 : ce dépôt sert PRIORITAIREMENT la thèse**
+(DBA Serge Patrick MINANG — zone `these/`).
+L'UPL (site institutionnel, en production, ne rien casser) devient la **base de données**
+de référence au service de la thèse : contenus vérifiés du secteur EPES, tarifs, contacts.
+La thèse **LIT** la base UPL ; elle ne la modifie **jamais** pour ses besoins propres.
+
+**Lire dans l'ordre :** `REPRISE.md` → `these/README.md` (thèse) → `HANDOVER.md` (base UPL)
+→ `docs/06_JURY_SIMULE_THESE.md` (garde-fous : Chabanne-Rive · Valax · Loufrani).
+
+## En 30 secondes — thèse d'abord
+
+- **Piste THÈSE (prioritaire)** : `these/` — zone indépendante, `noindex`, hors sitemap/nav UPL
+- **Base UPL (ressource)** : site statique ci-dessous — `npm run test:upl`
+- Avant tout merge : **`npm test`** (= 39 tests : les deux suites + garde-fous transverses)
+
+## Base UPL — site institutionnel (ne rien casser)
 
 **Université Privée de Libreville** — Sablière, Libreville (Gabon)
 Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — ne pas casser les MX)
-
-**Lire d'abord :** [`HANDOVER.md`](./HANDOVER.md) — passation complète (contexte, règles éditoriales, déploiement, contacts).
-
-## En 30 secondes
 
 - Site **statique** HTML/CSS/JS — zéro framework, zéro dépendance, reprise facile
 - Offre affichée : **Executive MBA** (depuis 2022) + **rentrée 2026-2027** : Licence, Master, CPGE, DBA — tarifs officiels UPL
@@ -45,9 +61,10 @@ Aucun `npm install` nécessaire (aucune dépendance).
 │       ├── config.js     ★ SOURCE DE VÉRITÉ (contacts, flags, programmes)
 │       ├── include.js    Header / footer injectés
 │       └── main.js       Nav, formulaire
-├── tests/site.test.mjs   28 tests de stabilité (Node ≥ 18)
-├── docs/                 Décisions & guides (domaine, DNS, GitHub, com)
-├── HANDOVER.md           ★ Passation — à lire en premier
+├── tests/                39 tests (site.test.mjs : 30 UPL · these.test.mjs : 9 thèse)
+├── docs/                 Décisions & guides (domaine, DNS, GitHub, com, double chantier, jury)
+├── REPRISE.md            ★ REPRISE INSTANTANÉE — à lire et maintenir en premier
+├── HANDOVER.md           Passation base UPL (contexte, règles éditoriales, déploiement)
 └── netlify.toml          Config Netlify conservée (publish = ".")
 ```
 

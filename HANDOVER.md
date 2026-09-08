@@ -231,6 +231,10 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**08/09/2026 (5) — système de reprise + bascule priorité thèse / UPL = base de données**
+- Nouveau `REPRISE.md` (racine) : protocole obligatoire — lire en premier, dire où on s'est arrêté, continuer avec lentille jury, **màj à chaque fin de message** (la conversation s'arrête par défaut).
+- `README.md` + `docs/05` réécrits : dépôt à priorité THÈSE ; UPL = base de données de référence (thèse LIT, ne modifie jamais). Fichiers partagés : + `REPRISE.md`.
+
 **08/09/2026 (4) — jury simulé recomposé : Chabanne-Rive (Lyon) · Valax (Nice) · Loufrani (Nice)**
 - Remplace la composition initiale (Pesqueux/Giordano/Dejoux) à la demande du Président.
 - Identités vérifiées (CV iaelyon, EMS/GRM, UniCA) ; simulation interne, non-implication explicite.
