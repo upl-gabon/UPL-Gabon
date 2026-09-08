@@ -1,5 +1,5 @@
-/* Zone thèse — feuille de style INDÉPENDANTE du site UPL.
-   Aucune dépendance vers assets/css/main.css : ce dossier vit seul.
+/* Zone thèse — feuille de style INDÉPENDANTE de la piste UPL.
+   Autonome : ce dossier vit seul, sans rien emprunter au site institutionnel.
    Palette : encre + bronze + papier (volontairement distincte du bleu/or UPL). */
 :root {
   --paper: #FAF8F2;

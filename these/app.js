@@ -1,5 +1,5 @@
-/* Zone thèse — script INDÉPENDANT du site UPL.
-   Aucune dépendance vers assets/js/*. Navigation mobile, année, bandeau d'échanges. */
+/* Zone thèse — script INDÉPENDANT de la piste UPL.
+   Zéro dépendance : navigation mobile, année, bandeau d'échanges. */
 (function () {
   "use strict";
 
