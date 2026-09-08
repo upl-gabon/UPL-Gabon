@@ -1,27 +1,19 @@
-# UPL-Gabon — dépôt à priorité THÈSE
-
-> **NOUVELLE CONVERSATION ? → lire [`REPRISE.md`](./REPRISE.md) en premier**
-> (protocole de reprise instantanée : où on s'est arrêté, chantiers, jury).
-
-**Décision du 08/09/2026 : ce dépôt sert PRIORITAIREMENT la thèse**
-(DBA Serge Patrick MINANG — zone `these/`).
-L'UPL (site institutionnel, en production, ne rien casser) devient la **base de données**
-de référence au service de la thèse : contenus vérifiés du secteur EPES, tarifs, contacts.
-La thèse **LIT** la base UPL ; elle ne la modifie **jamais** pour ses besoins propres.
-
-**Lire dans l'ordre :** `REPRISE.md` → `these/README.md` (thèse) → `HANDOVER.md` (base UPL)
-→ `docs/06_JURY_SIMULE_THESE.md` (garde-fous : Chabanne-Rive · Valax · Loufrani).
-
-## En 30 secondes — thèse d'abord
-
-- **Piste THÈSE (prioritaire)** : `these/` — zone indépendante, `noindex`, hors sitemap/nav UPL
-- **Base UPL (ressource)** : site statique ci-dessous — `npm run test:upl`
-- Avant tout merge : **`npm test`** (= 39 tests : les deux suites + garde-fous transverses)
-
-## Base UPL — site institutionnel (ne rien casser)
+# UPL — Site institutionnel
 
 **Université Privée de Libreville** — Sablière, Libreville (Gabon)
 Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — ne pas casser les MX)
+
+> **Reprise : lire [`REPRISE.md`](./REPRISE.md) en premier**
+> (où on s'est arrêté, chantiers, règles — maintenu à chaque message).
+
+**Note :** la thèse DBA de Serge Patrick MINANG vit dans un **dépôt séparé `these`**
+(extrait le 08/09/2026, privatisé — voir `REPRISE.md`). Ce dépôt = **site UPL uniquement**.
+Ne rien y mélanger de la thèse.
+
+**Lire :** `REPRISE.md` → [`HANDOVER.md`](./HANDOVER.md) (passation complète : contexte,
+règles éditoriales, déploiement, contacts).
+
+## En 30 secondes
 
 - Site **statique** HTML/CSS/JS — zéro framework, zéro dépendance, reprise facile
 - Offre affichée : **Executive MBA** (depuis 2022) + **rentrée 2026-2027** : Licence, Master, CPGE, DBA — tarifs officiels UPL
@@ -33,10 +25,8 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 ## Démarrage
 
 ```bash
-npm test            # les DEUX pistes (UPL + thèse) — OBLIGATOIRE avant toute livraison
-npm run test:upl    # piste UPL seule (travail institutionnel)
-npm run test:these  # piste thèse seule (travail recherche)
-npm run serve       # serveur local → http://127.0.0.1:5173 (thèse : /these/)
+npm test          # 30 tests de stabilité — OBLIGATOIRE avant toute livraison
+npm run serve     # serveur local → http://127.0.0.1:5173
 ```
 
 Aucun `npm install` nécessaire (aucune dépendance).
@@ -49,9 +39,6 @@ Aucun `npm install` nécessaire (aucune dépendance).
 ├── a-propos.html         Institution + vision + direction
 ├── president.html        Mot du Président (Serge Patrick MINANG)
 ├── contact.html          Téléphones + contact@ + formulaire (mailto)
-├── these/                Zone INDÉPENDANTE — thèse DBA de Serge Patrick MINANG
-│                         (4 pages FR + style.css + app.js autonomes, noindex,
-│                         hors nav UPL — accès par lien direct /these/)
 ├── en/                   Site complet en anglais (5 pages miroir)
 │                         Bascule FR ⇄ EN dans le header
 ├── assets/
@@ -61,10 +48,10 @@ Aucun `npm install` nécessaire (aucune dépendance).
 │       ├── config.js     ★ SOURCE DE VÉRITÉ (contacts, flags, programmes)
 │       ├── include.js    Header / footer injectés
 │       └── main.js       Nav, formulaire
-├── tests/                39 tests (site.test.mjs : 30 UPL · these.test.mjs : 9 thèse)
-├── docs/                 Décisions & guides (domaine, DNS, GitHub, com, double chantier, jury)
-├── REPRISE.md            ★ REPRISE INSTANTANÉE — à lire et maintenir en premier
-├── HANDOVER.md           Passation base UPL (contexte, règles éditoriales, déploiement)
+├── tests/site.test.mjs   30 tests de stabilité (Node ≥ 18)
+├── docs/                 Décisions & guides (domaine, DNS, GitHub, com)
+├── REPRISE.md            ★ Reprise instantanée — à lire et maintenir en premier
+├── HANDOVER.md           Passation UPL (contexte, règles éditoriales, déploiement)
 └── netlify.toml          Config Netlify conservée (publish = ".")
 ```
 
@@ -78,11 +65,13 @@ Aucun `npm install` nécessaire (aucune dépendance).
 
 ## Workflow de contribution (passation)
 
+0. Lire `REPRISE.md` (état exact, chantiers en cours)
 1. Créer une branche depuis `main`, travailler, **`npm test` vert**
 2. Ouvrir une **Pull Request** vers `main` — jamais de push direct sur `main`
 3. Revue + merge
 4. CI (recommandé) : activer `docs/templates/ci-tests.yml.template` (voir le fichier, 1 minute) pour relancer les tests automatiquement à chaque PR
 5. Toute action publique (mise en ligne, annonce partenaire, nouvelle filière) reste soumise à **validation du Président**
+6. **À chaque fin de message IA : mettre à jour `REPRISE.md`** (état, chantiers, journal)
 
 ## Règles non négociables
 
@@ -91,5 +80,6 @@ Aucun `npm install` nécessaire (aucune dépendance).
 - Pas de mail inventé (`admissions@`, `partenariats@`…)
 - Calvin = appui digital été 2026 **urgence only** — jamais en contact public permanent
 - Dossier bancaire Ecobank ≠ site public (ne jamais fusionner, ne jamais parler du Maroc)
+- Thèse DBA ≠ ce dépôt (dépôt `these` séparé — ne rien mélanger ici)
 
 © Université Privée de Libreville — SAS, Libreville (Gabon)

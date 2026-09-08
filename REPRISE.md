@@ -6,87 +6,59 @@
 
 ## 0. Protocole obligatoire (chaque message, sans exception)
 
-1. **Lire dans l'ordre** : ce fichier → `these/README.md` → `docs/06_JURY_SIMULE_THESE.md`
-   → `HANDOVER.md` § 10 (journal). Vérifier `git log --oneline -5` et `git status`.
-2. **Ouvrir ta réponse en disant EXACTEMENT où on s'est arrêté** (section 1 : état,
-   dernier commit, tests, question en suspens).
-3. **Continuer directement** le chantier, avec par défaut la lentille jury :
-   critique, pistes d'amélioration, réflexion, rigueur, **exigence DBA**
-   (savoir actionnable, preuves tracées, rien d'inventé).
+1. **Lire dans l'ordre** : ce fichier → `HANDOVER.md` (+ `README.md` si besoin).
+   Vérifier `git log --oneline -5` et `git status`.
+2. **Ouvrir ta réponse en disant EXACTEMENT où on s'est arrêté** (section 1).
+3. **Continuer directement** le chantier (ton factuel, sobre ; rien d'inventé).
 4. **À LA FIN DE CHAQUE MESSAGE : mettre à jour ce fichier**
-   (État § 1, Chantiers § 3, Décisions § 4 si besoin, Journal § 6).
+   (État § 1, Chantiers § 2, Décisions § 3 si besoin, Journal § 5).
    Puis commiter + pusher si des fichiers ont changé.
-5. Règle d'or : **un fait n'existe que s'il est écrit ici ou dans `docs/06`**.
+5. Règle d'or : **un fait n'existe que s'il est écrit ici ou dans `HANDOVER.md`**.
    En cas de conflit entre ta mémoire de conversation et ce fichier, **ce fichier gagne**.
 
 ## 1. ÉTAT — où on s'est arrêté (màj : 08/09/2026, fin de message)
 
-- **Fait à l'instant** : **zip d'extraction du dépôt autonome `these` livré**
-  (`these-SPM.zip`, 37 Ko, 16 fichiers, tests 9/9 verts dans le zip) : site à la racine,
-  liens UPL en absolus (`https://upl-gabon.com/`), jury + reprise + tests adaptés,
-  guide `CREER-LE-REPO.md` inclus. L'utilisateur crée le repo GitHub `these` de son côté.
-- **En attente** : (a) confirmation que le repo `these` est créé → décider alors du sort
-  de `these/` dans UPL-Gabon (garder en miroir ou supprimer) ; (b) GO passage jury n° 1
-  (fiche concept GA, § 3.2–3.3) — à mener dans le nouveau dépôt.
-- **Dépôt UPL-Gabon** : inchangé fonctionnellement, 39/39 verts, propre, poussé.
+- **Fait à l'instant** : **dépôt UPL nettoyé** — la thèse a été extraite vers un dépôt
+  séparé `these` (zip `these-SPM.zip` livré : site autonome, jury, reprise, tests 9/9).
+  Supprimé ici : `these/`, `tests/these.test.mjs`, `docs/05_*`, `docs/06_*`.
+  `README.md` recentré UPL, `package.json` : `npm test` = 30 tests site.
+- **Ce dépôt = site UPL uniquement.** Ne jamais y recréer de contenu thèse.
+  Thèse → dépôt `these` séparé (privé) ; jury et reprise thèse vivent là-bas.
+- **En attente** : confirmation que le repo `these` est créé côté utilisateur.
+  Chantiers UPL courants : mise en ligne (Pages/DNS, voir `HANDOVER.md`), com rentrée.
+- **Tests 30/30 verts**, commité + poussé sur `arena/01a08225-upl-gabon`. Dépôt propre.
 
-## 2. Priorités (décision du 08/09/2026 — prime sur tout le reste)
+## 2. Chantiers ouverts (UPL)
 
-1. **Ce dépôt sert PRIORITAIREMENT la thèse** (DBA Serge Patrick MINANG, `these/`).
-2. **UPL = BASE DE DONNÉES** : le site institutionnel reste en production (ne rien casser),
-   et devient la **ressource documentaire de référence** au service de la thèse
-   (connaissance du secteur EPES, contenus vérifiés, tarifs, contacts).
-   La thèse **LIT** la base UPL ; elle ne la modifie **jamais** pour ses besoins propres.
-3. Ordre de travail par défaut : thèse d'abord. UPL : maintenance + alimentation de la base.
+| # | Chantier | Statut | Prochaine action |
+|---|---|---|---|
+| U1 | Maintenance site (contenus, tarifs, communiqués) | 🟢 continu | `npm test` avant toute livraison |
+| U2 | Mise en ligne : Pages + DNS `upl-gabon.com` | ⏳ côté Président | Guide `docs/04` (ne pas toucher aux MX) |
+| U3 | Com rentrée 2026-2027 | ⏳ validation Président | `docs/com/` (ne pas merger sur `main` sans GO) |
 
-## 3. Chantiers ouverts (jury — ordre = bloquants d'abord)
+## 3. Décisions verrouillées (ne pas rouvrir sans GO explicite)
 
-| # | Chantier | Statut | Verdicts R/V/L | Prochaine action |
-|---|---|---|---|---|
-| T1 | Fiche concept GA (§ 3.2–3.3) | ⏳ en attente GO | — | Rédiger + passage jury n° 1 |
-| T2 | Protocole de cas (annexes C–D) + règle de saturation | 🔴 non démarré | Loufrani ❌ potentiel | Cadrer après T1 |
-| T3 | Typologie des usages IA (tab. 5.3) + grille d'observation | 🔴 non démarré | Exigence permanente n° 3 | Cadrer après T1 |
-| T4 | 4e regard expert IA (chap. 5) | 📌 rappel | — | Le moment venu → identifier un nom |
-| U1 | Maintenance site UPL / base de données | 🟢 continu | — | `npm run test:upl` avant toute livraison |
+- D1. Offre affichée = supports officiels 2026-2027 ; tarifs verrouillés par les tests.
+- D2. Pas de logo/partenariat non contractuel ; pas de mail inventé ;
+  Calvin = urgence only (jamais en contact public).
+- D3. Dossier bancaire Ecobank ≠ site public (ne jamais fusionner).
+- D4. Thèse DBA = dépôt `these` séparé — **aucun contenu thèse ici** (ni pages, ni docs).
+- D5. Jamais de push direct sur `main` (branche → PR → merge). `npm test` vert avant merge.
 
-## 4. Décisions verrouillées (ne pas rouvrir sans GO explicite)
-
-- D1. Zone `these/` : indépendance totale (aucun asset UPL, charte propre, `noindex`,
-  hors sitemap/nav UPL, accès `/these/`). Ponts autorisés UNIQUEMENT : `../index.html`,
-  `../contact.html`, `mailto:contact@upl-gabon.com?subject=Recherche doctorale`.
-- D2. Confidentialité terrain : codes **EPES-A à EPES-E** en public ; noms pressentis,
-  correspondances, consentements, enregistrements : **jamais sur le site ni dans Git**.
-- D3. Jury simulé = Chabanne-Rive · Valax · Loufrani (simulation interne, non-implication
-  explicite). 1 × ❌ = reprise exigée. 10 exigences conjointes (`docs/06`).
-- D4. Rien d'inventé : pas d'université d'inscription, directeur, date de soutenance,
-  mail, tarif ou partenaire supposés. Tout contenu thèse vient des documents de l'auteur.
-- D5. Dossier Matrix Group R+2 = chantier UPL, **pas** la thèse (exclu de `these/`).
-- D6. Fichiers partagés (`package.json`, `netlify.toml`, `HANDOVER.md`, `README.md`,
-  `REPRISE.md`) : une piste à la fois, `npm test` complet avant merge. Jamais de push sur `main`.
-
-## 5. Règles express (rappel sec)
+## 4. Règles express (rappel sec)
 
 - Parler français. Ton : factuel, sobre ; jamais défensif, jamais de promesse.
-- Tests : `npm run test:these` (9) / `npm run test:upl` (30) / `npm test` (39) — Node ≥ 18.
-- Aperçu local : `npm run serve` → `/` (UPL) et `/these/` (thèse).
-- Serveur de démo éventuel : binder `0.0.0.0`, jamais `localhost` côté navigateur.
-- Termes bannis dans le HTML (tests) : voir `tests/site.test.mjs` + `tests/these.test.mjs`.
-- Validation : thèse → auteur ; action publique UPL → Président.
+- Tests : `npm test` (30 tests site) — Node ≥ 18. Aperçu : `npm run serve` → `/`.
+- Termes bannis dans le HTML : voir `tests/site.test.mjs`.
+- Validation : toute action publique → Président.
 
-## 6. Journal des échanges (bref — derniers en haut)
+## 5. Journal (bref — derniers en haut)
 
+- **08/09/2026 (PM)** : nettoyage UPL — `these/`, `tests/these.test.mjs`, `docs/05`,
+  `docs/06` supprimés ; `README.md`/`package.json`/`REPRISE.md` recentrés UPL. 30/30, poussé.
 - **08/09/2026 (PM)** : zip `these-SPM.zip` livré (dépôt autonome : site racine, liens
-  absolus, jury + reprise + tests adaptés, guide de création). En attente : repo `these`
-  créé côté utilisateur → décider du sort de `these/` ici (miroir ou suppression).
-
-- **08/09/2026 (PM)** : système de reprise (`REPRISE.md` + protocole § 0) + bascule
-  priorité thèse / UPL = base de données (`README.md`, `docs/05` réécrits). 39/39, poussé.
-- **08/09/2026 (PM)** : jury recomposé Rive/Valax/Loufrani + annexe « oxymore ou slogan /
-  § 3.3 décisive » (`docs/06` réécrit). Proposition passage n° 1 (fiche concept GA).
-- **08/09/2026 (PM)** : jury initial Pesqueux/Giordano/Dejoux + critique + explication/critique
-  de la thèse en conversation.
-- **08/09/2026 (PM)** : double piste outillée (`tests/these.test.mjs`, `these/README.md`,
-  `docs/05`, scripts `test:upl`/`test:these`). 39/39.
-- **08/09/2026 (PM)** : zone `these/` créée (4 pages FR + CSS/JS autonomes, `noindex`)
-  depuis le Drive « Thèse president privé » (plan harmonisé + liste 27 tab./13 fig.).
-  Dossier Matrix exclu (chantier bâtiment, pas thèse).
+  absolus, jury Rive/Valax/Loufrani, reprise, tests 9/9, guide de création).
+- **08/09/2026 (PM)** : système de reprise + bascule priorité thèse (annulée par
+  l'extraction : chaque dépôt a désormais sa reprise et sa priorité propres).
+- **Antériorité** : zone `these/`, double piste, jury simulé — conçus ici le 08/09/2026
+  puis **déménagés** dans le dépôt `these` (voir son `REPRISE.md`). Historique Git conservé.

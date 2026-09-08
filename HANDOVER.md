@@ -231,6 +231,11 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**08/09/2026 (6) — thèse extraite vers dépôt séparé + UPL nettoyé**
+- Zip `these-SPM.zip` livré (dépôt `these` autonome : site, jury Rive/Valax/Loufrani, reprise, 9 tests).
+- Supprimé ici : `these/`, `tests/these.test.mjs`, `docs/05_*`, `docs/06_*`. `README.md`, `package.json`
+  (`npm test` = 30 tests), `REPRISE.md` recentrés UPL. Règle : aucun contenu thèse dans ce dépôt.
+
 **08/09/2026 (5) — système de reprise + bascule priorité thèse / UPL = base de données**
 - Nouveau `REPRISE.md` (racine) : protocole obligatoire — lire en premier, dire où on s'est arrêté, continuer avec lentille jury, **màj à chaque fin de message** (la conversation s'arrête par défaut).
 - `README.md` + `docs/05` réécrits : dépôt à priorité THÈSE ; UPL = base de données de référence (thèse LIT, ne modifie jamais). Fichiers partagés : + `REPRISE.md`.
