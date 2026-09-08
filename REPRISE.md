@@ -21,6 +21,15 @@
 
 ## 1. ÉTAT — où on s'est arrêté (màj : 08/09/2026, fin de message)
 
+- **Fait à l'instant** : **zip d'extraction du dépôt autonome `these` livré**
+  (`these-SPM.zip`, 37 Ko, 16 fichiers, tests 9/9 verts dans le zip) : site à la racine,
+  liens UPL en absolus (`https://upl-gabon.com/`), jury + reprise + tests adaptés,
+  guide `CREER-LE-REPO.md` inclus. L'utilisateur crée le repo GitHub `these` de son côté.
+- **En attente** : (a) confirmation que le repo `these` est créé → décider alors du sort
+  de `these/` dans UPL-Gabon (garder en miroir ou supprimer) ; (b) GO passage jury n° 1
+  (fiche concept GA, § 3.2–3.3) — à mener dans le nouveau dépôt.
+- **Dépôt UPL-Gabon** : inchangé fonctionnellement, 39/39 verts, propre, poussé.
+
 - **Fait à l'instant** : système de reprise créé (`REPRISE.md`) + bascule de priorité actée
   (dépôt = **thèse d'abord**, UPL = **base de données**). `README.md` et `docs/05` réécrits
   dans ce sens. Tests **39/39 verts**, commité + poussé sur `arena/01a08225-upl-gabon`.
@@ -75,6 +84,10 @@
 - Validation : thèse → auteur ; action publique UPL → Président.
 
 ## 6. Journal des échanges (bref — derniers en haut)
+
+- **08/09/2026 (PM)** : zip `these-SPM.zip` livré (dépôt autonome : site racine, liens
+  absolus, jury + reprise + tests adaptés, guide de création). En attente : repo `these`
+  créé côté utilisateur → décider du sort de `these/` ici (miroir ou suppression).
 
 - **08/09/2026 (PM)** : système de reprise (`REPRISE.md` + protocole § 0) + bascule
   priorité thèse / UPL = base de données (`README.md`, `docs/05` réécrits). 39/39, poussé.
