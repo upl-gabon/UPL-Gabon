@@ -231,6 +231,12 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**08/09/2026 (2) — double piste UPL / thèse : travail simultané sans confusion**
+- `tests/these.test.mjs` (9 tests) + scripts `test:upl` / `test:these` ; `npm test` enchaîne les deux suites.
+- `these/README.md` (règles de la piste thèse) + `docs/05_DOUBLE_CHANTIER_UPL_THESE.md` (carte, anti-confusion, règles de simultanéité).
+- Garde-fous transverses : indépendance `these/` (aucun asset UPL, charte propre), `noindex`, ponts autorisés uniquement, confidentialité terrain (codes EPES-A..E), discrétion croisée (UPL ⇏ thèse).
+- Fichiers partagés identifiés : `package.json`, `netlify.toml`, `HANDOVER.md`, `README.md` — une piste à la fois.
+
 **08/09/2026 — zone thèse indépendante « Recherche doctorale SPM » (Drive « Thèse president privé »)**
 - Nouveau dossier `these/` : 4 pages FR (index, plan, supports, documents) + `style.css` + `app.js` — 100 % autonome, charte encre/bronze distincte, aucun asset UPL chargé.
 - Contenu fidèle aux 2 PDF : titre indicatif, question centrale + QR1–QR4, P1–P7, plan 3 parties/6 chapitres, 27 tableaux + 13 figures, régime de confidentialité (codes EPES-A à EPES-E, noms pressentis exclus).

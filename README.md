@@ -17,8 +17,10 @@ Domaine officiel : `upl-gabon.com` · Mail : `contact@upl-gabon.com` (actif — 
 ## Démarrage
 
 ```bash
-npm test          # 28 tests de stabilité — OBLIGATOIRE avant toute livraison
-npm run serve     # serveur local → http://127.0.0.1:5173
+npm test            # les DEUX pistes (UPL + thèse) — OBLIGATOIRE avant toute livraison
+npm run test:upl    # piste UPL seule (travail institutionnel)
+npm run test:these  # piste thèse seule (travail recherche)
+npm run serve       # serveur local → http://127.0.0.1:5173 (thèse : /these/)
 ```
 
 Aucun `npm install` nécessaire (aucune dépendance).
