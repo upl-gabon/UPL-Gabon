@@ -30,16 +30,6 @@
   (fiche concept GA, § 3.2–3.3) — à mener dans le nouveau dépôt.
 - **Dépôt UPL-Gabon** : inchangé fonctionnellement, 39/39 verts, propre, poussé.
 
-- **Fait à l'instant** : système de reprise créé (`REPRISE.md`) + bascule de priorité actée
-  (dépôt = **thèse d'abord**, UPL = **base de données**). `README.md` et `docs/05` réécrits
-  dans ce sens. Tests **39/39 verts**, commité + poussé sur `arena/01a08225-upl-gabon`.
-- **Composition verrouillée** : jury simulé = Chabanne-Rive (Lyon) · Valax (Nice) ·
-  Loufrani (Nice) — `docs/06`, passage n° 0 journalisé (3 × ⚠️).
-- **Question en suspens** : GO du Président pour lancer le **passage jury n° 1 —
-  fiche concept « gouvernance augmentée » (§ 3.2–3.3)** : définition 1 §, 4–6 attributs
-  observables, 3 exclusions, 2 cas-limites tranchés, glossaire discipliné.
-- **Aucun fichier à moitié écrit, aucun test rouge, dépôt propre.**
-
 ## 2. Priorités (décision du 08/09/2026 — prime sur tout le reste)
 
 1. **Ce dépôt sert PRIORITAIREMENT la thèse** (DBA Serge Patrick MINANG, `these/`).
