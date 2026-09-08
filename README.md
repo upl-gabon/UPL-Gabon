@@ -31,6 +31,9 @@ Aucun `npm install` nécessaire (aucune dépendance).
 ├── a-propos.html         Institution + vision + direction
 ├── president.html        Mot du Président (Serge Patrick MINANG)
 ├── contact.html          Téléphones + contact@ + formulaire (mailto)
+├── these/                Zone INDÉPENDANTE — thèse DBA de Serge Patrick MINANG
+│                         (4 pages FR + style.css + app.js autonomes, noindex,
+│                         hors nav UPL — accès par lien direct /these/)
 ├── en/                   Site complet en anglais (5 pages miroir)
 │                         Bascule FR ⇄ EN dans le header
 ├── assets/

@@ -231,6 +231,13 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**08/09/2026 — zone thèse indépendante « Recherche doctorale SPM » (Drive « Thèse president privé »)**
+- Nouveau dossier `these/` : 4 pages FR (index, plan, supports, documents) + `style.css` + `app.js` — 100 % autonome, charte encre/bronze distincte, aucun asset UPL chargé.
+- Contenu fidèle aux 2 PDF : titre indicatif, question centrale + QR1–QR4, P1–P7, plan 3 parties/6 chapitres, 27 tableaux + 13 figures, régime de confidentialité (codes EPES-A à EPES-E, noms pressentis exclus).
+- Discrétion : `noindex` sur les 4 pages, hors sitemap, hors nav UPL, accès par lien direct `/these/` ; bandeau d'échanges propre (objet « Recherche doctorale » vers contact@upl-gabon.com existant, aucun mail inventé).
+- 3e PDF (Matrix Group R+2) = chantier bâtiment UPL, pas la thèse → exclu de la zone.
+- Tests 30/30 verts (marqueur `data-action-band` présent sur les 4 pages, rendu indépendant par `these/app.js`).
+
 **27/08/2026 (17) — lien ESSEC + WhatsApp 02 (consigne explicite)**
 - Lien mort `essec-douala.cm` → `https://www.essec-dla.com/concours/` (FR + EN).
 - Bouton WhatsApp `wa.me/24102621978` (ligne 02) : page Contact + bandeau d'action + pied de page.
