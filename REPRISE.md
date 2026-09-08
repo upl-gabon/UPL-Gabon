@@ -18,14 +18,14 @@
 
 ## 1. ÉTAT — où on s'est arrêté (màj : 08/09/2026, fin de message)
 
-- **Fait à l'instant** : **dépôt UPL nettoyé** — la thèse a été extraite vers un dépôt
-  séparé `these` (zip `these-SPM.zip` livré : site autonome, jury, reprise, tests 9/9).
-  Supprimé ici : `these/`, `tests/these.test.mjs`, `docs/05_*`, `docs/06_*`.
-  `README.md` recentré UPL, `package.json` : `npm test` = 30 tests site.
 - **Ce dépôt = site UPL uniquement.** Ne jamais y recréer de contenu thèse.
   Thèse → dépôt `these` séparé (privé) ; jury et reprise thèse vivent là-bas.
-- **En attente** : confirmation que le repo `these` est créé côté utilisateur.
-  Chantiers UPL courants : mise en ligne (Pages/DNS, voir `HANDOVER.md`), com rentrée.
+- **Fait à l'instant** : **zip `these-SPM.zip` déposé sur GitHub (TRANSPORT TEMPORAIRE,
+  commit `3a42073`)** — l'aperçu et la release ayant échoué (réseau). Lien brut :
+  `https://raw.githubusercontent.com/upl-gabon/UPL-Gabon/arena/01a08225-upl-gabon/these-SPM.zip`.
+  **À SUPPRIMER dès téléchargement confirmé** (`git rm these-SPM.zip` + push).
+- **En attente** : (a) téléchargement confirmé par l'utilisateur → suppression du zip ;
+  (b) confirmation repo `these` créé.
 - **Tests 30/30 verts**, commité + poussé sur `arena/01a08225-upl-gabon`. Dépôt propre.
 
 ## 2. Chantiers ouverts (UPL)
