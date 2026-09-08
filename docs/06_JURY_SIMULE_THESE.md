@@ -12,148 +12,125 @@ articulation IA × IE en situation de polycrise* (plan harmonisé + liste des su
 **Rôle du jury simulé :** relire chaque futur livrable de la piste thèse avec l'exigence d'un
 vrai jury de DBA, et bloquer ce qui ne passerait pas une soutenance.
 
-## Les trois membres
+## Les trois membres (composition validée le 08/09/2026)
 
 | # | Membre (identité vérifiée) | Rôle dans le jury simulé | Lentille |
 |---|---|---|---|
-| 1 | **Yvon Pesqueux** — Professeur titulaire de la chaire « Développement des Systèmes d'Organisation » du CNAM (Paris) ; gouvernance, RSE, philosophie et éthique du management | Le conceptuel critique | Les concepts gagnent-ils leur place ? Discours vs pratiques. RSE ≠ développement durable. |
-| 2 | **Yvonne Giordano** — Professeure en sciences de gestion, Université Côte d'Azur, laboratoire GRM (IAE Nice) ; méthodologie qualitative, études de cas | La méthodologue | La chaîne preuve est-elle traçable ? Protocole, saturation, triangulation, réflexivité. |
-| 3 | **Cécile Dejoux** — Professeure des universités au CNAM (HDR) ; IA, travail, management et compétences ; Learning Lab Human Change | La pragmaticienne de l'IA | L'IA invoquée existe-t-elle sur le terrain ? Usages réels, conditions, effets, éthique. |
+| 1 | **Jérôme Chabanne-Rive** — Professeur des Universités, iaelyon School of Management (Lyon 3) ; ex-DG de l'iaelyon (2008-2018), ex-Président IAE France, Délégué général EIASM ; GRH internationale, management interculturel, management education | L'homme des écoles + l'interculturel | Un EPES est une organisation qu'il connaît de l'intérieur. Le contexte gabonais est-il pris au sérieux ou plaqué ? L'IE est-elle observable ? Standards doctoraux. |
+| 2 | **Marc Valax** — Professeur des Universités, IAE Nice, GRM (Université Côte d'Azur) ; responsable des programmes académiques d'Executive DBA ; leadership global, GIRH, RSE & développement durable ; approches qualitatives et longitudinales | Le garant DBA | Un DBA doit produire du savoir actionnable. Leadership observable ? RSE ≠ DD ? Dimension temporelle ? |
+| 3 | **Sabrina Loufrani** — Professeure des Universités, IAE Nice, GRM (Université Côte d'Azur) ; management des compétences et talents, méthodes qualitatives, management responsable des organisations | La méthodologue du qualitatif + compétences | Rigueur quali (protocole, saturation, codage, triangulation). L'appropriation de l'IA = montée en compétences (3 niveaux). Gouvernance responsable ? |
 
-*Pourquoi ces trois-là : 1 Niçois (méthode) + 2 Parisiens (concepts, IA) ; trois institutions
-reconnues (CNAM × 2, Université Côte d'Azur) ; couverture exacte des trois risques majeurs
-identifiés : le concept central, le protocole d'enquête, la réalité de l'IA sur le terrain.*
-
----
-
-## Critique n° 1 — Yvon Pesqueux : « Montrez-moi que vos concepts travaillent »
-
-**Appréciation générale.** Le plan est sérieusement construit et la prudence affichée
-(« proposition à examiner, pas solution acquise ») est intellectuellement honnête.
-Mais une thèse ne vit pas de prudence : elle vit de concepts qui *travaillent*.
-Or vos trois concepts maîtres — gouvernance augmentée, polycrise, performance globale —
-sont tous les trois suspects de décoratif. À vous de prouver le contraire.
-
-**Points de critique.**
-
-1. **« Gouvernance augmentée » — oxymore ou slogan ?** Gouverner, c'est juger et trancher
-   en responsabilité. « Augmenter » la gouvernance par l'IA : de quoi ? De calcul, de vitesse,
-   de données — mais le jugement, lui, s'augmente-t-il ? Ou se délègue-t-il ? La section 3.3
-   (prévention des confusions) est le chapitre décisif de votre thèse : si elle ne trace pas
-   une frontière nette entre *gouverner avec des instruments* (vieux comme le management)
-   et *gouverner augmenté* (votre apport), le concept s'effondre et P4 avec lui.
-2. **Polycrise : concept ou décor ?** Le mot est à la mode, donc suspect. Le tableau 1.3
-   (dimensions de la polycrise) doit devenir un instrument d'observation, pas un catalogue :
-   pour chaque cas, quelles tensions, quels indicateurs, quels seuils ? Sans cela, tout le
-   contexte gabonais devient « polycrise » et le mot ne veut plus rien dire.
-3. **RSE ≠ développement durable (2.9).** Vous distinguez les deux — très bien — mais la
-   thèse devra tenir la distinction jusqu'au bout : la RSE relève des *pratiques imputables*
-   à l'établissement, le développement durable d'une *finalité qui le dépasse*. Le tableau 5.4
-   qui les fusionne est le point faible de votre liste de supports : gardez les trois domaines
-   (performance globale, RSE, DD) identifiables jusque dans l'analyse, comme vous vous y engagez.
-4. **Discours vs pratiques.** Votre matériau principal, ce sont des dirigeants qui *parlent*
-   de leur gouvernance. Or le discours managérial est performatif : il met en scène plus qu'il
-   ne décrit. Votre triangulation (entretiens + observations + documents) est la bonne réponse —
-   mais elle doit être *impitoyable* : chaque fois qu'un dirigeant déclare une pratique,
-   cherchez la trace (document, observation) ou marquez « déclaratif seul ». Sans cette
-   discipline, vous soutiendrez une thèse sur le discours des dirigeants, pas sur leur gouvernance.
-5. **Exigence DBA.** Un DBA n'est pas un PhD : on attend une connaissance *actionnable*.
-   Votre figure 6.2 (cadre d'aide à la décision) est la bonne promesse — à condition qu'elle
-   reste *conditionnelle* (conditions P7 explicites) et ne devienne pas une recette.
-
-**Verdict Pesqueux : FAVORABLE SOUS RÉSERVE.** Le plan tient ; les concepts sont en sursis.
-Prochain passage : § 3.2–3.3 et tableau 1.3. S'ils sont mous, avis défavorable.
+*Pourquoi cette composition : 1 Lyon (écoles, interculturel, GRH) + 2 Nice (DBA, leadership,
+compétences, quali) ; le responsable d'un Executive DBA dans le jury ; trois familiers des
+terrains internationaux et africains ; le versant humain (IE, leadership, compétences) —
+la moitié du sujet — fortement couvert.*
+*Point d'honnêteté : ce jury est centré humain/organisations, pas technologie. L'exigence IA
+(typologie des usages réels, non-usages, échecs) est donc maintenue comme exigence permanente
+n° 3 ci-dessous, et un 4e regard expert IA sera souhaitable au moment du chapitre 5.*
 
 ---
 
-## Critique n° 2 — Yvonne Giordano : « Montrez-moi la chaîne de preuve »
+## Critique n° 1 — Jérôme Chabanne-Rive : « Vous étudiez des écoles — montrez que vous savez ce qu'est une école »
 
-**Appréciation générale.** Le dispositif méthodologique est l'un des plus complets que j'aie
-vus au stade du plan : positionnement assumé, design multi-cas, instruments variés, codage
-hybride, cas négatifs, traçabilité. Mais un plan n'est pas une enquête. Tout se jouera dans
-l'exécution — et l'exécution, pour un praticien-chercheur en activité, est le risque n° 1.
+**Appréciation générale.** J'ai dirigé une école de management pendant dix ans et évalué
+des formations pendant huit (CEFDG) : je sais ce qu'est la gouvernance d'un établissement
+d'enseignement. Votre objet est légitime et votre prudence de bon aloi. Mais une thèse qui
+étudie des écoles sans mobiliser ce qu'on sait des écoles ne passera pas.
 
 **Points de critique.**
 
-1. **45 n'est pas un échantillon, c'est un quota.** En recherche qualitative, on n'échantillonne
-   pas, on *sature*. 15 + 20 + 10 est une cible de travail légitime — mais la règle d'arrêt
-   doit être informationnelle, pas arithmétique. Exigez de vous-même : matrice de saturation
-   (annexe H) tenue *au fil de l'eau*, et autorisation écrite dans le protocole de descendre
-   à 4 cas si la saturation est atteinte. Un jury préfère 32 entretiens saturés à 45 entretiens
-   convenus.
-2. **Le protocole de cas doit exister AVANT le terrain.** Grille d'entretien (14 questions),
-   grilles d'observation, grille documentaire, conventions de nommage, journal de terrain :
-   tout cela doit être figé, daté, versionné avant le premier entretien. C'est la condition
-   de la validité de construit. Votre annexe C–D est prévue : produisez-la tôt, elle est
-   votre assurance-soutenance.
-3. **Trianguler des sources, pas des méthodes.** Multiplier les instruments ne prouve rien si
-   tout reconduit la parole dirigeante. La triangulation qui compte : *un même fait* vu par
-   l'entretien, le document ET l'observation — ou marqué divergent. La matrice de triangulation
-   (annexe H) doit faire apparaître les divergences, pas les lisser.
-4. **Le praticien-chercheur est un instrument — calibrez-le.** Vous dirigez un EPES gabonais.
-   Deux questions sans esquive : (a) votre établissement fait-il partie des cas ? Si oui,
-   protocole renforcé (distance, tiers, journal) ; si non, écrivez-le. (b) Quelle est votre
-   relation avec chacun des 5 établissements ? Les mémos réflexifs (§ 4.9) doivent documenter
-   les moments où votre posture a pesé — un jury y verra de la maturité, pas de la faiblesse.
-5. **NVivo est un outil, pas une méthode.** L'arborescence des codes et son historique de
-   révisions (annexe F) doivent raconter le *travail d'analyse* : codes déductifs initiaux,
-   codes inductifs émergents, fusions, abandons. Si l'arbre final ressemble à l'arbre initial,
-   c'est que le terrain n'a rien appris — signal d'alarme.
-6. **40 supports : chacun doit porter une preuve.** La synthèse 115 → 40 est une bonne
-   discipline, mais 40 reste beaucoup. Règle : tout tableau/figure du corps de thèse doit
-   être *appelé par l'argumentation* (renvoi + lecture guidée). Un support que le texte
-   n'exploite pas retourne en annexe. Les figures 3.1 / 5.3 / 6.1 (trois statuts distincts)
-   sont exemplaires : généralisez cette rigueur.
+1. **Positionnez la gouvernance des EPES dans ce qu'on sait déjà.** Gouvernance collégiale
+   vs managériale, rôle du dirigeant-fondateur, accréditations, tutelles, modèle économique :
+   la littérature sur la gouvernance des établissements d'enseignement supérieur existe
+   (le chapitre 2 doit la traiter, pas seulement la gouvernance « en général »). Votre apport
+   se mesurera à l'écart avec cet existant — pas dans le vide.
+2. **Le Gabon n'est pas un décor.** Management interculturel oblige : les styles de leadership,
+   le rapport à l'autorité, la parole en réunion, la gestion des tensions ne se jouent pas
+   à Libreville comme à Lyon. Documentez les dimensions culturelles du terrain (entretiens,
+   observations) et méfiez-vous des grilles franco-centrées. Un jury international vous
+   attendra là-dessus.
+3. **L'IE doit se voir dans des actes de management.** GRH oblige : « intelligence
+   émotionnelle » ne veut rien dire sans manifestations observables — conduite de réunion,
+   annonce difficile, arbitrage, régulation d'équipe, gestion d'un désaccord avec la machine
+   (recommandation IA contestée : que se passe-t-il, qui tranche, comment ?). Vos grilles
+   d'observation doivent cibler ces scènes. Sinon l'IE reste déclarative — et P3 s'effondre.
+4. **Standards doctoraux (EIASM/EFMD).** Un DBA exige : question nette, protocole traçable,
+   résultats réfutables, contribution actionnable. Votre plan coche les cases sur le papier ;
+   l'exécution devra suivre. La figure 6.2 (cadre d'aide à la décision) est votre contrat
+   avec le jury : livrez-la, conditionnelle et étayée.
 
-**Verdict Giordano : FAVORABLE AVEC SURVEILLANCE.** Le design est excellent ; l'exécution
-est tout. Prochain passage : protocole de cas (annexes C–D) + règle de saturation écrite.
-Sans protocole daté avant le terrain, avis défavorable.
+**Verdict Rive : FAVORABLE SOUS RÉSERVE.** Prochain passage : § 2.2 (gouvernance des
+établissements d'enseignement : existant mobilisé ?) + grilles d'observation des scènes
+de décision. Sans scènes observées, avis défavorable.
 
 ---
 
-## Critique n° 3 — Cécile Dejoux : « Montrez-moi l'IA, pas le discours sur l'IA »
+## Critique n° 2 — Marc Valax : « Un DBA produit du savoir actionnable — où est le vôtre ? »
 
-**Appréciation générale.** La question est la bonne et elle est d'actualité : que change
-vraiment l'IA dans le travail des dirigeants ? Et votre intuition centrale — *c'est
-l'articulation avec l'humain qui compte, pas l'outil seul* — est juste. Mais c'est aussi
-la thèse la plus exposée au double écueil du moment : l'IA-washing sur le terrain et la
-technophobie en habit académique. Ni l'un ni l'autre ne passeront.
+**Appréciation générale.** Je dirige un Executive DBA : je sais ce qu'on attend d'un
+praticien-chercheur — pas une grande théorie, mais une connaissance qui change l'action,
+obtenue avec une rigueur traçable. Votre architecture (modèle exploratoire → terrain →
+modèle révisé → outil conditionnel) est la bonne. Tenez-la jusqu'au bout.
 
 **Points de critique.**
 
-1. **Qu'est-ce qui compte comme « IA » ?** Typologie impitoyable exigée : modèles prédictifs,
-   TAL/traitement documentaire, IA générative, automatisation/rules, tableaux de bord « dits
-   intelligents ». Votre § 2.5 prévoit la distinction IA vs numérisation/automatisation :
-   c'est LE point à tenir sur le terrain. Le tableau 5.3 (usages documentés) doit classer
-   chaque usage observé — et marquer sans pitié ce qui n'est pas de l'IA.
-2. **Documentez les non-usages et les échecs.** Une IA achetée puis abandonnée, un outil
-   contourné par les équipes, une direction qui refuse l'algorithme : ce sont des données
-   aussi précieuses que les succès. Si vos 5 cas ne montrent que des usages vertueux,
-   le jury n'y croira pas. La « non-articulation » (figure 5.2) doit être renseignée
-   pour de vrai.
-3. **P2 dit « contribution conditionnelle » : nommez les conditions.** Données disponibles ?
-   Compétences ? Infrastructure (connectivité, énergie) ? Confiance ? Coût ? C'est ici que le
-   contexte gabonais devient un apport et non un décor : les conditions P7 sont peut-être
-   votre résultat le plus utile aux dirigeants. Ne les traitez pas en 3 lignes.
-4. **L'IE doit être observée, pas déclarée.** « Nos dirigeants font preuve d'intelligence
-   émotionnelle » ne veut rien dire. Où la verrez-vous ? Dans les séquences de décision
-   (désaccords, arbitrages, annonces difficiles), les régulations d'équipe, la gestion des
-   tensions. Vos observations (§ 4.4, dominante non participante) sont cruciales ici :
-   prévoyez des situations d'observation ciblées, pas seulement des entretiens où l'on
-   *raconte* son IE.
-5. **Compétences et apprentissage : le chaînon manquant ?** Entre l'outil (IA) et l'effet
-   (performance), il y a l'appropriation : qui apprend quoi, comment, avec quel
-   accompagnement ? Si vos cas montrent des écarts d'appropriation, c'est un résultat
-   majeur — et directement actionnable (recommandations § 6.6/6.8).
-6. **Éthique de l'IA : ne pas l'oublier.** Biais, opacité, protection des données
-   (étudiants, personnels) : un dirigeant qui « gouverne augmenté » sans garde-fous
-   éthiques gouverne mal. Le § 3.5 (délibération et arbitrage éthique ; confiance,
-   transparence, responsabilité) doit se retrouver dans les recommandations, pas seulement
-   dans le modèle.
+1. **Actionnabilité : chaque chapitre doit finir en utilité.** Le chapitre 1 doit armer le
+   regard du dirigeant (tableau 1.3 = instrument, pas catalogue) ; le 5 doit livrer des
+   configurations comparables ; le 6 des recommandations *proportionnées aux preuves*
+   (conditions P7 explicites). Tout développement qui ne sert ni la démonstration ni l'action
+   est du gras : coupez.
+2. **Leadership : de l'IE déclarée au leadership observé.** Votre IE (P3) doit se convertir
+   en objets de leadership : qui exerce le jugement dans les séquences de décision ? Leadership
+   partagé dans les instances ? Relève, transmission ? Le Gabon et ses EPES ont des cultures
+   de leadership spécifiques : décrivez-les avant de les juger.
+3. **Pensez longitudinal.** La polycrise est un *processus*, pas un état ; la gouvernance
+   se joue dans la durée. Vos approches le permettent : prévoyez — même modestement — une
+   épaisseur temporelle (retour dans les cas, trajectoires 2022-2026, jalons datés). Une thèse
+   sur la gouvernance sans temps est une photo là où il faut un film.
+4. **RSE et développement durable : tenez la distinction.** J'ai travaillé sur RSE & RH :
+   la RSE = pratiques imputables à l'établissement (conditions de travail, équité, ancrage) ;
+   le DD = finalité qui le dépasse. Le tableau 5.4 qui les fusionne est votre point faible :
+   gardez les trois domaines (performance globale, RSE, DD) identifiables jusqu'en § 6,
+   comme vous vous y engagez — et traquez l'écart discours/pratiques.
 
-**Verdict Dejoux : FAVORABLE SOUS CONDITION.** La question vaut une thèse ; l'enquête
-dira si l'IA y existe. Prochain passage : typologie des usages (tableau 5.3) + grille
-d'observation des décisions. Si tout est déclaratif, avis défavorable.
+**Verdict Valax : FAVORABLE AVEC SURVEILLANCE.** Prochain passage : § 6.6/6.8 (forme et
+proportion des recommandations) + dimension temporelle du protocole. Sans utilité
+démontrée, un DBA ne se soutient pas.
+
+---
+
+## Critique n° 3 — Sabrina Loufrani : « Le qualitatif est une rigueur, pas une facilité »
+
+**Appréciation générale.** J'enseigne les méthodes qualitatives et j'étudie les compétences :
+votre design (multi-cas, codage hybride, triangulation, cas négatifs) est ambitieux et bien
+orienté. Mais l'ambition qualitative se paie en discipline d'exécution. C'est là que je vous attends.
+
+**Points de critique.**
+
+1. **Saturation, pas quotas.** 45 participants = cible de travail, pas contrat. Règle d'arrêt
+   informationnelle, matrice de saturation tenue au fil de l'eau (annexe H), autorisation
+   écrite de descendre à 4 cas si saturation atteinte. Je préfère 32 entretiens saturés
+   à 45 convenus.
+2. **Protocole daté avant le premier entretien.** Guide (14 questions), grilles d'observation
+   et documentaire, journal de terrain, conventions de nommage : figés, datés, versionnés
+   (annexes C–D). Tout écart journalisé. Sans protocole préalable, la validité de construit
+   ne tient pas.
+3. **L'appropriation de l'IA est une question de compétences — traitez-la comme telle.**
+   Entre l'outil et l'effet, il y a l'apprentissage : analysez-le sur trois niveaux
+   (individuel, collectif/équipe, organisationnel). Qui porte le changement ? Quelles
+   compétences manquent ? C'est peut-être votre résultat le plus actionnable — et il
+   relie naturellement IA et IE (apprendre avec la machine *et* avec les autres).
+4. **Triangulation des sources, divergences comprises.** Un même fait vu par entretien,
+   document ET observation — ou marqué divergent. La matrice de triangulation doit faire
+   apparaître les désaccords, pas les lisser. NVivo : l'arbre des codes et son historique
+   (annexe F) doivent raconter le travail d'analyse, pas recopier le plan.
+5. **Gouvernance « augmentée » = gouvernance responsable ?** J'ai créé l'axe Management
+   responsable des organisations : une gouvernance instrumentée par l'IA sans garde-fous
+   (biais, opacité, données des étudiants et personnels, § 3.5) n'est pas augmentée,
+   elle est dégradée. L'éthique doit irriguer modèle, enquête ET recommandations.
+
+**Verdict Loufrani : FAVORABLE SOUS CONDITION.** Prochain passage : protocole (annexes C–D)
++ règle de saturation + niveaux d'analyse des compétences. Sans protocole daté, avis défavorable.
 
 ---
 
@@ -161,14 +138,17 @@ d'observation des décisions. Si tout est déclaratif, avis défavorable.
 
 1. Aucun concept nouveau sans définition opérationnelle + frontières + exemple positif/négatif.
 2. Aucun résultat sans source tracée (cas, entretien/document/observation, code NVivo).
-3. Aucune mention d'« IA » sans classement dans la typologie (outil réel vs discours).
+3. Aucune mention d'« IA » sans classement (usage réel typé vs discours) ; non-usages et
+   échecs documentés comme les succès. *(Exigence permanente, en attendant un regard expert IA.)*
 4. Déclaratif seul = marqué comme tel ; jamais présenté comme pratique établie.
 5. RSE, performance globale, développement durable : identifiables séparément jusqu'en § 6.
 6. Saturation informationnelle primant sur les quotas (45 = cible, pas contrat).
 7. Protocole de cas daté avant le premier entretien ; tout écart journalisé.
 8. Position vis-à-vis des 5 cas écrite noir sur blanc (dont : UPL incluse ou exclue, et pourquoi).
-9. Non-usages, échecs, divergences et cas négatifs documentés comme les succès.
-10. Recommandations strictement proportionnées aux preuves (conditions P7 explicites).
+9. Contexte gabonais et dimensions interculturelles documentés, jamais plaqués ; épaisseur
+   temporelle minimale exigée (la polycrise est un processus).
+10. Recommandations strictement proportionnées aux preuves (conditions P7 explicites) ;
+    l'éthique de l'IA irriguant modèle, enquête et recommandations.
 
 ## Règles de fonctionnement — prochains échanges
 
@@ -186,6 +166,47 @@ d'observation des décisions. Si tout est déclaratif, avis défavorable.
 
 ## Journal des passages jury
 
-| Date | Livrable relu | Pesqueux | Giordano | Dejoux | Décision |
+| Date | Livrable relu | Rive | Valax | Loufrani | Décision |
 |---|---|---|---|---|---|
-| 08/09/2026 | Plan harmonisé + liste des supports (v. sept. 2026) | ⚠️ réserve (concepts en sursis : § 3.3, tab. 1.3) | ⚠️ surveillance (protocole C–D + saturation à produire) | ⚠️ condition (typologie 5.3 + grille d'observation) | Base validée ; 3 chantiers prioritaires ouverts (voir exigences conjointes) |
+| 08/09/2026 | Plan harmonisé + liste des supports (v. sept. 2026) — jury recomposé (Rive/Valax/Loufrani) | ⚠️ réserve (gouvernance des écoles : existant ? + scènes observées) | ⚠️ surveillance (actionnabilité + longitudinal à démontrer) | ⚠️ condition (protocole C–D + saturation + compétences 3 niveaux) | Base validée ; 3 chantiers prioritaires ouverts (voir exigences conjointes) |
+
+---
+
+## Annexe — Pourquoi « oxymore ou slogan » et pourquoi § 3.3 décide de tout (note du 08/09/2026)
+
+**1. « Gouvernance augmentée » : le soupçon d'oxymore.** Gouverner, c'est juger et trancher
+en responsabilité, dans l'incertitude, entre des exigences incommensurables (excellence
+académique vs viabilité financière) — et *répondre* de ses décisions. « Augmenter », c'est
+accroître des capacités (calcul, vitesse, mémoire). Tension : plus la machine prédit,
+recommande et automatise, plus le jugement risque de se rétracter (biais d'automatisation,
+perte de compétence, dilution de la responsabilité : « c'est l'algorithme »). Une gouvernance
+« augmentée » pourrait donc être une gouvernance *diminuée* — le paradoxe doit être résolu
+dans la thèse, pas subi : l'augmentation défendue = extension instrumentée d'un jugement
+qui RESTE humain et responsable.
+
+**2. Le soupçon de slogan.** « Augmenté » est un morphème marketing (tout est « augmenté »
+chez les vendeurs de transformation). Mécanique du slogan : vague (chacun y projette son
+sens), consensuel (qui est contre ?), irréfutable (aucun contre-exemple possible). Test :
+si rien ne peut *ne pas* être de la « gouvernance augmentée », c'en est un. La thèse doit
+donc fournir des contre-exemples (tableau de bord seul, tâche automatisée, usage occasionnel
+de l'IA générative, « stratégie IA » déclarative) et des cas-limites tranchés.
+
+**3. Pourquoi § 3.3 est décisive.** P4 (« orchestration IA–IE et émergence de la gouvernance
+augmentée ») est une thèse d'*émergence* : de l'interaction X × Y naît Z, différent de X+Y.
+Or une émergence ne se soutient qu'avec (i) Z défini indépendamment de X et Y (sinon :
+« la GA, c'est ce qui émerge quand IA et IE s'articulent » = tautologie), (ii) un mécanisme
+précisé (qui orchestre ? quelle séquence ? quels marqueurs observables ? — sinon l'« articulation »
+n'est qu'une juxtaposition), (iii) des critères observables (comment reconnaître Z dans le cas A
+et son absence dans le cas B). § 3.3 est le lieu de (i) : définitions, frontières, niveaux
+d'analyse. Si elle est molle (métaphores, synonymes, « peut se comprendre comme »), alors :
+codage NVivo impossible (pas de règles d'inclusion/exclusion), P4 intestable (tout confirme,
+rien ne réfute ; explications rivales inéliminables), et cascade — P5/P6 (effets de Z)
+présupposent Z identifié ; § 6.4 révise un modèle au cœur flottant ; la figure 6.2 prescrit
+ce qu'elle ne sait pas décrire. Tout l'aval hérite du flou : P4 s'effondre, et avec elle
+la contribution centrale.
+
+**4. Bonne nouvelle : § 3.3 s'écrit MAINTENANT, à coût zéro, avant le terrain.** Livrable
+attendu : « fiche concept GA » (1–2 pages) — définition (1 paragraphe), 4–6 attributs avec
+indicateurs observables chacun, 3 exclusions, 2 cas-limites tranchés, discipline du glossaire
+(GA vs pilotage instrumenté vs management algorithmique vs e-gouvernance). C'est le passage
+jury n° 1 proposé.

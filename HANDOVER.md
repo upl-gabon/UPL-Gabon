@@ -231,6 +231,11 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**08/09/2026 (4) — jury simulé recomposé : Chabanne-Rive (Lyon) · Valax (Nice) · Loufrani (Nice)**
+- Remplace la composition initiale (Pesqueux/Giordano/Dejoux) à la demande du Président.
+- Identités vérifiées (CV iaelyon, EMS/GRM, UniCA) ; simulation interne, non-implication explicite.
+- `docs/06` réécrit : 3 critiques adaptées (écoles+interculturel / garant DBA+leadership / quali+compétences) + annexe détaillée « oxymore ou slogan / § 3.3 décisive ». Exigence IA maintenue en exigence permanente n° 3.
+
 **08/09/2026 (3) — jury simulé de la thèse (garde-fous permanents)**
 - `docs/06_JURY_SIMULE_THESE.md` : Pesqueux (CNAM, concepts) · Giordano (Côte d'Azur/Nice, méthode) · Dejoux (CNAM, IA) — identités vérifiées, simulation interne, non-implication explicite.
 - Critique initiale des 3 membres + 10 exigences conjointes + règles de « passage jury » (✅/⚠️/❌) pour chaque futur livrable thèse. Premier passage journalisé.
