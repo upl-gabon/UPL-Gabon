@@ -54,5 +54,7 @@ npm run serve        # aperçu local → http://127.0.0.1:5173/these/
 
 ## Validation
 
-Toute mise en ligne ou ajout de contenu : **validation de l'auteur** (Serge Patrick MINANG).
+Tout livrable thèse passe le **jury simulé** (`docs/06_JURY_SIMULE_THESE.md` — Pesqueux ·
+Giordano · Dejoux) : un seul ❌ = reprise exigée. Puis validation finale de l'auteur
+(Serge Patrick MINANG).
 En cas de doute entre « UPL » et « thèse » : relire `docs/05_DOUBLE_CHANTIER_UPL_THESE.md`.

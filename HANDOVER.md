@@ -231,6 +231,10 @@ Handover bancaire : `0_HANDOVER_Reprise_Contexte_UPL_Ecobank.pdf`
 
 ## 10. Journal des mises à jour
 
+**08/09/2026 (3) — jury simulé de la thèse (garde-fous permanents)**
+- `docs/06_JURY_SIMULE_THESE.md` : Pesqueux (CNAM, concepts) · Giordano (Côte d'Azur/Nice, méthode) · Dejoux (CNAM, IA) — identités vérifiées, simulation interne, non-implication explicite.
+- Critique initiale des 3 membres + 10 exigences conjointes + règles de « passage jury » (✅/⚠️/❌) pour chaque futur livrable thèse. Premier passage journalisé.
+
 **08/09/2026 (2) — double piste UPL / thèse : travail simultané sans confusion**
 - `tests/these.test.mjs` (9 tests) + scripts `test:upl` / `test:these` ; `npm test` enchaîne les deux suites.
 - `these/README.md` (règles de la piste thèse) + `docs/05_DOUBLE_CHANTIER_UPL_THESE.md` (carte, anti-confusion, règles de simultanéité).
